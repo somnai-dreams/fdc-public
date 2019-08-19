@@ -1,16 +1,15 @@
 import React from "react";
 import Navicon from './navicon-round.svg'
-import SearchIcon from './search-round.svg'
 import { NavLink } from 'react-router-dom';
 
 import Logo from './DOE.png';
 
-import Listen from './listen-icon.svg';
 import Language from './language_icon.svg';
+import SearchIcon from '../Home/Search.svg';
 
 
 
-const NavBar = () => {
+const NavBar = (props) => {
   return (<div>
 
     <div className="top-bar">
@@ -18,10 +17,13 @@ const NavBar = () => {
         <a href="/">
           <img src={Logo} alt="Department of Education" className="logo"/>
         </a>
-        <div>
-          <img src={Listen} alt="Listen" className="language-icon"/>
-          <img src={Language} alt="Language" className="language-icon"/>
-        </div>
+        {props.search &&
+          <div className="flex-row">
+            <input className="nav-search" placeholder="What are you looking for?" type="text"/>
+            <img src={SearchIcon} alt="search" className="search-icon" 
+              style={{marginLeft: 465}}/>
+          </div>
+        }
       </div>
     </div>
     <div className="nav-bar teal-light">

@@ -36,6 +36,11 @@ class Home extends Component {
           <div className="banner">
               <NavBar/>
               <div className="container">
+                <div className="inner" style={{width: '100%', maxWidth: 1020}}>
+                  <div style={{textAlign: 'center', width: '100%', maxWidth: 1020}}>
+                    <h1> Lorem ipsum setina sapa </h1>
+                  </div>
+                </div>
                 <div className="inner">
                   <input className="home-search" type="text" placeholder="What you are looking for?"/>
                   <img src={SearchIcon} alt="search" className="search-icon"/>
