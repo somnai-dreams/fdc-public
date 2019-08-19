@@ -18,7 +18,7 @@ const NavBar = (props) => {
           <img src={Logo} alt="Department of Education" className="logo"/>
         </a>
         {props.search &&
-          <div className="flex-row">
+          <div className="flex-row mobile-hidden">
             <input className="nav-search" placeholder="What are you looking for today?" type="text"/>
             <div>
             <img src={SearchIcon} alt="search" className="search-icon" 

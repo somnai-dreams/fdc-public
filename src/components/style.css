@@ -161,11 +161,13 @@ p {
 }
 
 .speech-triangle.answer {
-  margin-left: 58%;
+  margin-top: 11px;
+  position: relative;
 }
 
 .speech-triangle {
   width: 35px;
+  height: 19px;
   position: absolute;
   margin-top: 9px;
   margin-left: 8px;
@@ -948,6 +950,10 @@ p {
 
   .mobile-hidden {
     display: none; 
+  }
+
+  .search-results {
+    width: 100%; 
   }
 }
 

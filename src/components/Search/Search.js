@@ -27,7 +27,9 @@ class Search extends Component {
                 <h1>Lorem ipsum telang sarasa?</h1>
                 <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo consequat sapien, et volutpat lectus porttitor at. Proin egestas elementum orci. Cras finibus sed dolor at malesuada. Cras nec sapien a ligula posuere convallis. Cras velit neque, tincidunt vitae nisl ac, dignissim condimentum urna. Etiam ornare pharetra ante molestie suscipit. Integer orci tortor, porta ut enim sit amet, feugiat ullamcorper nisi.
                 </p>
-                <img className="speech-triangle answer" src={Triangle2} />
+                <div style={{height: 2, display: 'flex', justifyContent: 'flex-end'}}>
+                  <img className="speech-triangle answer" src={Triangle2} />
+                </div>
               </div>
             </div>
           </div>
@@ -81,7 +83,7 @@ class Search extends Component {
 
               </div>
 
-              <div style={{width: '25%'}}>
+              <div style={{width: '25%'}} className="mobile-hidden">
                 <h1 style={{color: '#2889AA'}}> People also ask:</h1>
 
                 <div className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
