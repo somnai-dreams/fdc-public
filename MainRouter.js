@@ -3,7 +3,7 @@ import Home from './components/Home';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 
-class App extends Component {
+class MainRouter extends Component {
   render() {
     return (
       <Router>
@@ -15,6 +15,5 @@ class App extends Component {
   }
 }
 
-export default App;
-
+export default MainRouter;
 
