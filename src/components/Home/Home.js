@@ -36,14 +36,16 @@ class Home extends Component {
           <div className="banner">
               <NavBar/>
               <div className="container">
-                <div className="inner" style={{width: '100%', maxWidth: 1020}}>
+                <div className="inner">
                   <div style={{textAlign: 'center', width: '100%', maxWidth: 1020}}>
                     <h1> Lorem ipsum setina sapa </h1>
                   </div>
                 </div>
                 <div className="inner">
-                  <input className="home-search" type="text" placeholder="What you are looking for?"/>
+                  <input className="home-search" type="text" placeholder="What you are looking for today?"/>
+                  <div>
                   <img src={SearchIcon} alt="search" className="search-icon"/>
+                  </div>
                 </div>
               </div>
           </div>
@@ -54,7 +56,7 @@ class Home extends Component {
                 <h2> description text header 2 format</h2>
               </div>
             </div>
-            <div className="inner" style={{marginTop: 87}}>
+            <div className="inner collapsible" style={{marginTop: 87}}>
               <div className="fdc-box">
               </div>
               <div className="fdc-box">
@@ -74,11 +76,11 @@ class Home extends Component {
                 <div className="btm-3">
                 </div>
               </div>
-              <div className="fdc-box2">
+              <div className="fdc-box2 mobile-hidden">
                 <div className="btm-3">
                 </div>
               </div>
-              <div className="fdc-box2">
+              <div className="fdc-box2 mobile-hidden">
                 <div className="btm-3">
                 </div>
               </div>

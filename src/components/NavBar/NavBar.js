@@ -19,9 +19,11 @@ const NavBar = (props) => {
         </a>
         {props.search &&
           <div className="flex-row">
-            <input className="nav-search" placeholder="What are you looking for?" type="text"/>
+            <input className="nav-search" placeholder="What are you looking for today?" type="text"/>
+            <div>
             <img src={SearchIcon} alt="search" className="search-icon" 
-              style={{marginLeft: 465}}/>
+              style={{marginLeft: -55}}/>
+            </div>
           </div>
         }
       </div>
