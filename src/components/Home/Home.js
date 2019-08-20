@@ -10,18 +10,18 @@ import { withRouter } from "react-router-dom";
 
 let headerState = 1;
 let tags = [
-{text: "lorem ipsum"},
-{text: "lorem ipsum"},
-{text: "lorem ipsum"},
-{text: "lorem ipsum"},
-{text: "lorem ipsum"},
-{text: "lorem ipsum"},
-{text: "lorem ipsum"},
-{text: "lorem ipsum"},
-{text: "lorem ipsum"},
-{text: "lorem ipsum"},
-{text: "lorem ipsum"},
-{text: "lorem ipsum"}
+{text: "Become an approved provider"},
+{text: "Set up a service"},
+{text: "Enrol children"},
+{text: "Report sessions of care"},
+{text: "Subsidy payments"},
+{text: "Record keeping"},
+{text: "Compliance"},
+{text: "Child care subsidy (CCS)"},
+{text: "Additional child care subsidy (ACCS)"},
+{text: "Support for providers"},
+{text: "Exempt services"},
+{text: "Contacts"}
 ]
 
 class Home extends Component {
@@ -72,11 +72,11 @@ class Home extends Component {
           <div className="container" style={{paddingBottom: 150, flexWrap: 'wrap', alignItems: 'center'}}>
             <div className="inner" style={{width: '100%', maxWidth: 1020}}>
               <div style={{textAlign: 'left', width: '100%', maxWidth: 1020}}>
-                <h1> Lorem ipsum setina sapa </h1>
-                <h2> description text header 2 format</h2>
+                <h1> Find your way </h1>
+                <h2> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam. </h2>
               </div>
             </div>
-            <div className="inner collapsible" style={{marginTop: 87}}>
+            <div className="inner collapsible" style={{marginTop: 53}}>
               <div className="fdc-box">
               </div>
               <div className="fdc-box">
@@ -88,7 +88,7 @@ class Home extends Component {
           <div className="container flex-row" style={{background: '#f4f9fb', height: 517, flexWrap: 'wrap'}}>
             <div className="inner" style={{width: '100%', maxWidth: 'none'}}>
               <div style={{textAlign: 'left', width: '100%', maxWidth: 1020}}>
-                <h1> Lorem ipsum setina sapa </h1>
+                <h1>News & Updates</h1>
               </div>
             </div>
             <div className="inner flex-row" style={{marginTop: -105}}>
@@ -106,19 +106,19 @@ class Home extends Component {
               </div>
             </div>
           </div>
-          <div className="container flex-row" style={{flexWrap: 'wrap', marginTop: 124, marginBottom: 144}}>
+          <div className="container flex-row" style={{flexWrap: 'wrap', marginTop: 100, marginBottom: 144}}>
             <div className="inner" style={{width: '100%', maxWidth: 'none'}}>
               <div style={{textAlign: 'left', width: '100%', maxWidth: 1020}}>
-                <h1> Lorem ipsum setina sapa </h1>
+                <h1> Popular Topics </h1>
               </div>
             </div>
             <div className="inner flex-row" style={{flexWrap: 'wrap'}}>
               {tags.map((item, i) => {
                 return (
-                  <div className="fdc-box3">
-                    <a> {item.text} </a>
+                  <a href="/" className="fdc-box3">
+                    {item.text}
                     <img src={ChevronRight} style={{width: 8}}/>
-                  </div>
+                  </a>
                 )
               })}
             </div>

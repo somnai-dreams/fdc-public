@@ -23,11 +23,13 @@ body {
 }
 
 h1 {
+  font-weight: 600;
   color: #5aa5be;
 }
 
 h2 {
-  color: #d5e7ee;
+  color: #6f9baa;
+  font-weight: lighter;
 }
 
 h3 {
@@ -113,6 +115,12 @@ p {
 
 
 /* --------- End Color --------------*/
+.subfooter .list {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
 .search-results {
   width: 65%;
 }
@@ -210,6 +218,10 @@ p {
   border-radius: 28px 28px 0px 0px;
 }
 
+.fdc-box3:hover { 
+  text-decoration: underline;
+}
+
 .fdc-box3 { 
   left: 429px;
   width: 200px;
@@ -222,7 +234,7 @@ p {
   padding: 0 16px;
   margin: 15px;
   font-weight: 600;
-  color: #FFF;
+  color: #1B536B;
 }
 .fdc-box2 { 
   width: 288px;
@@ -1220,6 +1232,24 @@ li {
   margin: 40px 20px 0 20px; 
 }
 
+.footer {
+  background-color: #2889AA;
+  color: #FFF;
+}
+
+.footer a{
+  text-decoration: underline;
+  margin-right: 10px;
+}
+
+.subfooter a:visited {
+  color: #2889AA;
+}
+
+.footer a:visited {
+  color: #FFF;
+}
+
 .subfooter {
   background-color: #c9e1eb;
 }
@@ -1230,7 +1260,7 @@ li {
 }
 
 .subfooter .container {
-  color: #707070;
+  color: #1B536B;
 }
 
 .footer-logo {
