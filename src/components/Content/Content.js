@@ -25,7 +25,7 @@ class Content extends Component {
               </div>
 
               <div style={{width: '25%'}} className="mobile-hidden">
-                <h1 style={{color: '#2889AA'}}> People also ask:</h1>
+                <h1 style={{color: '#2889AA'}}> Other topics:</h1>
 
                 <div className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
                   <a> Lorem ipsum dolor sit amet</a>

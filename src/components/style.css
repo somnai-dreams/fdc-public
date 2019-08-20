@@ -24,7 +24,7 @@ body {
 
 h1 {
   font-weight: 600;
-  color: #5aa5be;
+  color: #2889AA;
 }
 
 h2 {
@@ -212,9 +212,10 @@ p {
 }
 
 .fdc-box2 .btm-3 { 
-  background-color: #5ca5bf;
+  background-position: center center;
+  background-size: cover;
   width:100%;
-  height: 130px;
+  height: 160px;
   border-radius: 28px 28px 0px 0px;
 }
 
@@ -226,7 +227,7 @@ p {
   left: 429px;
   width: 200px;
   height: 63px;
-  background: #a5cddb;
+  background-color: #c9e1ea;
   border-radius: 17px;
   display: flex;
   align-items: center;
@@ -236,14 +237,61 @@ p {
   font-weight: 600;
   color: #1B536B;
 }
+.fdc-box2 h2{ 
+   color: #FFF;
+   font-size: 16px;
+   font-weight: lighter;
+   padding-left: 15px;
+   margin-top: -10px;
+   padding-bottom: 10px;
+   max-height: 38px;
+   text-overflow: ellipsis;
+   overflow: hidden;
+}
+
+.fdc-box2 h1{ 
+   color: #FFF;
+   font-size: 20px;
+   font-weight: 500;
+   padding-left: 15px;
+   margin-top: -10px;
+}
+
+.fdc-box2 .clock{ 
+    margin-left: 16px;
+    margin-top: -5px;
+    width: 17px;
+    position: absolute;
+}
+
+.fdc-box2 span{ 
+    margin-left: 40px;
+    margin-top: -12px;
+    font-size: 14px;
+    color: #FFF;
+}
+
 .fdc-box2 { 
   width: 288px;
   height: 274px;
-  transform: matrix(-1, 0, 0, -1, 0, 0);
-  background: #9fcad9;
+  background: #5ca5bf;
   border-radius: 28px;
   margin-right: 25px;
   margin-left: 25px;
+}
+
+.fdc-box2 .tag { 
+  text-align: center;
+  font-size: 10px;
+  font-weight: bold;
+  width: 80px;
+  background-color: #FFF;
+  border-radius: 50px;
+  color: #1B536B;
+  padding: 10px 5px;
+  margin-top: -18px;
+  margin-left: auto;
+  margin-right: 15px;
 }
 
 .fdc-box { 

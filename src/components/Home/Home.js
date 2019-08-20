@@ -3,6 +3,10 @@ import '../style.css';
 import '../style_mobile.css';
 import NavBar from '../NavBar/NavBar';
 import Footer from '../footer/footer';
+import News1 from './News1.png';
+import News2 from './News2.png';
+import News3 from './News3.png';
+import Clock from './clock.svg';
 import SearchIcon from './Search.svg';
 import ChevronRight from './chevron-right.svg';
 import { withRouter } from "react-router-dom";
@@ -92,18 +96,44 @@ class Home extends Component {
               </div>
             </div>
             <div className="inner flex-row" style={{marginTop: -105}}>
+            
               <div className="fdc-box2">
-                <div className="btm-3">
+                <div className="btm-3" style={{backgroundImage: `url(${News3})`}}>
+                </div>
+                <div className="tag">POLICY UPDATE</div>
+                <h1> Policy Update </h1>
+                <h2> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod. </h2>
+                <div className="flex-row">
+                  <img className="clock" src={Clock} />
+                  <span> 12 JULY 2018 </span>
                 </div>
               </div>
+             
               <div className="fdc-box2 mobile-hidden">
-                <div className="btm-3">
+                <div className="btm-3" style={{backgroundImage: `url(${News2})`}}>
+                </div>
+                <div className="tag">NEWS ITEM</div>
+                <h1> News Item </h1>
+                <h2> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod. </h2>
+                <div className="flex-row">
+                  <img className="clock" src={Clock} />
+                  <span> 12 JULY 2018 </span>
                 </div>
               </div>
+
+           
               <div className="fdc-box2 mobile-hidden">
-                <div className="btm-3">
+                <div className="btm-3" style={{backgroundImage: `url(${News1})`}}>
+                </div>
+                <div className="tag">WEBINAR</div>
+                <h1> Latest Webinar</h1>
+                <h2> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod. </h2>
+                <div className="flex-row">
+                  <img className="clock" src={Clock} />
+                  <span> 12 JULY 2018 </span>
                 </div>
               </div>
+
             </div>
           </div>
           <div className="container flex-row" style={{flexWrap: 'wrap', marginTop: 100, marginBottom: 144}}>
@@ -115,7 +145,7 @@ class Home extends Component {
             <div className="inner flex-row" style={{flexWrap: 'wrap'}}>
               {tags.map((item, i) => {
                 return (
-                  <a href="/" className="fdc-box3">
+                  <a href="/content" className="fdc-box3">
                     {item.text}
                     <img src={ChevronRight} style={{width: 8}}/>
                   </a>
