@@ -38,17 +38,23 @@ const NavBar = (props) => {
           <div className="text">Home</div>
         </NavLink>
 
-        <NavLink to="/help" href="/help" activeClassName="selected" className="nav-item no-ipad">
-          <div className="text">Item 1</div>
+        <NavLink to="/childcare" href="/childcare" activeClassName="selected" className="nav-item no-ipad">
+          <div className="text">Child Care</div>
         </NavLink>
 
-        <NavLink to="/connect" href="/connect" activeClassName="selected" className="nav-item no-ipad">
-          <div className="text">Item 2</div>
+        <NavLink to="/compliance" href="/compliance" activeClassName="selected" className="nav-item no-ipad">
+          <div className="text">Compliance</div>
         </NavLink>
 
-        <NavLink to="/respite" href="/respite" activeClassName="selected" className="nav-item no-ipad">
-          <div className="text">Item 3</div>
+        <NavLink to="/resources" href="/resources" activeClassName="selected" className="nav-item no-ipad">
+          <div className="text">Resources</div>
         </NavLink>
+
+        <NavLink to="/news" href="/news" activeClassName="selected" className="nav-item no-ipad">
+          <div className="text">News</div>
+        </NavLink>
+
+
       </div>
     </div>
   </div>);

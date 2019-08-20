@@ -12,7 +12,7 @@ class RouterApp extends Component {
         <Switch>
           <Route exact path={`${process.env.PUBLIC_URL}/`} component={Home}/>
           <Route exact path={`${process.env.PUBLIC_URL}/Home`} component={Home}/>
-          <Route exact path={`${process.env.PUBLIC_URL}/Search`} component={Search}/>
+          <Route path={`${process.env.PUBLIC_URL}/Search`} component={Search}/>
           <Route path={`${process.env.PUBLIC_URL}/Mobile_Nav`} component={MobileNav}/>
         </Switch>
       </Router>

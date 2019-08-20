@@ -28,8 +28,28 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      searchVal: ""
     }
   }
+
+  //Handling keypress keyCode 13 = enter
+  keyPress = (e) => {
+     if(e.keyCode == 13){
+        //console.log('value', e.target.value);
+        this.props.history.push('/search/'+e.target.value);
+     }
+  }
+
+  //Handling Input Change
+  handleChange = (e) => {
+    this.setState({[e.target.name] : e.target.value});
+  }
+
+  goSearch = () => {
+    this.props.history.push('/search/'+this.state.searchVal);
+  }
+
+
   render() {
     return (
       <div>
@@ -42,9 +62,9 @@ class Home extends Component {
                   </div>
                 </div>
                 <div className="inner">
-                  <input className="home-search" type="text" placeholder="What you are looking for today?"/>
+                  <input onKeyDown={this.keyPress} value={this.state.searchVal} onChange={this.handleChange} className="home-search" name="searchVal" type="text" placeholder="What you are looking for today?"/>
                   <div>
-                  <img src={SearchIcon} alt="search" className="search-icon"/>
+                  <img onClick={this.goSearch} src={SearchIcon} alt="search" className="search-icon"/>
                   </div>
                 </div>
               </div>

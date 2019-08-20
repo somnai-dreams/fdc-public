@@ -21,9 +21,11 @@ a {
 body {
   background-color: #FFF;
 }
+
 h1 {
   color: #5aa5be;
 }
+
 h2 {
   color: #d5e7ee;
 }
@@ -247,6 +249,7 @@ p {
   width: 30px;
   margin-top: -15px;
   margin-left: -41px;
+  cursor: pointer;
 }
 
 .home-search {
