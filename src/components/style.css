@@ -244,9 +244,13 @@ p {
    padding-left: 15px;
    margin-top: -10px;
    padding-bottom: 10px;
-   max-height: 38px;
-   text-overflow: ellipsis;
+   -webkit-line-clamp: 2; /* number of lines to show */
+   line-height: 20px;        /* fallback */
+   max-height: 32px;       /* fallback */
    overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-box-orient: vertical;
 }
 
 .fdc-box2 h1{ 
@@ -407,7 +411,6 @@ p {
   background-color: #1eb3c4;
   line-height: 70px;
   margin-top: 0;
-  height: calc(99% );
 }
 
 .nav-item{
@@ -1288,6 +1291,10 @@ li {
 .footer a{
   text-decoration: underline;
   margin-right: 10px;
+}
+
+.subfooter a:hover {
+  text-decoration: underline;
 }
 
 .subfooter a:visited {

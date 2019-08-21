@@ -9,6 +9,7 @@ import News3 from './News3.png';
 import Clock from './clock.svg';
 import SearchIcon from './Search.svg';
 import ChevronRight from './chevron-right.svg';
+import ChevronLeft from './chevron-left.svg';
 import { withRouter } from "react-router-dom";
 
 
@@ -77,7 +78,6 @@ class Home extends Component {
             <div className="inner" style={{width: '100%', maxWidth: 1020}}>
               <div style={{textAlign: 'left', width: '100%', maxWidth: 1020}}>
                 <h1> Find your way </h1>
-                <h2> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam. </h2>
               </div>
             </div>
             <div className="inner collapsible" style={{marginTop: 53}}>
@@ -97,6 +97,7 @@ class Home extends Component {
             </div>
             <div className="inner flex-row" style={{marginTop: -105}}>
             
+              <img style={{cursor: 'pointer'}} src={ChevronLeft} alt="more"/>
               <div className="fdc-box2">
                 <div className="btm-3" style={{backgroundImage: `url(${News3})`}}>
                 </div>
@@ -133,13 +134,14 @@ class Home extends Component {
                   <span> 12 JULY 2018 </span>
                 </div>
               </div>
-
+              <img style={{cursor: 'pointer'}} src={ChevronRight} alt="more"/>
             </div>
           </div>
           <div className="container flex-row" style={{flexWrap: 'wrap', marginTop: 100, marginBottom: 144}}>
             <div className="inner" style={{width: '100%', maxWidth: 'none'}}>
-              <div style={{textAlign: 'left', width: '100%', maxWidth: 1020}}>
+              <div className="flex-row" style={{justifyContent: 'space-between', width: '100%', maxWidth: 1020}}>
                 <h1> Popular Topics </h1>
+                <h2 style={{cursor: 'pointer'}}> View All</h2>
               </div>
             </div>
             <div className="inner flex-row" style={{flexWrap: 'wrap'}}>
