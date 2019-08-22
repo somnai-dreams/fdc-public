@@ -1,10 +1,4 @@
 @media only screen and (max-width: 1700px) {
-
-  .nav-bar {
-    padding-left: 145px; 
-  }
-
-
   .arrow-grey.no-mobile:nth-of-type(1) {
     left: 10%; 
   }

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import NavBar from '../NavBar/NavBar';
+import NavBar2 from '../NavBar2/NavBar2';
 import Footer from '../footer/footer';
 import Triangle from './speech-triangle.svg';
 import Triangle2 from './speech-triangle2.svg';
@@ -55,7 +55,7 @@ class Search extends Component {
   render() {
     return (
       <div>
-          <NavBar search={true}/>
+          <NavBar2/>
 
           <div className="container flex-row">
             <div className="inner" style={{width: '100%', marginTop: 80, flexWrap: 'wrap'}}>

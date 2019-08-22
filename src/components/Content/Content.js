@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import NavBar from '../NavBar/NavBar';
+import NavBar2 from '../NavBar2/NavBar2';
 import Footer from '../footer/footer';
 import ChevronRight from '../Home/chevron-right.svg';
 
@@ -9,7 +9,7 @@ class Content extends Component {
   render() {
     return (
       <div>
-          <NavBar search={true}/>
+          <NavBar2/>
 
           <div className="container flex-row">
             <div className="inner flex-row" style={{minHeight: 'calc(100vh - 200px)', marginTop: 80, justifyContent: 'space-between', alignItems: 'flex-start'}}>

@@ -7,7 +7,7 @@ html,body
 }
 
 * {
-  font-family: Open Sans;
+  font-family: 'Livvic', sans-serif;
 }
 
 a {
@@ -23,8 +23,8 @@ body {
 }
 
 h1 {
-  font-weight: 600;
-  color: #2889AA;
+  color: #1F2D76;
+  font-size: 46px;
 }
 
 h2 {
@@ -59,7 +59,7 @@ p {
 }
 
 .teal-light {
-  background-color: #2889AA;
+  background-color: #202E77;
   color: #FFF;
 }
 
@@ -195,7 +195,8 @@ p {
 }
 
 .banner {
-  background-image: url('./Home/Banner1.svg');
+  background-image: url('./Home/Banner3.png');
+  background-color: #202E77;
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;
@@ -227,7 +228,7 @@ p {
   left: 429px;
   width: 200px;
   height: 63px;
-  background-color: #c9e1ea;
+  background-color: #FFF;
   border-radius: 17px;
   display: flex;
   align-items: center;
@@ -235,7 +236,7 @@ p {
   padding: 0 16px;
   margin: 15px;
   font-weight: 600;
-  color: #1B536B;
+  color: #4864C8;
 }
 .fdc-box2 h2{ 
    color: #FFF;
@@ -278,7 +279,7 @@ p {
 .fdc-box2 { 
   width: 288px;
   height: 274px;
-  background: #5ca5bf;
+  background-color: #FF6B77;
   border-radius: 28px;
   margin-right: 25px;
   margin-left: 25px;
@@ -299,20 +300,58 @@ p {
 }
 
 .fdc-box h2 {
-  color: #1B536B; 
+  color: #202E77; 
+  width: 162px;
   font-weight: 400;
+  font-style: italic;
+  margin: none;
+  margin-left: 19%;
 }
 
 .fdc-box { 
+  cursor: pointer;
+  background-size: cover;
   width: 273px;
   height: 378px;
-  background-color: #a5cddb; 
+  background-color: #719FFF; 
   border-radius: 28px;
   margin-right: 25px;
   margin-left: 25px;
   padding: 15px;
+  text-align: center;
+}
+.about-section {
+  background-image: url('./Home/AboutBG.png');
+  background-repeat: no-repeat;
+  background-size: 500px;
+  background-position-x: 80px;
+  background-position-y: 77px;
 }
 
+.news-section .shape {
+  position: absolute;
+  width: 200px;
+  margin-top: 150px;
+  right: 0;
+}
+
+.popular-section {
+  background-image: url('./Home/PopularBG.png');
+  background-repeat: no-repeat;
+  background-size: 355px;
+}
+
+.news-section {
+  background: #FFE0E6;
+  background-image: url('./Home/NewsBG.png');
+  height: 467px;
+  flex-wrap: wrap;
+  background-position: right;
+  background-size: 500px;
+  background-repeat: no-repeat;
+  background-position-y: 132px;
+  background-position-x: 90%;
+}
 .search-icon {
   position: absolute;
   width: 30px;
@@ -322,12 +361,28 @@ p {
 }
 
 .home-search {
-  border-radius: 15px;
+  border-radius: 37px;
   border: none;
   font-size: 18px;
   padding: 15px;
-  width: 700px;
+  width: 1000px;
+  margin-left: -10px;
 }
+
+.banner .inner h1 {
+  color: #FFF;
+  font-weight: 800;
+  font-size: 46px;
+  margin-bottom: 0px;
+}
+
+.banner .inner h2 {
+  margin-top: 10px;
+  color: #FFF;
+  font-size: 32px;
+}
+
+
 .phone-banner {
   height: 110px;
   display: inline-flex;
@@ -400,22 +455,10 @@ p {
 .teal-text {
   color: #019AAB;
 }
-
-.selected .text{
-  margin-bottom: -14px;
-}
-
-.selected{
-  font-weight: bold;
-  margin-top: -8px;
-  height: calc(100% - 15px);
-  border-bottom: 8px solid #FFF;
-}
-
 .nav-item.selected{
-  background-color: #1eb3c4;
-  line-height: 70px;
-  margin-top: 0;
+  background-image: url('./NavBar/scribble.png');
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .nav-item{
@@ -425,7 +468,6 @@ p {
   align-items: center;
   padding-left: 30px;
   padding-right: 30px;
-  transition: all 0.5s ease;
   font-size: 20px;
 }
 
@@ -435,11 +477,36 @@ p {
 }
 
 .nav-item:hover{
-  background-color: #1eb3c4;
+  text-decoration: underline;
 }
+
+.top-bar .logo {
+  height: 82px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.top-bar h1 {
+  color: #4864C8;
+  font-size: 30px;
+  margin-bottom: 0;
+}
+
+.top-bar h2 {
+  margin-top: 0;
+  color: #4864C8;
+}
+
+.nav-bar .logo {
+  height: 82px;
+  margin-right: 50px; 
+  margin-top: 15px;
+}
+
+
 .nav-bar {
+  background-color: transparent;
   height: 75px;
-  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
   display: flex;
   align-items: center;
   display: flex;
@@ -577,7 +644,6 @@ p {
 }
 
 .logo {
-  height: 98px;
 }
 
 .half-tab .watermelon-light:hover {
@@ -1313,8 +1379,8 @@ li {
 }
 
 .footer {
-  background-color: #2889AA;
-  color: #FFF;
+  background-color: #FFE0E6;
+  color: #1F2D76;
 }
 
 .footer a{
@@ -1327,15 +1393,11 @@ li {
 }
 
 .subfooter a:visited {
-  color: #2889AA;
+  color: #1F2D76;
 }
 
 .footer a:visited {
-  color: #FFF;
-}
-
-.subfooter {
-  background-color: #c9e1eb;
+  color: #1F2D76;
 }
 
 .subfooter hr {
@@ -1344,7 +1406,7 @@ li {
 }
 
 .subfooter .container {
-  color: #1B536B;
+  color: #1F2D76;
 }
 
 .footer-logo {

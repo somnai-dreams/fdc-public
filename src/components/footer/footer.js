@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import Logo from '../NavBar/DOE.png';
+import Logo from './DOE2.png';
+import Shape from './Shape.png';
 
 class footer extends Component {
 
@@ -24,8 +25,7 @@ class footer extends Component {
       <div className="subfooter mobile-hidden">
         <div className="container" style={{alignItems: 'center'}}>
           <div className="inner" style={{justifyContent: 'space-between', maxWidth: 1200}}>
-            <img src={Logo} alt="Department of Education" className="logo"
-              style={{marginTop: -80, height: 166}}/>
+            <img src={Logo} alt="Department of Education" className="logo" />
             <div className="flex-row" style={{justifyContent: 'space-between', width: '100%', height: '100%', padding: '90px 150px 90px 100px'}}>
 
               <div className="list">
@@ -58,6 +58,7 @@ class footer extends Component {
             </div>
           </div>
         </div>
+        <img src={Shape} style={{position: 'absolute', marginTop: -135, right: 0}}/>
       </div>
 
       <div className="footer flex-row"  style={{justifyContent: 'center'}}>
@@ -84,7 +85,7 @@ class footer extends Component {
             Request publications
           </a>
 
-          <p style={{width: '100%', textAlign: 'center', color: '#FFF'}}>Site maintained by the Department of Education </p>
+          <p style={{width: '100%', textAlign: 'center', color: '#1F2D76'}}>Site maintained by the Department of Education </p>
         </div>
         
       </div>

@@ -12,6 +12,14 @@ import ChevronRight from './chevron-right.svg';
 import ChevronLeft from './chevron-left.svg';
 import { withRouter } from "react-router-dom";
 
+import Journey1 from './Journeys1.png';
+import Journey2 from './Journeys2.png';
+import Journey3 from './Journeys3.png';
+
+import AboutShapes from './AboutShapes.png';
+import NewsShapes from './NewsShapes.png';
+import PopularShape from './PopularShape.png';
+
 let headerState = 1;
 let tags = [
 {text: "Become an approved provider"},
@@ -59,8 +67,9 @@ class Home extends Component {
               <NavBar/>
               <div className="container">
                 <div className="inner">
-                  <div style={{textAlign: 'center', width: '100%', maxWidth: 1020}}>
-                    <h1> Lorem ipsum setina sapa </h1>
+                  <div style={{width: '100%', maxWidth: 1020}}>
+                    <h1> Family Day Care</h1>
+                    <h2> for providers </h2>
                   </div>
                 </div>
                 <div className="inner">
@@ -72,27 +81,36 @@ class Home extends Component {
               </div>
           </div>
           <div className="container" style={{paddingBottom: 50, flexWrap: 'wrap', alignItems: 'center'}}>
-            <div className="inner" style={{width: '100%', maxWidth: 1020}}>
-              <div style={{textAlign: 'left', width: '100%', maxWidth: 1020}}>
-                <h1> Find your way </h1>
+            <div className="inner collapsible" style={{marginTop: -100}}>
+              <div className="fdc-box" style={{backgroundImage: `url(${Journey1})`, backgroundColor: '#FFE0E6'}}>
+                <h2> I am a new provider</h2>
               </div>
-            </div>
-            <div className="inner collapsible" style={{marginTop: 20}}>
-              <div className="fdc-box">
-                <h2> I am a New Provider</h2>
+              <div className="fdc-box" style={{backgroundImage: `url(${Journey3})`, backgroundColor: '#b9c7f6'}}>
+                <h2> I need information</h2>
               </div>
-              <div className="fdc-box">
-                <h2> I Need Information</h2>
-              </div>
-              <div className="fdc-box">
-                <h2> Help With Compliance </h2>
+              <div className="fdc-box" style={{backgroundImage: `url(${Journey2})`}}>
+                <h2 style={{color: '#FFF'}}> Help with compliance </h2>
               </div>
             </div>
           </div>
-          <div className="container flex-row" style={{background: '#f4f9fb', height: 467, flexWrap: 'wrap'}}>
+
+          <div className="container about-section" style={{paddingBottom: 50, flexWrap: 'wrap', alignItems: 'center'}}>
+            <div className="inner collapsible" style={{flexWrap:'wrap', paddingLeft: 33}}>
+              <h1 style={{width: '100%', color: '#FF6B77', marginBottom: 0}}> About </h1>
+              <div className="flex-row" style={{justifyContent: 'space-between'}}>
+                <div style={{width: '60%', color: '#1F2D76', fontSize: 20}}>
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam.
+                </div>
+                <img src={AboutShapes} />
+              </div>
+            </div>
+          </div>
+
+          <div className="container flex-row news-section" >
             <div className="inner" style={{width: '100%', maxWidth: 'none'}}>
               <div style={{textAlign: 'left', width: '100%', maxWidth: 1020}}>
                 <h1>News & Updates</h1>
+                <img src={NewsShapes} className="shape"/>
               </div>
             </div>
             <div className="inner flex-row" style={{marginTop: -105}}>
@@ -137,11 +155,12 @@ class Home extends Component {
               <img style={{cursor: 'pointer'}} src={ChevronRight} alt="more"/>
             </div>
           </div>
-          <div className="container flex-row" style={{flexWrap: 'wrap', marginTop: 100, marginBottom: 144}}>
+          <div className="container flex-row popular-section" style={{backgroundColor: '#1F2D76', flexWrap: 'wrap', paddingTop: 100, paddingBottom: 144}}>
             <div className="inner" style={{width: '100%', maxWidth: 'none'}}>
               <div className="flex-row" style={{justifyContent: 'space-between', width: '100%', maxWidth: 1020}}>
-                <h1> Popular Topics </h1>
-                <h2 style={{cursor: 'pointer'}}> View All</h2>
+                <img src={PopularShape} style={{position: 'absolute', marginLeft: -81, marginTop: -53}}/>
+                <h1 style={{color: '#FFF', zIndex: 2}}> Popular Topics </h1>
+                <h2 style={{cursor: 'pointer', color: '#FFF'}}> View All</h2>
               </div>
             </div>
             <div className="inner flex-row" style={{flexWrap: 'wrap'}}>
