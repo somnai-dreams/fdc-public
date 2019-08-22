@@ -6,6 +6,29 @@ import Triangle from './speech-triangle.svg';
 import Triangle2 from './speech-triangle2.svg';
 import ChevronRight from '../Home/chevron-right.svg';
 
+var documents = [{
+  "title": "Lunr",
+  "text": "Like Solr, but much smaller, and not as bright."
+}, {
+  "title": "React",
+  "text": "A JavaScript library for building user interfaces."
+}, {
+  "title": "Lodash",
+  "text": "A modern JavaScript utility library delivering modularity, performance & extras."
+}]
+
+var idx = window.lunr(function () {
+  this.ref('title');
+  this.field('text');
+  this.field('title');
+
+  documents.forEach(function (doc) {
+    this.add(doc)
+  }, this)
+})
+
+
+
 class Search extends Component {
 
   constructor(props) {
@@ -14,8 +37,18 @@ class Search extends Component {
     query = decodeURI(query.substring(query.indexOf("=") + 1, query.length));
     query = query.substring(1, query.length - 1);
     console.log(query);
+    let index = idx.search(query);
+    let results = [];
+    index.forEach(i => {
+      for (let doc of documents) {
+        if (i.ref == doc.title) {
+          results.push(doc);
+        }
+      }
+    })
     this.state = {
-      query: query
+      query: query,
+      results: results
     }
   }
 
@@ -44,50 +77,20 @@ class Search extends Component {
             <div className="inner flex-row" style={{marginTop: 80, justifyContent: 'space-between', alignItems: 'flex-start'}}>
               <div className="search-results">
                 <h1 style={{color: '#2889AA'}}> Not what you were after? Try these: </h1>
-
-                <div className="search-result">
-                  <a href="/"> Lorem ipsum dolor </a>
-                  <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo consequat sapien, et volutpat lectus porttitor at. Proin egestas elementum orci. Cras finibus sed dolor at malesuada.
-                  </p>
-                  <div className="flex-row">
-                    <div className="tag"> General Information </div> 
-                    <div className="date"> 19 Aug 2019 </div> 
-                  </div>
-                </div>
-
-
-                <div className="search-result">
-                  <a href="/"> Lorem ipsum dolor </a>
-                  <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo consequat sapien, et volutpat lectus porttitor at. Proin egestas elementum orci. Cras finibus sed dolor at malesuada.
-                  </p>
-                  <div className="flex-row">
-                    <div className="tag"> General Information </div> 
-                    <div className="date"> 19 Aug 2019 </div> 
-                  </div>
-                </div>
-
-
-                <div className="search-result">
-                  <a href="/"> Lorem ipsum dolor </a>
-                  <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo consequat sapien, et volutpat lectus porttitor at. Proin egestas elementum orci. Cras finibus sed dolor at malesuada.
-                  </p>
-                  <div className="flex-row">
-                    <div className="tag"> General Information </div> 
-                    <div className="date"> 19 Aug 2019 </div> 
-                  </div>
-                </div>
-
-
-                <div className="search-result">
-                  <a href="/"> Lorem ipsum dolor </a>
-                  <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo consequat sapien, et volutpat lectus porttitor at. Proin egestas elementum orci. Cras finibus sed dolor at malesuada.
-                  </p>
-                  <div className="flex-row">
-                    <div className="tag"> General Information </div> 
-                    <div className="date"> 19 Aug 2019 </div> 
-                  </div>
-                </div>
-
+                {this.state.results.map((item, i) => {
+                  return (
+                    <div className="search-result">
+                      <a href={"/Content/"+item.title}> {item.title}</a>
+                      <p> 
+                        {item.text}
+                      </p>
+                      <div className="flex-row">
+                        <div className="tag"> General Information </div> 
+                        <div className="date"> 19 Aug 2019 </div> 
+                      </div>
+                    </div>
+                  )
+                })}
               </div>
 
               <div style={{width: '25%'}} className="mobile-hidden">
