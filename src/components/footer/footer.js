@@ -2,9 +2,26 @@ import React, { Component } from "react";
 import Logo from '../NavBar/DOE.png';
 
 class footer extends Component {
+
+  scrollTop = () => {
+    window.scrollTo({
+      top: 100,
+      left: 100,
+      behavior: 'smooth'
+    });
+  }
+
+
   render() {
     return (<div>
-      <div className="subfooter">
+      <div className="subfooter mobile-only">
+        <div onClick={this.scrollTop} className="container" style={{alignItems: 'center', cursor: 'pointer'}}>
+          <div className="inner" style={{justifyContent: 'center', maxWidth: 1200}}>
+            <h1 style={{fontSize: 22}}> Back to Top </h1>
+          </div>
+        </div>
+      </div>
+      <div className="subfooter mobile-hidden">
         <div className="container" style={{alignItems: 'center'}}>
           <div className="inner" style={{justifyContent: 'space-between', maxWidth: 1200}}>
             <img src={Logo} alt="Department of Education" className="logo"

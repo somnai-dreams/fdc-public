@@ -12,7 +12,6 @@ import ChevronRight from './chevron-right.svg';
 import ChevronLeft from './chevron-left.svg';
 import { withRouter } from "react-router-dom";
 
-
 let headerState = 1;
 let tags = [
 {text: "Become an approved provider"},
@@ -40,8 +39,7 @@ class Home extends Component {
   //Handling keypress keyCode 13 = enter
   keyPress = (e) => {
      if(e.keyCode == 13){
-        //console.log('value', e.target.value);
-        this.props.history.push('/search/'+e.target.value);
+        this.goSearch();
      }
   }
 
@@ -51,9 +49,8 @@ class Home extends Component {
   }
 
   goSearch = () => {
-    this.props.history.push('/search/'+this.state.searchVal);
+    this.props.history.push("/search?query='"+this.state.searchVal+"'");
   }
-
 
   render() {
     return (
@@ -74,22 +71,25 @@ class Home extends Component {
                 </div>
               </div>
           </div>
-          <div className="container" style={{paddingBottom: 150, flexWrap: 'wrap', alignItems: 'center'}}>
+          <div className="container" style={{paddingBottom: 50, flexWrap: 'wrap', alignItems: 'center'}}>
             <div className="inner" style={{width: '100%', maxWidth: 1020}}>
               <div style={{textAlign: 'left', width: '100%', maxWidth: 1020}}>
                 <h1> Find your way </h1>
               </div>
             </div>
-            <div className="inner collapsible" style={{marginTop: 53}}>
+            <div className="inner collapsible" style={{marginTop: 20}}>
               <div className="fdc-box">
+                <h2> I am a New Provider</h2>
               </div>
               <div className="fdc-box">
+                <h2> I Need Information</h2>
               </div>
               <div className="fdc-box">
+                <h2> Help With Compliance </h2>
               </div>
             </div>
           </div>
-          <div className="container flex-row" style={{background: '#f4f9fb', height: 517, flexWrap: 'wrap'}}>
+          <div className="container flex-row" style={{background: '#f4f9fb', height: 467, flexWrap: 'wrap'}}>
             <div className="inner" style={{width: '100%', maxWidth: 'none'}}>
               <div style={{textAlign: 'left', width: '100%', maxWidth: 1020}}>
                 <h1>News & Updates</h1>

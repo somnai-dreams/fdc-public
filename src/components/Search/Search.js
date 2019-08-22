@@ -7,11 +7,18 @@ import Triangle2 from './speech-triangle2.svg';
 import ChevronRight from '../Home/chevron-right.svg';
 
 class Search extends Component {
+
   constructor(props) {
     super(props);
+    let query = props.location.search;
+    query = decodeURI(query.substring(query.indexOf("=") + 1, query.length));
+    query = query.substring(1, query.length - 1);
+    console.log(query);
     this.state = {
+      query: query
     }
   }
+
   render() {
     return (
       <div>
@@ -20,7 +27,7 @@ class Search extends Component {
           <div className="container flex-row">
             <div className="inner" style={{width: '100%', marginTop: 80, flexWrap: 'wrap'}}>
               <div className="question-block">
-                <h1>"Lorem ipsum telang sarasa?"</h1>
+                <h1>"{this.state.query}"</h1>
                 <img className="speech-triangle" src={Triangle} />
               </div>
               <div className="answer-block">
