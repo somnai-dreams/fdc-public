@@ -5,6 +5,7 @@ import Footer from '../footer/footer';
 import Triangle from './speech-triangle.svg';
 import Triangle2 from './speech-triangle2.svg';
 import ChevronRight from '../Home/chevron-right.svg';
+import PopularShape from '../Home/PopularShape.png';
 
 var documents = [{
   "title": "Lunr",
@@ -76,7 +77,7 @@ class Search extends Component {
           <div className="container flex-row">
             <div className="inner flex-row" style={{marginTop: 80, justifyContent: 'space-between', alignItems: 'flex-start'}}>
               <div className="search-results">
-                <h1 style={{color: '#2889AA'}}> Not what you were after? Try these: </h1>
+                <h1> Not what you were after? Try these: </h1>
                 {this.state.results.map((item, i) => {
                   return (
                     <div className="search-result">
@@ -93,8 +94,8 @@ class Search extends Component {
                 })}
               </div>
 
-              <div style={{width: '25%'}} className="mobile-hidden">
-                <h1 style={{color: '#2889AA'}}> People also ask:</h1>
+              <div style={{width: '25%'}} className="also-asked mobile-hidden">
+                <h1> People also ask:</h1>
 
                 <div className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
                   <a> Lorem ipsum dolor sit amet</a>
@@ -116,6 +117,34 @@ class Search extends Component {
               </div>
             </div>
           </div>
+          <div className="container flex-row popular-section" style={{backgroundColor: '#1F2D76', flexWrap: 'wrap', paddingTop: 50, paddingBottom: 70}}>
+            <div className="inner" style={{width: '100%', maxWidth: 'none'}}>
+              <div className="flex-row" style={{justifyContent: 'space-between', width: '100%', maxWidth: 1020}}>
+                <img src={PopularShape} style={{position: 'absolute', marginLeft: -81, marginTop: -53}}/>
+                <h1 style={{color: '#FFF', zIndex: 2}}> Popular Topics </h1>
+                <h2 style={{cursor: 'pointer', color: '#FFF'}}> View All</h2>
+              </div>
+            </div>
+            <div className="inner flex-row" style={{flexWrap: 'wrap'}}>
+                  <a href="/content" className="fdc-box3">
+                    Become An Approved Provider
+                    <img src={ChevronRight} style={{width: 8}}/>
+                  </a>
+                  <a href="/content" className="fdc-box3">
+                    Set Up A Service
+                    <img src={ChevronRight} style={{width: 8}}/>
+                  </a>
+                  <a href="/content" className="fdc-box3">
+                    Enrol Children 
+                    <img src={ChevronRight} style={{width: 8}}/>
+                  </a>
+                  <a href="/content" className="fdc-box3">
+                    Report Sessions Of Care
+                    <img src={ChevronRight} style={{width: 8}}/>
+                  </a>
+            </div>
+          </div>
+
           <Footer/>
       </div> 
     );

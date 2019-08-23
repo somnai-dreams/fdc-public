@@ -24,7 +24,7 @@ body {
 
 h1 {
   color: #1F2D76;
-  font-size: 46px;
+  font-size: 38px;
 }
 
 h2 {
@@ -121,8 +121,14 @@ p {
   text-align: right;
 }
 
+.also-asked .fdc-box3 {
+  background-color: #719FFF;
+  color: #FFF;
+}
+
 .search-results {
   width: 65%;
+  padding-bottom: 70px;
 }
 
 .search-result {
@@ -142,13 +148,16 @@ p {
 }
 
 .search-result a {
-  text-decoration: underline;
+  font-style: italic;
   font-size: 20px;
-  color: #2889aa;
+  color: #4864C8;
 }
 
+.answer-block p {
+ color: #1F2D76;
+}
 .answer-block {
-  background-color: #d5e7ee;
+  background-color: #FFE0E6;
   padding: 10px 30px;
   border-radius: 15px;
   max-width: 80%;
@@ -157,7 +166,7 @@ p {
 }
 
 .question-block {
-  background-color: #5da6bf;
+  background-color: #4864C8;
   padding: 10px 30px;
   border-radius: 15px;
   max-width: 80%;
@@ -171,13 +180,15 @@ p {
 }
 
 .speech-triangle.answer {
-  margin-top: 11px;
+  margin-top: -36px;
   position: relative;
+  width: 51px;
+  height: 90px;
 }
 
 .speech-triangle {
-  width: 35px;
-  height: 19px;
+  width: 45px;
+  height: 38px;
   position: absolute;
   margin-top: 9px;
   margin-left: 8px;
