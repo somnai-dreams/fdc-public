@@ -19,6 +19,9 @@ import Journey3 from './Journeys3.png';
 import AboutShapes from './AboutShapes.png';
 import NewsShapes from './NewsShapes.png';
 import PopularShape from './PopularShape.png';
+import bannerShapeLeft from './bannerShapeLeft.png';
+import bannerShapeCentre from './bannerShapeCentre.png';
+import bannerShapeRight from './bannerShapeRight.png';
 
 let headerState = 1;
 let tags = [
@@ -63,25 +66,29 @@ class Home extends Component {
   render() {
     return (
       <div>
-          <div className="banner">
+          <div className="banner"  style={{position: 'relative', zIndex: -1}}>
               <NavBar/>
               <div className="container">
                 <div className="inner">
                   <div style={{width: '100%', maxWidth: 1020}}>
-                    <h1> Family Day Care</h1>
-                    <h2> for providers </h2>
+                    <h1> Family Day Care <br/> <span style={{fontWeight:'400'}}> for providers </span></h1>
                   </div>
                 </div>
-                <div className="inner">
+                <div className="inner" style={{position: 'relative'}}>
                   <input onKeyDown={this.keyPress} value={this.state.searchVal} onChange={this.handleChange} className="home-search" name="searchVal" type="text" placeholder="What you are looking for today?"/>
                   <div>
                   <img onClick={this.goSearch} src={SearchIcon} alt="search" className="search-icon"/>
                   </div>
+                <img src={bannerShapeCentre} style={{position: 'absolute', right: 120, bottom: -60, height: 300}}/>
                 </div>
               </div>
+              <img src={bannerShapeLeft} style={{position: 'absolute',  left: 0, bottom: 0,maxWidth: 280, width: '15vw'}}/>
+              
+              <img src={bannerShapeRight} style={{position: 'absolute', right: 0, bottom: 0, maxWidth: 400, width: '25vw'}}/>
+
           </div>
           <div className="container" style={{paddingBottom: 50, flexWrap: 'wrap', alignItems: 'center'}}>
-            <div className="inner collapsible" style={{marginTop: -100}}>
+            <div className="inner collapsible" style={{marginTop: -70}}>
               <div className="fdc-box" style={{backgroundImage: `url(${Journey1})`, backgroundColor: '#FFE0E6'}}>
                 <h2> I am a new provider</h2>
               </div>
@@ -94,14 +101,14 @@ class Home extends Component {
             </div>
           </div>
 
-          <div className="container about-section" style={{paddingBottom: 50, flexWrap: 'wrap', alignItems: 'center'}}>
+          <div className="container about-section" style={{paddingBottom: 100, flexWrap: 'wrap', alignItems: 'center'}}>
             <div className="inner collapsible" style={{flexWrap:'wrap', paddingLeft: 33}}>
-              <h1 style={{width: '100%', color: '#FF6B77', marginBottom: 0}}> About </h1>
-              <div className="flex-row" style={{justifyContent: 'space-between'}}>
+              <h2 style={{width: '100%', color: '#FF6B77', marginBottom: 0}}> About </h2>
+              <div className="flex-row" style={{justifyContent: 'space-between', position: 'relative'}}>
                 <div style={{width: '60%', color: '#1F2D76', fontSize: 20}}>
                   Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam.
                 </div>
-                <img src={AboutShapes} />
+                <img style={{position: 'absolute', right: 0}} src={AboutShapes} />
               </div>
             </div>
           </div>
@@ -109,11 +116,11 @@ class Home extends Component {
           <div className="container flex-row news-section" >
             <div className="inner" style={{width: '100%', maxWidth: 'none'}}>
               <div style={{textAlign: 'left', width: '100%', maxWidth: 1020}}>
-                <h1>News & Updates</h1>
+                <h2>News & Updates</h2>
                 <img src={NewsShapes} className="shape"/>
               </div>
             </div>
-            <div className="inner flex-row" style={{marginTop: -105}}>
+            <div className="inner flex-row" style={{marginTop: 0}}>
             
               <img style={{cursor: 'pointer'}} src={ChevronLeft} alt="more"/>
               <div className="fdc-box2">
@@ -159,8 +166,8 @@ class Home extends Component {
             <div className="inner" style={{width: '100%', maxWidth: 'none'}}>
               <div className="flex-row" style={{justifyContent: 'space-between', width: '100%', maxWidth: 1020}}>
                 <img src={PopularShape} style={{position: 'absolute', marginLeft: -81, marginTop: -53}}/>
-                <h1 style={{color: '#FFF', zIndex: 2}}> Popular Topics </h1>
-                <h2 style={{cursor: 'pointer', color: '#FFF'}}> View All</h2>
+                <h2 style={{color: '#FFF', zIndex: 2}}> Popular Topics </h2>
+                <h3 style={{cursor: 'pointer', color: '#FFF'}}> View All</h3>
               </div>
             </div>
             <div className="inner flex-row" style={{flexWrap: 'wrap'}}>
