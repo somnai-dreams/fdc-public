@@ -142,8 +142,8 @@ p {
 }
 
 .also-asked .fdc-box3 {
-    background-color: #719FFF;
-    color: #FFF;
+  background-color: #c3d7ff;
+  color: #1F2D76;
 }
 
 .search-results {
@@ -256,6 +256,10 @@ p {
     text-decoration: underline;
 }
 
+.fdc-box3 img { 
+  margin-left: 10px;
+}
+
 .fdc-box3 {
     left: 429px;
     width: 200px;
@@ -267,9 +271,10 @@ p {
     align-items: center;
     justify-content: space-between;
     padding: 0 16px;
-    margin: 15px;
+    margin: 15px 15px 0 0;
     font-weight: 600;
     color: #4864C8;
+    cursor: pointer;
 }
 
 .fdc-box2 h2 {
@@ -1102,6 +1107,21 @@ p {
 
 
 /*--------- End Mobile Nav ---------*/
+.fdc-box4 {
+  cursor: pointer;
+  background-color: #f0f3fd;
+  padding: 10px 53px 10px 15px;
+  border-radius: 17px;
+  margin-bottom: 16px;
+}
+
+.fdc-box4 h3 {
+  color: #1F2D76;
+  font-weight: 500;
+  padding: 0;
+  margin: 0;
+}
+
 .wrapper {
     margin-right: auto;
     /* 1 */

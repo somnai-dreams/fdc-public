@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import Navicon from './navicon-round.svg'
 import { NavLink } from 'react-router-dom';
 
@@ -6,10 +6,36 @@ import Logo from './DOE2.png';
 
 import Language from './language_icon.svg';
 import SearchIcon from '../Home/Search.svg';
+import { withRouter } from "react-router-dom";
 
 
 
-const NavBar2 = (props) => {
+class NavBar2 extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      searchVal: ""
+    }
+  }
+
+  //Handling keypress keyCode 13 = enter
+  keyPress = (e) => {
+     if(e.keyCode == 13){
+        this.goSearch();
+     }
+  }
+
+  //Handling Input Change
+  handleChange = (e) => {
+    this.setState({[e.target.name] : e.target.value});
+  }
+
+  goSearch = () => {
+    this.props.history.push("/search?query='"+this.state.searchVal+"'");
+  }
+
+  render() {
   return (<div>
     <div className="top-bar">
       <div className="inner flex-row">
@@ -28,7 +54,7 @@ const NavBar2 = (props) => {
               </div>
             </div>
             <div>
-              <input className="nav-search" placeholder="What are you looking for today?" type="text"/>
+              <input onKeyDown={this.keyPress} value={this.state.searchVal} onChange={this.handleChange} className="nav-search" name="searchVal" placeholder="What are you looking for today?" type="text"/>
               <img src={SearchIcon} alt="search" className="search-icon" 
                 style={{marginLeft: -55, marginTop: 13}}/>
             </div>
@@ -65,6 +91,8 @@ const NavBar2 = (props) => {
       </div>
     </div>
   </div>);
+  }
 };
 
-export default NavBar2;
+export default withRouter(NavBar2);
+
