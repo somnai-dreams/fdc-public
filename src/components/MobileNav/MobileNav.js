@@ -21,20 +21,20 @@ class MobileNav extends Component {
                 <h1> Home </h1>
               </a>
 
-              <a href="/help" className="item">
-                <h1> Help & Advice </h1>
+              <a href="/" className="item">
+                <h1> Family Day Care</h1>
               </a>
 
-              <a href="/connect" className="item">
-                <h1> Connect with others </h1>
+              <a href="/" className="item">
+                <h1> Compliance </h1>
               </a>
 
-              <a href="/respite" className="item">
-                <h1> Respite </h1>
+              <a href="/" className="item">
+                <h1> Resources </h1>
               </a>
 
-              <a href="/payments" className="item">
-                <h1> Payments </h1>
+              <a href="/" className="item">
+                <h1> News </h1>
               </a>
             </div>
 

@@ -40,7 +40,7 @@ const NavBar = (props) => {
         </NavLink>
 
         <NavLink to="/childcare" href="/childcare" activeClassName="selected" className="nav-item no-ipad">
-          <div className="text">Child Care</div>
+          <div className="text">Family Day Care</div>
         </NavLink>
 
         <NavLink to="/compliance" href="/compliance" activeClassName="selected" className="nav-item no-ipad">

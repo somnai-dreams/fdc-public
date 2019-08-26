@@ -61,7 +61,7 @@ class NavBar2 extends Component {
           </div>
       </div>
     </div>
-    <div className="nav-bar teal-light" style={{backgroundColor: '#202E77'}}>
+    <div className="nav-bar teal-light" style={{backgroundColor: '#202E77', height: 75, paddingTop: 0}}>
       <div className="inner">
         <a href='/Mobile_Nav'>
           <img src={Navicon} alt="menu" className="nav-icon only-ipad" /> 

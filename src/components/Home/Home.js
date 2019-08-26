@@ -66,7 +66,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-          <div className="banner"  style={{position: 'relative', zIndex: -1}}>
+          <div className="banner"  style={{position: 'relative', zIndex: 0}}>
               <NavBar/>
               <div className="container">
                 <div className="inner">
@@ -79,12 +79,12 @@ class Home extends Component {
                   <div>
                   <img onClick={this.goSearch} src={SearchIcon} alt="search" className="search-icon"/>
                   </div>
-                <img src={bannerShapeCentre} style={{position: 'absolute', right: 120, bottom: -60, height: 300}}/>
+                <img className="mobile-hidden" src={bannerShapeCentre} style={{position: 'absolute', right: 120, bottom: -60, height: 300}}/>
                 </div>
               </div>
-              <img src={bannerShapeLeft} style={{position: 'absolute',  left: 0, bottom: 0,maxWidth: 280, width: '15vw'}}/>
+              <img className="mobile-hidden" src={bannerShapeLeft} style={{position: 'absolute',  left: 0, bottom: 0,maxWidth: 280, width: '15vw'}}/>
               
-              <img src={bannerShapeRight} style={{position: 'absolute', right: 0, bottom: 0, maxWidth: 400, width: '25vw'}}/>
+              <img className="mobile-hidden" src={bannerShapeRight} style={{position: 'absolute', right: 0, bottom: 0, maxWidth: 400, width: '25vw'}}/>
 
           </div>
           <div className="container" style={{paddingBottom: 50, flexWrap: 'wrap', alignItems: 'center'}}>
@@ -117,7 +117,7 @@ class Home extends Component {
             <div className="inner" style={{width: '100%', maxWidth: 'none'}}>
               <div style={{textAlign: 'left', width: '100%', maxWidth: 1020}}>
                 <h2>News & Updates</h2>
-                <img src={NewsShapes} className="shape"/>
+                <img src={NewsShapes} className="shape mobile-hidden"/>
               </div>
             </div>
             <div className="inner flex-row" style={{marginTop: 0}}>
@@ -173,7 +173,7 @@ class Home extends Component {
             <div className="inner flex-row" style={{flexWrap: 'wrap'}}>
               {tags.map((item, i) => {
                 return (
-                  <a href="/content" className="fdc-box3">
+                  <a key={i} href="/content" className="fdc-box3">
                     {item.text}
                     <img src={ChevronRight} style={{width: 8}}/>
                   </a>

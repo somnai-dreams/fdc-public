@@ -25,6 +25,8 @@ body {
 
 h1 {
     color: #1F2D76;
+    font-size: 50px;
+    font-weight: 600;
     font-weight: 600;
     font-size: 50px;
     letter-spacing: 0.05em;
@@ -133,32 +135,6 @@ p {
 
 
 /* --------- End Color --------------*/
-.sticky-nav {
-  position: fixed;
-  top: 0;
-}
-#sticky-nav {
-  display: flex;
-  flex-wrap:  wrap;
-  background-color: #fff;
-}
-
-#sticky-nav .heading {
-  color: #939EB5;
-  font-size: 18px;
-  margin-top: 10px;
-}
-
-#sticky-nav .sub-heading {
-  color: #C3CAD9;
-  font-size: 14px;
-  margin-left: 15px;
-  margin-top: 5px;
-}
- #sticky-nav .title {
-  color: #FF6B77;
- }
-
 .subfooter .list {
     display: flex;
     flex-direction: column;
@@ -166,8 +142,8 @@ p {
 }
 
 .also-asked .fdc-box3 {
-  background-color: #c3d7ff;
-  color: #1F2D76;
+    background-color: #719FFF;
+    color: #FFF;
 }
 
 .search-results {
@@ -241,7 +217,7 @@ p {
 
 .nav-search {
     width: 487px;
-    height: 55px;
+    height: 24px;
     background: #dfeef2;
     border-radius: 27px;
     border: none;
@@ -280,10 +256,6 @@ p {
     text-decoration: underline;
 }
 
-.fdc-box3 img { 
-  margin-left: 10px;
-}
-
 .fdc-box3 {
     left: 429px;
     width: 200px;
@@ -295,10 +267,9 @@ p {
     align-items: center;
     justify-content: space-between;
     padding: 0 16px;
-    margin: 15px 15px 0 0;
+    margin: 15px;
     font-weight: 600;
     color: #4864C8;
-    cursor: pointer;
 }
 
 .fdc-box2 h2 {
@@ -388,7 +359,6 @@ p {
     margin-left: 25px;
     /*  padding: 15px;*/
     text-align: center;
-    z-index: 5;
 }
 
 .about-section {
@@ -431,7 +401,6 @@ p {
     margin-top: -15px;
     margin-left: -41px;
     cursor: pointer;
-    z-index: 10;
 }
 
 .home-search {
@@ -591,7 +560,6 @@ p {
     height: 82px;
     margin-right: 50px;
     margin-top: 15px;
-    margin-left: 20px;
 }
 
 
@@ -1117,8 +1085,6 @@ p {
 
 .mobile-nav .item h1 {
     font-weight: normal;
-    color: #FFF;
-    font-size: 26px;
 }
 
 .mobile-nav .item {
@@ -1136,21 +1102,6 @@ p {
 
 
 /*--------- End Mobile Nav ---------*/
-.fdc-box4 {
-  cursor: pointer;
-  background-color: #f0f3fd;
-  padding: 10px 53px 10px 15px;
-  border-radius: 17px;
-  margin-bottom: 16px;
-}
-
-.fdc-box4 h3 {
-  color: #1F2D76;
-  font-weight: 500;
-  padding: 0;
-  margin: 0;
-}
-
 .wrapper {
     margin-right: auto;
     /* 1 */
@@ -1222,9 +1173,6 @@ p {
         padding: 15px;
         width: calc(100% - 30px);
         height: 75px;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
     }
 
     .fdc-box h2 {

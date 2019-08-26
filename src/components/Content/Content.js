@@ -5,8 +5,38 @@ import Footer from '../footer/footer';
 import ChevronRight from '../Home/chevron-right.svg';
 import PopularShape from '../Home/PopularShape.png';
 
-
 class Content extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      nav_offset : Infinity
+    }
+  }
+
+  //---- Start window resize trigger ----
+  componentDidMount = () => {
+    if (window.pageYOffset < 100) {
+      this.setState({nav_offset: document.getElementById("sticky-nav").getBoundingClientRect().top})
+    }
+    window.addEventListener('scroll', this.didScroll);
+  }
+
+  componentWillUnmount = () => {
+    window.addEventListener('scroll', this.didScroll);
+  }
+
+  //---- End window resize trigger -----
+  didScroll = () => {
+    let nav = document.getElementById("sticky-nav");
+    console.log(window.pageYOffset, nav.getBoundingClientRect());
+    if(window.pageYOffset > this.state.nav_offset) {
+      nav.classList.add("sticky-nav")
+    } else {
+      nav.classList.remove("sticky-nav")
+    }
+  }
+
+
   render() {
     return (
       <div>
@@ -68,23 +98,43 @@ class Content extends Component {
               </div>
 
               <div style={{width: '25%'}} className="also-asked mobile-hidden">
-                <h1 >Relevant Material</h1>
+                <div style={{paddingBottom: 20}}>
+                  <h1 >Relevant Material</h1>
 
-                <div className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
-                  <a> Lorem ipsum dolor sit amet</a>
-                  <img src={ChevronRight} style={{width: 8}}/>
+                  <div className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
+                    <a> Lorem ipsum dolor sit amet</a>
+                    <img src={ChevronRight} style={{width: 8}}/>
+                  </div>
+
+
+                  <div className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
+                    <a> Lorem ipsum dolor sit amet</a>
+                    <img src={ChevronRight} style={{width: 8}}/>
+                  </div>
+
+
+                  <div className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
+                    <a> Lorem ipsum dolor sit amet</a>
+                    <img src={ChevronRight} style={{width: 8}}/>
+                  </div>
                 </div>
 
+                <div id="sticky-nav" >
+                  <div className="title"> Table of Contents </div>
+                  <a href="/content" className="heading"> What is an approved provider? </a>
+                  <a href="/content" className="sub-heading"> Family Assistance Law approval </a>
+                  <a href="/content" className="sub-heading"> Family Assistance Law approval </a>
 
-                <div className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
-                  <a> Lorem ipsum dolor sit amet</a>
-                  <img src={ChevronRight} style={{width: 8}}/>
-                </div>
+                  <a href="/content" className="heading"> What is an approved provider? </a>
+                  <a href="/content" className="sub-heading"> Family Assistance Law approval </a>
+                  <a href="/content" className="sub-heading"> Family Assistance Law approval </a>
+                  <a href="/content" className="sub-heading"> Family Assistance Law approval </a>
 
+                  <a href="/content" className="heading"> What is an approved provider? </a>
+                  <a href="/content" className="sub-heading"> Family Assistance Law approval </a>
+                  <a href="/content" className="sub-heading"> Family Assistance Law approval </a>
+                  <a href="/content" className="sub-heading"> Family Assistance Law approval </a>
 
-                <div className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
-                  <a> Lorem ipsum dolor sit amet</a>
-                  <img src={ChevronRight} style={{width: 8}}/>
                 </div>
 
               </div>

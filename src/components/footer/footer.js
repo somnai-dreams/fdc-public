@@ -29,7 +29,7 @@ class footer extends Component {
             <div className="flex-row" style={{justifyContent: 'space-between', width: '100%', height: '100%', padding: '90px 150px 90px 100px'}}>
 
               <div className="list">
-                <a href="/" style={{fontSize: 18, fontWeight: 600, marginBottom: 5}}> Child Care </a>
+                <a href="/" style={{fontSize: 18, fontWeight: 600, marginBottom: 5}}> Family Day Care </a>
                 <a href="/" style={{fontSize: 14}}> Lorem ipsum </a>
                 <a href="/" style={{fontSize: 14}}> Lorem ipsum </a>
               </div>
