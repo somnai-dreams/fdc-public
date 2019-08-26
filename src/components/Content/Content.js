@@ -4,20 +4,81 @@ import NavBar2 from '../NavBar2/NavBar2';
 import Footer from '../footer/footer';
 import ChevronRight from '../Home/chevron-right.svg';
 import PopularShape from '../Home/PopularShape.png';
+import ScrollableAnchor from 'react-scrollable-anchor';
 
-class Content extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      nav_offset : Infinity
+var test_html = require('./template.html');
+let html_array = test_html.split("\n");
+let table_headings = [];
+let current_h1 = "";
+let multiline_type = null;
+let multiline = [];
+
+//Gather h1 and h2 and make them scrollable
+for (let i = 0; i < html_array.length; i++) {
+  let el = html_array[i];
+  let id = "";
+  //If we are in a header which spans accross multiple indexes of the array
+  if (multiline.length > 0 ) {
+    if (multiline_type === "H1") {
+      if (el.indexOf("</H1>") != -1) {
+        multiline.push(el);
+        el = multiline.join(" ");
+        current_h1 = current_h1.replace(/<[^>]+>/g, '');
+        id = current_h1;
+        table_headings[current_h1] = [];
+        html_array[i] = "<ScrollableAnchor id='"+id.split(" ").join("_")+"'>"+el+"</ScrollableAnchor>";
+        multiline = [];
+      } else {
+        multiline.push(el);
+        html_array[i] = "";
+      }
+    } else {
+      if (el.indexOf("</H2>") != -1) {
+        multiline.push(el);
+        el = multiline.join(" ");
+        id = el.replace(/<[^>]+>/g, '');
+        table_headings[current_h1].push(id) ;
+        html_array[i] = "<ScrollableAnchor id='"+id.split(" ").join("_")+"'>"+el+"</ScrollableAnchor>";
+        multiline = [];
+      } else {
+        multiline.push(el);
+        html_array[i] = "";
+      }
     }
   }
 
+  if (el.startsWith("<H1")) {
+    if (el.indexOf("</H1>") != -1) {
+      current_h1 = el.replace(/<[^>]+>/g, '');
+      id = current_h1;
+      table_headings[current_h1] = [];
+      html_array[i] = "<ScrollableAnchor id='"+id.split(" ").join("_")+"'>"+el+"</ScrollableAnchor>";
+    } else {
+      multiline.push(el);
+      multiline_type = "H1";
+      html_array[i] = "";
+    }
+  } else if (el.startsWith("<H2") ) {
+    if (el.indexOf("/H2>") != -1) {
+      id = el.replace(/<[^>]+>/g, '');
+      table_headings[current_h1].push(id);
+      html_array[i] = "<ScrollableAnchor id='"+id.split(" ").join("_")+"'>"+el+"</ScrollableAnchor>";
+    } else {
+      multiline.push(el);
+      multiline_type = "H2";
+      html_array[i] = "";
+    }
+  }
+}
+
+test_html = html_array.join("\n");
+
+console.log(Object.keys(table_headings));
+console.log(table_headings);
+
+class Content extends Component {
   //---- Start window resize trigger ----
   componentDidMount = () => {
-    if (window.pageYOffset < 100) {
-      this.setState({nav_offset: document.getElementById("sticky-nav").getBoundingClientRect().top})
-    }
     window.addEventListener('scroll', this.didScroll);
   }
 
@@ -28,11 +89,10 @@ class Content extends Component {
   //---- End window resize trigger -----
   didScroll = () => {
     let nav = document.getElementById("sticky-nav");
-    console.log(window.pageYOffset, nav.getBoundingClientRect());
-    if(window.pageYOffset > this.state.nav_offset) {
-      nav.classList.add("sticky-nav")
+    if(window.pageYOffset > window.innerHeight) {
+      nav.classList.add("sticky-nav");
     } else {
-      nav.classList.remove("sticky-nav")
+      nav.classList.remove("sticky-nav");
     }
   }
 
@@ -94,12 +154,13 @@ class Content extends Component {
                 </p>
                 <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo consequat sapien, et volutpat lectus porttitor at. Proin egestas elementum orci. Cras finibus sed dolor at malesuada. Cras nec sapien a ligula posuere convallis. Cras velit neque, tincidunt vitae nisl ac, dignissim condimentum urna. Etiam ornare pharetra ante molestie suscipit. Integer orci tortor, porta ut enim sit amet, feugiat ullamcorper nisi.
                 </p>
+                <div dangerouslySetInnerHTML={{__html: test_html}}/>
 
               </div>
 
               <div style={{width: '25%'}} className="also-asked mobile-hidden">
                 <div style={{paddingBottom: 20}}>
-                  <h1 >Relevant Material</h1>
+                  <h1 style={{fontSize: 25}}>Relevant Material</h1>
 
                   <div className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
                     <a> Lorem ipsum dolor sit amet</a>
@@ -121,20 +182,18 @@ class Content extends Component {
 
                 <div id="sticky-nav" >
                   <div className="title"> Table of Contents </div>
-                  <a href="/content" className="heading"> What is an approved provider? </a>
-                  <a href="/content" className="sub-heading"> Family Assistance Law approval </a>
-                  <a href="/content" className="sub-heading"> Family Assistance Law approval </a>
-
-                  <a href="/content" className="heading"> What is an approved provider? </a>
-                  <a href="/content" className="sub-heading"> Family Assistance Law approval </a>
-                  <a href="/content" className="sub-heading"> Family Assistance Law approval </a>
-                  <a href="/content" className="sub-heading"> Family Assistance Law approval </a>
-
-                  <a href="/content" className="heading"> What is an approved provider? </a>
-                  <a href="/content" className="sub-heading"> Family Assistance Law approval </a>
-                  <a href="/content" className="sub-heading"> Family Assistance Law approval </a>
-                  <a href="/content" className="sub-heading"> Family Assistance Law approval </a>
-
+                  {Object.keys(table_headings).map((item, i) => {
+                    return (
+                      <div style={{display: 'flex', flexWrap: 'wrap'}}>
+                        <a href={"/content/#"+item.split(" ").join("_")} className="heading">{item}</a>
+                        {table_headings[item].map((sub, i) => {
+                          return(
+                            <a href={"/content/#"+sub.split(" ").join("_")} className="sub-heading">{sub}</a>
+                          )
+                        })}
+                      </div>
+                    )
+                  })}
                 </div>
 
               </div>
