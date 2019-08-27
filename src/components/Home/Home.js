@@ -25,18 +25,18 @@ import bannerShapeRight from './bannerShapeRight.png';
 
 let headerState = 1;
 let tags = [
-{text: "Become an approved provider"},
-{text: "Set up a service"},
-{text: "Enrol children"},
-{text: "Report sessions of care"},
-{text: "Subsidy payments"},
-{text: "Record keeping"},
-{text: "Compliance"},
-{text: "Child care subsidy (CCS)"},
-{text: "Additional child care subsidy (ACCS)"},
-{text: "Support for providers"},
-{text: "Exempt services"},
-{text: "Contacts"}
+  {text: "Becoming an approved provider"},
+  {text: "Applying to become an approved provider"},
+  {text: "Provider and service eligibility"},
+  {text: "Exempt services"},
+  {text: "How child care subsidy is paid"},
+  {text: "Child Care Subsidy"},
+  {text: "Additional Child Care Subsidy"},
+  {text: "Enrolling children"},
+  {text: "Managing and reporting sessions of care"},
+  {text: "Record keeping and notifications"},
+  {text: "Support for Providers"},
+  {text: "Compliance"},
 ]
 
 class Home extends Component {
@@ -173,7 +173,7 @@ class Home extends Component {
             <div className="inner flex-row" style={{flexWrap: 'wrap'}}>
               {tags.map((item, i) => {
                 return (
-                  <a key={i} href="/content" className="fdc-box3">
+                  <a key={i} href={"/content"+"?="+(i)} className="fdc-box3">
                     {item.text}
                     <img src={ChevronRight} style={{width: 8}}/>
                   </a>

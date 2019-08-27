@@ -137,6 +137,11 @@ p {
 
 
 /* --------- End Color --------------*/
+.search-results .title {
+  color: #FF6B77; 
+  font-weight: 600;
+  font-size: 50px;
+}
 .highlight {
   font-weight: 600;
 }
@@ -164,16 +169,19 @@ p {
   background-color: rgb(232, 237, 252);
 }
 
-
-.sticky-nav {
+#sticky-nav {
   padding: 10px;
   z-index: 15;
-  position: fixed;
-  top: 0;
   overflow-y: scroll;
   max-height: 90vh;
   background-color: #fff;
   border-radius: 10px;
+  max-width: 262px;
+}
+
+.sticky-nav {
+  position: fixed;
+  top: 0;
 }
 
 #sticky-nav a:hover {

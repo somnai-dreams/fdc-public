@@ -9,15 +9,56 @@ import PopularShape from '../Home/PopularShape.png';
 
 let ApplyingToBecomeProvider = require('../Content/template.html');
 
+var html1  = require('../Content/1.html');
+var html2  = require('../Content/2.html');
+var html3  = require('../Content/3.html');
+var html4  = require('../Content/4.html');
+var html5  = require('../Content/5.html');
+var html6  = require('../Content/6.html');
+var html7  = require('../Content/7.html');
+var html8  = require('../Content/8.html');
+var html9  = require('../Content/9.html');
+var html10 = require('../Content/10.html');
+var html11 = require('../Content/11.html');
+var html12 = require('../Content/12.html');
+
+
 var documents = [{
-  "title": "Applying to become a provider",
-  "text": ApplyingToBecomeProvider
+  "title": "Becoming an approved provider",
+  "text": html1
 }, {
-  "title": "React",
-  "text": "A JavaScript library for building user interfaces."
+  "title": "Applying to become an approved provider",
+  "text": html2
 }, {
-  "title": "Lodash",
-  "text": "A modern JavaScript utility library delivering modularity, performance & extras."
+  "title": "Provider and service eligibility",
+  "text": html3
+}, {
+  "title": "Exempt services",
+  "text": html4
+}, {
+  "title": "How child care subsidy is paid",
+  "text": html5
+}, {
+  "title": "Child Care Subsidy",
+  "text": html6
+}, {
+  "title": "Additional Child Care Subsidy",
+  "text": html7
+}, {
+  "title": "Enrolling children",
+  "text": html8
+}, {
+  "title": "Managing and reporting sessions of care",
+  "text": html9
+}, {
+  "title": "Record keeping and notifications",
+  "text": html10
+}, {
+  "title": "Support for Providers",
+  "text": html11
+}, {
+  "title": "Compliance",
+  "text": html12
 }]
 
 var idx = window.lunr(function () {
@@ -74,6 +115,7 @@ class Search extends Component {
           query: query
         })
       }).then(response => {
+        console.log(response);
         return response.json();
       }).then(data => {
         dialogflow_answers = data;
@@ -144,6 +186,9 @@ class Search extends Component {
                 }
                 {!this.state.oneshot &&
                   <h1> Results: </h1>
+                }
+                {this.state.results.length == 0 && 
+                  "No results..."
                 }
                 {this.state.results.map((item, i) => {
                   return (

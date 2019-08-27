@@ -6,46 +6,80 @@ import ChevronRight from '../Home/chevron-right.svg';
 import PopularShape from '../Home/PopularShape.png';
 import ScrollableAnchor from 'react-scrollable-anchor';
 
-var test_html = require('./template.html');
-let html_array = test_html.split("\n");
-let table_headings = [];
-let current_h1 = "";
-let multiline_type = null;
-let multiline = [];
+var html1  = require('./1.html');
+var html2  = require('./2.html');
+var html3  = require('./3.html');
+var html4  = require('./4.html');
+var html5  = require('./5.html');
+var html6  = require('./6.html');
+var html7  = require('./7.html');
+var html8  = require('./8.html');
+var html9  = require('./9.html');
+var html10 = require('./10.html');
+var html11 = require('./11.html');
+var html12 = require('./12.html');
 
-//Gather h1 and h2 and make them scrollable
-for (let i = 0; i < html_array.length; i++) {
-  let el = html_array[i];
-  let id = "";
-  //If we are in a header which spans accross multiple indexes of the array
-  if (multiline.length > 0 ) {
-    if (multiline_type === "H1") {
-      if (el.indexOf("</H1>") != -1) {
-        multiline.push(el);
-        el = multiline.join(" ");
-        current_h1 = current_h1.replace(/<[^>]+>/g, '');
-        id = current_h1;
-        table_headings[current_h1] = [];
-        html_array[i] = "<ScrollableAnchor id='"+id.split(" ").join("_")+"'>"+el+"</ScrollableAnchor>";
-        multiline = [];
-      } else {
-        multiline.push(el);
-        html_array[i] = "";
+let all_html = [html1, html2, html3, html4, html5, html6, html7, html8, html9, html10, html11, html12];
+
+let current_html = null;
+let table_headings = null;
+
+class Content extends Component {
+  //---- Start window resize trigger ----
+  componentWillMount = () => {
+    current_html = all_html[parseInt(this.props.location.search.replace("?=",""))];
+    let html_array = current_html.split("\n");
+    table_headings = [];
+    let current_h1 = "";
+    let multiline_type = null;
+    let multiline = [];
+
+    //Gather h1 and h2 and make them scrollable
+    for (let i = 0; i < html_array.length; i++) {
+      let el = html_array[i];
+      let id = "";
+      //If we are in a header which spans accross multiple indexes of the array
+      if (multiline.length > 0 ) {
+        if (multiline_type === "H1") {
+          if (el.indexOf("</H1>") != -1) {
+            multiline.push(el);
+            el = multiline.join(" ");
+            current_h1 = current_h1.replace(/<[^>]+>/g, '');
+            id = current_h1;
+            table_headings[current_h1] = [];
+            html_array[i] = "<ScrollableAnchor id='"+id.split(" ").join("_")+"'>"+el+"</ScrollableAnchor>";
+            multiline = [];
+          } else {
+            multiline.push(el);
+            html_array[i] = "";
+          }
+        } else if (multiline_type === "H2") {
+          if (el.indexOf("</H2>") != -1) {
+            multiline.push(el);
+            el = multiline.join(" ");
+            id = el.replace(/<[^>]+>/g, '');
+            current_h1 = id;
+            table_headings[current_h1] = id;
+            html_array[i] = "<ScrollableAnchor id='"+id.split(" ").join("_")+"'>"+el+"</ScrollableAnchor>";
+            multiline = [];
+          } else {
+            multiline.push(el);
+            html_array[i] = "";
+          }
+        } else {
+          if (el.indexOf("</H3>") != -1) {
+            multiline.push(el);
+            el = multiline.join(" ");
+            id = el.replace(/<[^>]+>/g, '');
+            table_headings[current_h1].push(id) ;
+            html_array[i] = "<ScrollableAnchor id='"+id.split(" ").join("_")+"'>"+el+"</ScrollableAnchor>";
+            multiline = [];
+          } else {
+            multiline.push(el);
+            html_array[i] = "";
+          }
+        }
       }
-    } else {
-      if (el.indexOf("</H2>") != -1) {
-        multiline.push(el);
-        el = multiline.join(" ");
-        id = el.replace(/<[^>]+>/g, '');
-        table_headings[current_h1].push(id) ;
-        html_array[i] = "<ScrollableAnchor id='"+id.split(" ").join("_")+"'>"+el+"</ScrollableAnchor>";
-        multiline = [];
-      } else {
-        multiline.push(el);
-        html_array[i] = "";
-      }
-    }
-  }
 
   if (el.startsWith("<H1")) {
     if (el.indexOf("</H1>") != -1) {
@@ -61,21 +95,30 @@ for (let i = 0; i < html_array.length; i++) {
   } else if (el.startsWith("<H2") ) {
     if (el.indexOf("/H2>") != -1) {
       id = el.replace(/<[^>]+>/g, '');
-      table_headings[current_h1].push(id);
+      current_h1 = id;
+      table_headings[current_h1] = [];
       html_array[i] = "<ScrollableAnchor id='"+id.split(" ").join("_")+"'>"+el+"</ScrollableAnchor>";
     } else {
       multiline.push(el);
       multiline_type = "H2";
       html_array[i] = "";
     }
+  } else if (el.startsWith("<H3") ) {
+    if (el.indexOf("/H3>") != -1) {
+      id = el.replace(/<[^>]+>/g, '');
+      table_headings[current_h1].push(id);
+      html_array[i] = "<ScrollableAnchor id='"+id.split(" ").join("_")+"'>"+el+"</ScrollableAnchor>";
+    } else {
+      multiline.push(el);
+      multiline_type = "H3";
+      html_array[i] = "";
+    }
   }
-}
-test_html = html_array.join("\n");
 
-class Content extends Component {
-  //---- Start window resize trigger ----
-  componentDidMount = () => {
-    window.addEventListener('scroll', this.didScroll);
+}
+current_html = html_array.join("\n");
+
+
   }
 
   componentWillUnmount = () => {
@@ -154,11 +197,12 @@ class Content extends Component {
                 <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo consequat sapien, et volutpat lectus porttitor at. Proin egestas elementum orci. Cras finibus sed dolor at malesuada. Cras nec sapien a ligula posuere convallis. Cras velit neque, tincidunt vitae nisl ac, dignissim condimentum urna. Etiam ornare pharetra ante molestie suscipit. Integer orci tortor, porta ut enim sit amet, feugiat ullamcorper nisi.
                 </p>
                 */}
-                <div dangerouslySetInnerHTML={{__html: test_html}}/>
+                <div dangerouslySetInnerHTML={{__html: current_html}}/>
 
               </div>
 
               <div style={{width: '25%'}} className="also-asked mobile-hidden">
+                {/*
                 <div style={{paddingBottom: 20}}>
                   <h1 style={{fontSize: 25}}>Relevant Material</h1>
 
@@ -179,6 +223,7 @@ class Content extends Component {
                     <img src={ChevronRight} style={{width: 8}}/>
                   </div>
                 </div>
+                */}
 
                 <div id="sticky-nav" >
                   <div className="title"> Table of Contents </div>
