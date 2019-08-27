@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Navicon from '../NavBar/navicon.svg'
-import Logo from '../NavBar/DOE.png';
+import Logo from '../NavBar2/DOE2.png';
 import RightArrow from '../Home/arrow-right-icon.svg'
 import { NavLink } from 'react-router-dom';
 import CloseIcon from './close-button.svg';
@@ -10,7 +10,7 @@ class MobileNav extends Component {
   render() {
     return (<div>
           <div className="flex-row top-bar-phone">
-            <img src={Logo} alt="Carer-gateway" className="logo"/>
+            <img src={Logo} alt="Carer-gateway" style={{height: 80, margin: 20}}/>
           </div>
           <div className="mobile-nav teal-light">
             

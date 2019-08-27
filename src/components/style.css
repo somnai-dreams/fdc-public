@@ -15,6 +15,10 @@ a {
     text-decoration: none;
 }
 
+input:focus, textarea:focus, select:focus{
+    outline: none;
+}
+
 .teal-light a {
     color: #fff;
 }
@@ -133,15 +137,45 @@ p {
 
 
 /* --------- End Color --------------*/
+.highlight {
+  font-weight: 600;
+}
+.content thead p 
+{
+  background-color: rgb(72, 100, 200) !important;
+  border-bottom : none !important;
+  padding: 10px !important;
+}
+.content thead p font font font
+{
+  color: #FFF;
+}
+
+.content thead tr td {
+  background-color: rgb(72, 100, 200);
+  color: #FFF;
+}
+
+.content tbody tr:nth-of-type(odd) td {
+  background-color: rgb(244, 246, 254);
+}
+
+.content tbody tr:nth-of-type(even) td {
+  background-color: rgb(232, 237, 252);
+}
+
+
 .sticky-nav {
   padding: 10px;
   z-index: 15;
   position: fixed;
   top: 0;
-}
-#sticky-nav {
+  overflow-y: scroll;
+  max-height: 90vh;
   background-color: #fff;
+  border-radius: 10px;
 }
+
 #sticky-nav a:hover {
   text-decoration: underline;
 }
@@ -250,7 +284,7 @@ p {
 .nav-search {
     width: 487px;
     height: 55px;
-    background: #dfeef2;
+    background: #f5f7fe;
     border-radius: 27px;
     border: none;
     margin-right: 10px;
@@ -387,7 +421,6 @@ p {
 
 .fdc-box {
     cursor: pointer;
-    background-size: cover;
     width: 234px;
     height: 313px;
     background-color: #719FFF;
@@ -515,8 +548,11 @@ p {
 
 .nav-icon {
     width: 45px;
-    float: left;
     margin: 15px;
+}
+
+.content table {
+  width: 100%;
 }
 
 .search-nav-icon {
@@ -1236,7 +1272,7 @@ p {
         align-items: center;
         justify-content: flex-start;
         background-position: right;
-        background-size: 140px;
+        background-size: contain;
         background-repeat: no-repeat;
     }
 

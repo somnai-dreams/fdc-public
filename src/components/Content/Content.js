@@ -70,11 +70,7 @@ for (let i = 0; i < html_array.length; i++) {
     }
   }
 }
-
 test_html = html_array.join("\n");
-
-console.log(Object.keys(table_headings));
-console.log(table_headings);
 
 class Content extends Component {
   //---- Start window resize trigger ----
@@ -89,22 +85,25 @@ class Content extends Component {
   //---- End window resize trigger -----
   didScroll = () => {
     let nav = document.getElementById("sticky-nav");
-    if(window.pageYOffset > window.innerHeight) {
-      nav.classList.add("sticky-nav");
-    } else {
-      nav.classList.remove("sticky-nav");
+    if (nav) {
+      if(window.pageYOffset > window.innerHeight) {
+        nav.classList.add("sticky-nav");
+      } else {
+        nav.classList.remove("sticky-nav");
+      }
     }
   }
 
 
   render() {
     return (
-      <div>
+      <div className="content">
           <NavBar2/>
 
           <div className="container flex-row">
             <div className="inner flex-row" style={{minHeight: 'calc(100vh - 200px)', marginTop: 80, justifyContent: 'space-between', alignItems: 'flex-start'}}>
               <div className="search-results">
+                {/*
                 <h1 style={{color: '#FF6B77'}}> Becoming an approved provider</h1>
                 <h2  style={{color: '#1F2D76', fontStyle: 'italic', fontSize: 20}}> This chapter provides information about the responsibilities of a child care provider and the key business requirements that are part of being a provider.</h2>
 
@@ -154,6 +153,7 @@ class Content extends Component {
                 </p>
                 <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo consequat sapien, et volutpat lectus porttitor at. Proin egestas elementum orci. Cras finibus sed dolor at malesuada. Cras nec sapien a ligula posuere convallis. Cras velit neque, tincidunt vitae nisl ac, dignissim condimentum urna. Etiam ornare pharetra ante molestie suscipit. Integer orci tortor, porta ut enim sit amet, feugiat ullamcorper nisi.
                 </p>
+                */}
                 <div dangerouslySetInnerHTML={{__html: test_html}}/>
 
               </div>

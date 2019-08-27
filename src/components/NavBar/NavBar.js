@@ -27,11 +27,11 @@ const NavBar = (props) => {
     </div>
     */}
     <div className="nav-bar teal-light">
-      <div className="inner">
+      <div className="inner" style={{alignItems: 'center'}}>
         <a href="/">
           <img src={Logo} alt="Department of Education" className="logo"/>
         </a>
-        <a href='/Mobile_Nav'>
+        <a href='/Mobile_Nav' style={{marginLeft: 'auto', marginRight: 20}}>
           <img src={Navicon} alt="menu" className="nav-icon only-ipad" /> 
         </a>
 

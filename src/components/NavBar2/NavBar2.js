@@ -55,7 +55,7 @@ class NavBar2 extends Component {
             </div>
             <div>
               <input onKeyDown={this.keyPress} value={this.state.searchVal} onChange={this.handleChange} className="nav-search" name="searchVal" placeholder="What are you looking for today?" type="text"/>
-              <img src={SearchIcon} alt="search" className="search-icon" 
+              <img onClick={this.goSearch} src={SearchIcon} alt="search" className="search-icon" 
                 style={{marginLeft: -55, marginTop: 13}}/>
             </div>
           </div>
