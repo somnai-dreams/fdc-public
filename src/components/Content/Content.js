@@ -22,12 +22,14 @@ var html12 = require('./12.html');
 let all_html = [html1, html2, html3, html4, html5, html6, html7, html8, html9, html10, html11, html12];
 
 let current_html = null;
+let doc_no = null;
 let table_headings = null;
 
 class Content extends Component {
   //---- Start window resize trigger ----
   componentWillMount = () => {
-    current_html = all_html[parseInt(this.props.location.search.replace("?=",""))];
+    doc_no = parseInt(this.props.location.search.replace("?=",""))
+    current_html = all_html[doc_no];
     let html_array = current_html.split("\n");
     table_headings = [];
     let current_h1 = "";
@@ -81,43 +83,42 @@ class Content extends Component {
         }
       }
 
-  if (el.startsWith("<H1")) {
-    if (el.indexOf("</H1>") != -1) {
-      current_h1 = el.replace(/<[^>]+>/g, '');
-      id = current_h1;
-      table_headings[current_h1] = [];
-      html_array[i] = "<ScrollableAnchor id='"+id.split(" ").join("_")+"'>"+el+"</ScrollableAnchor>";
-    } else {
-      multiline.push(el);
-      multiline_type = "H1";
-      html_array[i] = "";
-    }
-  } else if (el.startsWith("<H2") ) {
-    if (el.indexOf("/H2>") != -1) {
-      id = el.replace(/<[^>]+>/g, '');
-      current_h1 = id;
-      table_headings[current_h1] = [];
-      html_array[i] = "<ScrollableAnchor id='"+id.split(" ").join("_")+"'>"+el+"</ScrollableAnchor>";
-    } else {
-      multiline.push(el);
-      multiline_type = "H2";
-      html_array[i] = "";
-    }
-  } else if (el.startsWith("<H3") ) {
-    if (el.indexOf("/H3>") != -1) {
-      id = el.replace(/<[^>]+>/g, '');
-      table_headings[current_h1].push(id);
-      html_array[i] = "<ScrollableAnchor id='"+id.split(" ").join("_")+"'>"+el+"</ScrollableAnchor>";
-    } else {
-      multiline.push(el);
-      multiline_type = "H3";
-      html_array[i] = "";
-    }
-  }
+      if (el.startsWith("<H1")) {
+        if (el.indexOf("</H1>") != -1) {
+          current_h1 = el.replace(/<[^>]+>/g, '');
+          id = current_h1;
+          table_headings[current_h1] = [];
+          html_array[i] = "<ScrollableAnchor id='"+id.split(" ").join("_")+"'>"+el+"</ScrollableAnchor>";
+        } else {
+          multiline.push(el);
+          multiline_type = "H1";
+          html_array[i] = "";
+        }
+      } else if (el.startsWith("<H2") ) {
+        if (el.indexOf("/H2>") != -1) {
+          id = el.replace(/<[^>]+>/g, '');
+          current_h1 = id;
+          table_headings[current_h1] = [];
+          html_array[i] = "<ScrollableAnchor id='"+id.split(" ").join("_")+"'>"+el+"</ScrollableAnchor>";
+        } else {
+          multiline.push(el);
+          multiline_type = "H2";
+          html_array[i] = "";
+        }
+      } else if (el.startsWith("<H3") ) {
+        if (el.indexOf("/H3>") != -1) {
+          id = el.replace(/<[^>]+>/g, '');
+          table_headings[current_h1].push(id);
+          html_array[i] = "<ScrollableAnchor id='"+id.split(" ").join("_")+"'>"+el+"</ScrollableAnchor>";
+        } else {
+          multiline.push(el);
+          multiline_type = "H3";
+          html_array[i] = "";
+        }
+      }
 
-}
-current_html = html_array.join("\n");
-
+    }
+    current_html = html_array.join("\n");
 
   }
 
@@ -125,9 +126,14 @@ current_html = html_array.join("\n");
     window.addEventListener('scroll', this.didScroll);
   }
 
+  componentDidMount = () => {
+    window.addEventListener('scroll', this.didScroll);
+  }
+
   //---- End window resize trigger -----
   didScroll = () => {
     let nav = document.getElementById("sticky-nav");
+    console.log(nav, window.pageYOffset , window.innerHeight);
     if (nav) {
       if(window.pageYOffset > window.innerHeight) {
         nav.classList.add("sticky-nav");
@@ -230,10 +236,10 @@ current_html = html_array.join("\n");
                   {Object.keys(table_headings).map((item, i) => {
                     return (
                       <div style={{display: 'flex', flexWrap: 'wrap'}}>
-                        <a href={"/content/#"+item.split(" ").join("_")} className="heading">{item}</a>
+                        <a href={"/content/?="+doc_no+"#"+item.split(" ").join("_")} className="heading">{item}</a>
                         {table_headings[item].map((sub, i) => {
                           return(
-                            <a href={"/content/#"+sub.split(" ").join("_")} className="sub-heading">{sub}</a>
+                            <a href={"/content/?="+doc_no+"#"+sub.split(" ").join("_")} className="sub-heading">{sub}</a>
                           )
                         })}
                       </div>
