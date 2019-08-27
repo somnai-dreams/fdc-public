@@ -290,6 +290,7 @@ p {
     margin-right: 10px;
     font-size: 18px;
     padding: 15px;
+    padding-right: 40px;
 }
 
 .banner {
@@ -341,6 +342,13 @@ p {
     font-weight: 600;
     color: #4864C8;
     cursor: pointer;
+}
+.fdc-box3 a {
+    color: #4864C8;
+}
+
+.fdc-box3 a:visited {
+    color: #4864C8;
 }
 
 .fdc-box2 h2 {

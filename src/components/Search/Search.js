@@ -8,7 +8,6 @@ import ChevronRight from '../Home/chevron-right.svg';
 import PopularShape from '../Home/PopularShape.png';
 
 let ApplyingToBecomeProvider = require('../Content/template.html');
-console.log(ApplyingToBecomeProvider[443], ApplyingToBecomeProvider[444], ApplyingToBecomeProvider[445], ApplyingToBecomeProvider[446], ApplyingToBecomeProvider[447], ApplyingToBecomeProvider[448]);
 
 var documents = [{
   "title": "Applying to become a provider",
@@ -43,91 +42,73 @@ class Search extends Component {
     this.state = {
       query: "",
       results: [],
+      all_answers: [],
       oneshot: null
     }
   }
 
   componentDidMount() {
-    let query = this.props.location.search;
-    query = decodeURI(query.substring(query.indexOf("=") + 1, query.length));
-    query = query.substring(1, query.length - 1);
-
-    let dialogflow_answers = [];
-    let oneshot_answer = null;
-    //Get one shot answer
-    fetch('http://3.19.71.124:3000/dialogflow', {
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      method: 'POST',
-      body: JSON.stringify({
-        query: query
-      })
-    }).then(response => {
-      return response.json();
-    }).then(data => {
-      console.log(data);
-      for (let i = 0; i < data.length; i++) {
-        if (data[i].matchConfidence >= 0.95) {
-          oneshot_answer = data[i];
-          break;
-        }
-      }
-
-      let index = idx.search(query+"~1");
-      let results = [];
-      index.forEach(i => {
-        for (let doc of documents) {
-          if (i.ref == doc.title) {
-            doc.snippet = "";
-            Object.keys(i.matchData.metadata).forEach(el => {
-              i.matchData.metadata[el].text.position.forEach(pos => {
-                let end_position = doc.text.indexOf("\n", pos[0]);
-                end_position = doc.text.indexOf("\n", end_position+1);
-                let start_position = doc.text.indexOf("\n", pos[0] - (end_position - pos[0]));
-                let snippet = doc.text.substring(start_position, end_position).replace(/<[^>]+>/g, '');
-                snippet = snippet.toLowerCase();
-                query = query.toLowerCase();
-                snippet = snippet.replace(query, "<span class='highlight'>"+query+"</span>");
-                doc.snippet = doc.snippet + snippet + "<br/>";
-              })
-            })
-            results.push(doc);
-          }
-        }
-      })
-      console.log(query, results, oneshot_answer);
-      this.setState({query: query, results: results, oneshot: oneshot_answer});
-    });
+    this.runSearch();
   }
 
   componentDidUpdate() {
+    this.runSearch();
+  }
+
+  runSearch() {
     let query = this.props.location.search;
     query = decodeURI(query.substring(query.indexOf("=") + 1, query.length));
     query = query.substring(1, query.length - 1);
-    if (this.state.query != query) {
-      let index = idx.search(query+"~1");
-      let results = [];
-      index.forEach(i => {
-        for (let doc of documents) {
-          if (i.ref == doc.title) {
-            doc.snippet = "";
-            Object.keys(i.matchData.metadata).forEach(el => {
-              i.matchData.metadata[el].text.position.forEach(pos => {
-                let end_position = doc.text.indexOf("\n", pos[0]);
-                end_position = doc.text.indexOf("\n", end_position+1);
-                let start_position = doc.text.indexOf("\n", pos[0] - (end_position - pos[0]));
-                let snippet = doc.text.substring(start_position, end_position).replace(/<[^>]+>/g, '');
-                snippet = snippet.replace(query, "<span class='highlight'>"+query+"</span>");
-                doc.snippet = doc.snippet + snippet + "<br/>";
-              })
-            })
-            results.push(doc);
+    console.log(query.toLowerCase(), this.state.query, query.toLowerCase() != this.state.query);
+    if (query.toLowerCase() != this.state.query) {
+      let dialogflow_answers = [];
+      let oneshot_answer = null;
+      //Get one shot answer
+      fetch('http://3.19.71.124:3000/dialogflow', {
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        method: 'POST',
+        body: JSON.stringify({
+          query: query
+        })
+      }).then(response => {
+        return response.json();
+      }).then(data => {
+        dialogflow_answers = data;
+        for (let i = 0; i < data.length; i++) {
+          if (data[i].matchConfidence >= 0.95) {
+            oneshot_answer = data[i];
+            break;
           }
         }
-      })
-      this.setState({query: query, results: results});
+
+        let index = idx.search(query+"~1");
+        let results = [];
+        index.forEach(i => {
+          for (let doc of documents) {
+            if (i.ref == doc.title) {
+              doc.snippet = "";
+              Object.keys(i.matchData.metadata).forEach(el => {
+                i.matchData.metadata[el].text.position.forEach(pos => {
+                  let end_position = doc.text.indexOf("\n", pos[0]);
+                  end_position = doc.text.indexOf("\n", end_position+1);
+                  let start_position = doc.text.indexOf("\n", pos[0] - (end_position - pos[0]));
+                  let snippet = doc.text.substring(start_position, end_position).replace(/<[^>]+>/g, '');
+                  snippet = snippet.toLowerCase();
+                  query = query.toLowerCase();
+                  snippet = snippet.replace(query, "<span class='highlight'>"+query+"</span>");
+                  doc.snippet =  doc.snippet + snippet + " ... <br/>";
+                })
+              })
+              results.push(doc);
+            }
+          }
+        })
+        console.log(query, results, oneshot_answer);
+        this.setState({query: query, results: results, oneshot: oneshot_answer, all_answers: dialogflow_answers});
+      });
     }
   }
 
@@ -166,8 +147,8 @@ class Search extends Component {
                 }
                 {this.state.results.map((item, i) => {
                   return (
-                    <div className="search-result">
-                      <a href={"/Content/"+item.title}> {item.title}</a>
+                    <div key={i} className="search-result">
+                      <a href={"/Content/"+item.title.split(" ").join("_")}> {item.title}</a>
                       <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} dangerouslySetInnerHTML={{__html: item.snippet}}/>
                       <div className="flex-row" style={{display: 'none'}}>
                         <div className="tag"> General Information </div> 
@@ -177,28 +158,20 @@ class Search extends Component {
                   )
                 })}
               </div>
+              {this.state.all_answers.length > 0 &&
+                <div style={{width: '25%'}} className="also-asked mobile-hidden">
+                  <h1> People also ask:</h1>
 
-              <div style={{width: '25%'}} className="also-asked mobile-hidden">
-                <h1> People also ask:</h1>
-
-                <div className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
-                  <a> Lorem ipsum dolor sit amet</a>
-                  <img src={ChevronRight} style={{width: 8}}/>
+                  {this.state.all_answers.map((answer, i) => {
+                    return (
+                      <div key={i} className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
+                        <a href={'/search?query="'+answer.faqQuestion+'"'}> {answer.faqQuestion}</a>
+                        <img src={ChevronRight} style={{width: 8}}/>
+                      </div>
+                    )
+                  })}
                 </div>
-
-
-                <div className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
-                  <a> Lorem ipsum dolor sit amet</a>
-                  <img src={ChevronRight} style={{width: 8}}/>
-                </div>
-
-
-                <div className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
-                  <a> Lorem ipsum dolor sit amet</a>
-                  <img src={ChevronRight} style={{width: 8}}/>
-                </div>
-
-              </div>
+              }
             </div>
           </div>
           <div className="container flex-row popular-section" style={{backgroundColor: '#1F2D76', flexWrap: 'wrap', paddingTop: 50, paddingBottom: 70}}>
