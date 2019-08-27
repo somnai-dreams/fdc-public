@@ -1,0 +1,22 @@
+[
+ {
+   "Question": "What is the correct enrolment start date?",
+   "Answer": "Under Family Assistance Law, an enrolment starts on the day a provider enters into a complying written arrangement (CWA) with the parent (i.e. the day the parent confirms their agreement to the arrangement). You must enter this date as the start date in the enrolment notice."
+ },
+ {
+   "Question": "What if I don't submit an enrolment within the required timeframe?",
+   "Answer": "You need to submit an enrolment notice in the Child Care Subsidy (CCS) system within 7 days of entering into a CWA with a family. Providers are expected to comply with all legislative requirements, and the department uses the CCS system to record and monitor possible breaches.\nIf you realise that you have not met this timeframe, you should submit the enrolment notice as soon as possible. You will receive a message noting you did not meet the legislated timeframe on this occasion. The department may hold late enrolment notices for review, which can delay processing of session reports."
+ },
+ {
+   "Question": "When do enrolments cease?",
+   "Answer": "Generally, enrolments 'cease' when the CWA or other care arrangement ends, for example, because the child no longer attends your service. You don't have to give an enrolment end date when you submit the initial (200A) enrolment notice. Once you know the enrolment end date, you can add it at any time by submitting a (200D) enrolment update.\nIf you do not enter an enrolment end date and the child stops attending your service, the CCS system will automatically end date the enrolment 8 weeks after the child last attended a session of care at your service."
+ },
+ {
+   "Question": "What happens when absences occur before and after a child attends your service?",
+   "Answer": "You may have noticed that absences from sessions of care are not eligible for CCS/ACCS when they occur before a child first attends your service under a new enrolment, or after the child last attends under an enrolment. Subsidy is not paid for absences submitted before the first attendance under a new enrolment. Absences submitted after the last attendance may be paid, however, these amounts will be recovered if the child does not attend another session of care before the enrolment ceases."
+ },
+ {
+   "Question": "How will providers submit new enrolments in advance?",
+   "Answer": "We know some services like to set up new enrolments well before children start care. However, you should be aware that if an enrolment start date is more than 8 weeks before the child first attends, the enrolment will be ceased in the CCS system before the child starts attending care.\nTo avoid this occurring, as well as having to re-establish CWAs and resubmit enrolment notices, it is best to delay establishing the CWA with the parent until it is less than 8 weeks before the child is expected to start attending. You could still consider holding a place for a child for more than 8 weeks, then waiting until it is closer the child's first attendance to confirm the CWA with the parent.\n"
+ }
+]

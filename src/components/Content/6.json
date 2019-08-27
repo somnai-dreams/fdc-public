@@ -1,0 +1,50 @@
+[
+ {
+   "Question": "What is the yearly limit?",
+   "Answer": "For most families (i.e. those earning $186,958 or less) there is no longer an annual cap on the amount of subsidy you can receive. For families earning more than $186,958 and under $351,248, an increased annual subsidy cap of $10,190 per child, per year applies."
+ },
+ {
+   "Question": "Where can families see their outcome of Child Care Subsidy assessment or claim?",
+   "Answer": "Once Centrelink has finalised the assessment or claim, the individual applying will be sent a notice of the outcome. If they get their letters online, the letter will be sent to their myGovinbox telling them if they are eligible and the child care fee assistance they will get.\nThe individual needs to select Child Care Subsidy from the menu and then Child Care Subsidy Summary to see the letter.\nThe Child Care Subsidy summary table lists the Child's Name, Subsidy Type, Subsidy Percentage, Subsidised hours per fortnight, the annual cap and withholding amount."
+ },
+ {
+   "Question": "How do hourly rate caps work?",
+   "Answer": "If your service charges a daily fee, the hourly rate is determined by dividing the daily fee by the hours the service operates. Your service tells us their standard session fees and how long the session is, and we use the hourly rate cap to help us calculate how much to pay."
+ },
+ {
+   "Question": "Is the rate cap the same for standard and non-standards hours?\n",
+   "Answer": "Yes. The hourly rate cap applies to all hours of child care."
+ },
+ {
+   "Question": "Why is Family Day Care hourly rate allowance different to Long Day Care?",
+   "Answer": "The hourly rate cap varies across service types to reflect differences in fees charged and operating costs."
+ },
+ {
+   "Question": "Do the hourly rate caps get indexed?",
+   "Answer": "Yes, the hourly rate caps may be subject to adjustment through indexation in subsequent years."
+ },
+ {
+   "Question": "Are the maximum hours of subsidy per child or per family?",
+   "Answer": "The maximum hours of subsidy are per child."
+ },
+ {
+   "Question": "Is the preschool exemption applied to all parents who are entitled to it?",
+   "Answer": "Yes. Entitlement to the preschool exemption is applied to parents' CCSS records based on details provided in their Child Care Subsidy claim (or subsequent update). As the preschool exemption only applies to the preschool aged child/ren in the family, this entitlement is added to the parent record at the individual child level if:\n1. the parent's activity test result is 0 or 24, and\n2. the child's primary school start date is the next year (i.e. the child is a 'preschool aged child')."
+ },
+ {
+   "Question": "I believe a parent is entitled to the preschool exemption – why are their 'eligible hours' still 0 or 24?\n",
+   "Answer": "Where a parent is entitled to the preschool exemption for a child (based on claim details above), their 'eligible hours' will show as either 0 or 24 in third party software and the Provider Entry Point (PEP).\nThis is because the 36 hours of subsidy available under the preschool exemption only apply in specific circumstances (see this fact sheet for detail). The parent's correct hours of entitlement will continue to be either 0 or 24 hours for:\ntheir non-preschool aged children, and\nfor their preschool aged child when the session of care provided by a centre based day care service does not include an early educational program (as indicated by the session report), or care is provided by another type of service.\nThis means the hours of Child Care Subsidy per fortnight for parents who are entitled to the preschool exemption is as follows:\n"
+ },
+ {
+   "Question": "How do I know if a parent is entitled to the preschool exemption for a child?",
+   "Answer": "Services can ask parents what Centrelink advised them following their claim assessment. Parents who are entitled to the preschool exemption will have received a letter from Centrelink indicating their 'eligible hours' are 0 or 24 but that they are entitled to 36 hours per fortnight for their preschool aged child/ren if they attend an early education program at a centre based day care service.\nIn the longer term, we are also exploring a system enhancement so that parents' preschool exemption entitlement is displayed in third party software and the PEP."
+ },
+ {
+   "Question": "Is community-based preschool subsidised?",
+   "Answer": "This will depend on where the kindergarten program is being delivered. For example, if it is a component of the early education and care offered at a centre based day care centre, then families are eligible for the Child Care Subsidy. However, if the service primarily provides only a preschool or kindergarten program (like a standalone preschool), then this program will not attract the Child Care Subsidy."
+ },
+ {
+   "Question": "How does the Victorian Government 'kindergarten per capita funding' affect the Child Care Subsidy fee reduction requirement?",
+   "Answer": "Subclause 2(2) of Schedule 2 of the Family Assistance Legislation Amendment (Jobs for Families Child Care Package) Act 2017 defines the fee used to calculate Child Care Subsidy (the hourly session fee) as:\nthe amount the parent is liable to pay for the session of care\ndivided by the number of hours in the session\nreduced by the hourly rate of any other subsidy (or reimbursement fringe benefit) the parent benefits from for that session.\nThe requirement to reduce the hourly rate where a parent also benefits from another subsidy for a session of care applies only where the other subsidy is paid to the provider specifically to reduce the fee the parent pays for the session of care. When a parent benefits from another subsidy in relation to a session of care, providers need to reduce the fee charged and reported to ensure the parent's Child Care Subsidy entitlement is calculated as required by the legislation–based on the amount the parent is genuinely liable to pay for a session of care.\nBased on the description in the Kindergarten Funding Guide issued by the Victorian Government, the Australian Government's understanding is that 'kindergarten per capita funding' is not intended to directly reduce parent's fee liability. Therefore, providers in receipt of this funding would not be required to reduce fees reported in their session reports to account for this funding."
+ }
+]

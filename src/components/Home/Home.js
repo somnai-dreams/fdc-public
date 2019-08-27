@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import '../style.css';
+import '../max.css';
 import '../style_mobile.css';
 import NavBar from '../NavBar/NavBar';
 import Footer from '../footer/footer';
@@ -135,7 +136,7 @@ class Home extends Component {
                 </div>
               </div>
              
-              <div className="fdc-box2 mobile-hidden">
+              <div className="fdc-box2 mobile-hidden-600">
                 <div className="btm-3" style={{backgroundImage: `url(${News2})`}}>
                 </div>
                 <div className="tag">NEWS ITEM</div>
@@ -148,7 +149,7 @@ class Home extends Component {
               </div>
 
            
-              <div className="fdc-box2 mobile-hidden">
+              <div className="fdc-box2 mobile-hidden-800">
                 <div className="btm-3" style={{backgroundImage: `url(${News1})`}}>
                 </div>
                 <div className="tag">WEBINAR</div>

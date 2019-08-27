@@ -1,0 +1,70 @@
+[
+ {
+   "Question": "I am a Family Day Care educator. Do I have to change my hourly rate?",
+   "Answer": "No. As a Family Day Care educator, your service should set fees. The hourly rate cap for Family Day Care is $10.90 per hour. This is the maximum amount that the Government will subsidise, it is not the amount that services must charge."
+ },
+ {
+   "Question": "I run a network of Family Day Care centres. Do I claim the subsidy on behalf of my educators?",
+   "Answer": "Yes, the Child Care Subsidy is paid directly to approved Family Day Care providers in arrears, based on attendance records (session reports) the service submits. Family Day Care providers submit session reports generally within 14 days after the end of the week when care was provided, but they are able to submit for payment processing at any time."
+ },
+ {
+   "Question": "Who makes sure services are doing the right thing?",
+   "Answer": "The Department of Education has a sophisticated and broad ranging monitoring and enforcement program to protect the integrity of child care payments and promote compliant behaviour by providers with the Family Assistance Law. Child safety or education concerns can be reported to www.acecqa.gov.au. Fraud can be reported via the tip off line on 1800 664 231."
+ },
+ {
+   "Question": "What happens if a service charges more than the hourly rate cap?",
+   "Answer": "Fee charging practices are commercial decisions made by child care providers and are not a matter regulated by the Family Assistance Law."
+ },
+ {
+   "Question": "Is the Child Care Subsidy paid on actual attendance or a session of care?",
+   "Answer": "The subsidy is calculated based on the reported hours in a session of care. The reporting of actual attendance data is not required to calculate parents' entitlement."
+ },
+ {
+   "Question": "If a centre chooses to open longer than 12 hours (for example 14 hours) and the parent has an arrangement for care for more than 12 hours, can they split sessions?",
+   "Answer": "A session of care can be of any length up to, but not exceeding, 12 hours. Where a parent is liable to pay for more than 12 hours of continuous care, this must be submitted as two or more sessions of care."
+ },
+ {
+   "Question": "Do I have to charge my families an hourly fee or a session fee?",
+   "Answer": "Although there is an hourly rate cap for Child Care Subsidy, this does not mean child care providers need to charge parents by the hour. Providers can charge parents for a session of care or use an hourly rate – this is a business decision for providers.\nWhen submitting session reports, providers that charge by the session can enter the session fee and session start/end times, and the hourly session fee will be automatically calculated (session fee divided by session hours). Alternatively, providers who charge by the hour can enter an hourly rate, along with session start/end times. Either way, Child Care Subsidy will continue to be calculated based on all the hours in a session of care."
+ },
+ {
+   "Question": "When will payments be made?",
+   "Answer": "Providers can submit session reports at any time, using their third party software or the Provider Entry Point. Receipt of each report will be acknowledged.\nPayment will be processed each Monday morning for sessions of care that occurred in the previous week (or earlier) and which have been reported before 9pm on the Sunday evening. A session report for a child can be submitted and then varied during the week before payment processing if necessary. For example, sessions of care on Monday through to Wednesday could be reported on Wednesday evening and sessions of care on Thursday and Friday could be added on Friday evening, however, payments related to sessions for all five days would be processed on the following Monday morning.\nIf a session report is varied (up until 28 days after the start of the week to which the report relates), payment adjustments will be processed and paid when the variation is submitted.\nOnce a session report has been processed, the determination of entitlement will be available through the provider's third party software or the Provider Entry Point and the payment advice will be issued.\nPayments are generally be made to the provider's nominated bank account. In limited circumstances, a payment may be made directly to the parent. For example, if a provider reports initial sessions of care before the parent has lodged their Child Care Subsidy claim, the payment for those sessions will go to the parent once their claim has been granted."
+ },
+ {
+   "Question": "When subsidy may be paid directly to parents",
+   "Answer": "While Child Care Subsidy/Additional Child Care Subsidy is generally paid to providers to pass on to parents as a fee reduction, it may need to be paid directly to parents in some specific scenarios, particularly where there is a change in circumstances after session reports have been submitted.\nParents will also be paid directly when a provider has submitted session reports before the parent has finalised their claim for the child. In these scenarios, the enrolment status will be 'pending eligibility', meaning session reports can be submitted but will not be processed. Once the parent's claim for the child is finalised, these session reports will be processed and any resulting payment will be made directly to the parent.\nParents will also be paid directly if they report a change in circumstances that affects their entitlement for sessions of care for which subsidy has already been paid (for example, a retrospective change to a parent's hours of recognised activity). In addition, any amount owing to a parent following the end of year reconciliation process will continue to be paid directly to the parent.\nIn all cases where a payment is made directly to the parent, the parent will be able to see a record of this payment through Centrelink Online or the Express Plus mobile app.\n"
+ },
+ {
+   "Question": "Can child care services stop charging fees when children are absent?\n",
+   "Answer": "Fee charging practices are commercial decisions made by child care services and are not a matter regulated by the Family Assistance Law. Families are entitled to 42 absence days per child, per financial year and additional absences in certain circumstances (including illness of the child, a parent or sibling)."
+ },
+ {
+   "Question": "Will providers be able to see the outcomes of balancing for a family on their third party provider software or directly through the Child Care Subsidy System?",
+   "Answer": "Providers will not be able to see families' Child Care Subsidy (CCS) balancing outcomes through their software or directly from the Child Care Subsidy System. \nCentrelink will advise families of their balancing outcome in a letter, or if the family receives letters electronically, the letter will be sent to their myGov inbox.\nCentrelink have access to all the family's information so if a family has any queries about their outcome letter, it is important they contact Centrelink."
+ },
+ {
+   "Question": "How will services know if a family's withholding CCS percentage changes to more than 5%?",
+   "Answer": "Information on a family's withholding amount is available to providers in their software and the Provider Entry Point. Software providers may display this information differently, however it should be found in the family enrolment or entitlement screen.  \nIn the Provider Entry Point, the family's withholding percentage can be viewed by accessing the child's enrolment and clicking 'Entitlement.'\n"
+ },
+ {
+   "Question": "How does recovering CCS overpayment from a family affect the payments a provider receives on behalf of that family?",
+   "Answer": "Providers and services may notice a change to the amount of CCS received on behalf of a family after Centrelink completes the balancing process. For example, if a family owes Centrelink money after balancing has occurred, the family may choose to reduce their future CCS payments to repay monies owed. This is called an offset.\nThe amount of CCS providers and services receive on behalf of families may also change throughout the year for a number of reasons. Examples include a family:\nNotifying Centrelink of a change in their circumstances, such as a change in income, level of recognised activity or a change in relationship status\nchoosing to change the percentage of withholding."
+ },
+ {
+   "Question": "Will services be notified if a family is repaying their CCS overpayment through reductions in their future CCS payments?\n",
+   "Answer": "No, the recovery of overpayments by Centrelink is a matter between the family and Centrelink. CCS overpayments may be recovered by Centrelink in several ways including direct payments, or reductions in the amount of future CCS payments made on behalf of a family.\nCentrelink may recover overpayments of CCS from a family's ongoing CCS payments. Details of the particulars of a repayment plan is confidential information shared between the family and Centrelink."
+ },
+ {
+   "Question": "What other factors might impact a family's CCS entitlement?\n",
+   "Answer": "There are other factors that may affect how much CCS providers receive on behalf of families throughout the year. Examples include a family:\nnotifying Centrelink of a change in their circumstances, such as a change in income, level of recognised activity or a change in relationship status\nchoosing to change the percentage of withholding."
+ },
+ {
+   "Question": "Where can I see statements of entitlement?\n",
+   "Answer": "In your third party software product. Information and how the statement is displayed may differ depending on the product/s you use. Please refer to your software provider directly for assistance with using their product."
+ },
+ {
+   "Question": "Where do I send enquiries about families' entitlements?\n",
+   "Answer": "Families who have queries about their entitlements should check their Centrelink online account through myGov or contact Centrelink."
+ }
+]

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import NavBar2 from '../NavBar2/NavBar2';
 import Footer from '../footer/footer';
+import FAQBox from '../FAQBox/FAQBox';
 import ChevronRight from '../Home/chevron-right.svg';
 import PopularShape from '../Home/PopularShape.png';
 import ScrollableAnchor from 'react-scrollable-anchor';
@@ -19,9 +20,19 @@ var html10 = require('./10.html');
 var html11 = require('./11.html');
 var html12 = require('./12.html');
 
+var faq2 = require('./2.json');
+var faq5 = require('./5.json');
+var faq6 = require('./6.json');
+var faq7 = require('./7.json');
+var faq8 = require('./8.json');
+var faq9 = require('./9.json');
+var faq12 = require('./12.json');
+
+let all_faq = [[], faq2, [], [], faq5, [], faq7, faq8, faq9, [], [], faq12];
 let all_html = [html1, html2, html3, html4, html5, html6, html7, html8, html9, html10, html11, html12];
 
 let current_html = null;
+let current_faq = null;
 let doc_no = null;
 let table_headings = null;
 
@@ -30,6 +41,8 @@ class Content extends Component {
   componentWillMount = () => {
     doc_no = parseInt(this.props.location.search.replace("?=",""))
     current_html = all_html[doc_no];
+    current_faq = all_faq[doc_no];
+    console.log(current_faq);
     let html_array = current_html.split("\n");
     table_headings = [];
     let current_h1 = "";
@@ -152,6 +165,18 @@ class Content extends Component {
           <div className="container flex-row">
             <div className="inner flex-row" style={{minHeight: 'calc(100vh - 200px)', marginTop: 80, justifyContent: 'space-between', alignItems: 'flex-start'}}>
               <div className="search-results">
+                {current_faq.length > 0 &&
+                  <div>
+                    <h1> Frequently Asked Questions </h1>
+                    {current_faq.map((item, i) => {
+                      if (i < 5) {
+                        return (
+                          <FAQBox question={item.Question} answer={item.Answer}/>
+                        )
+                      }
+                    })}
+                  </div>
+                }
                 {/*
                 <h1 style={{color: '#FF6B77'}}> Becoming an approved provider</h1>
                 <h2  style={{color: '#1F2D76', fontStyle: 'italic', fontSize: 20}}> This chapter provides information about the responsibilities of a child care provider and the key business requirements that are part of being a provider.</h2>
