@@ -39,55 +39,73 @@ class Search extends Component {
   constructor(props) {
 
     super(props);
-    let query = props.location.search;
+
+    this.state = {
+      query: "",
+      results: [],
+      oneshot: null
+    }
+  }
+
+  componentDidMount() {
+    let query = this.props.location.search;
     query = decodeURI(query.substring(query.indexOf("=") + 1, query.length));
     query = query.substring(1, query.length - 1);
 
+    let dialogflow_answers = [];
+    let oneshot_answer = null;
+    //Get one shot answer
     fetch('http://3.19.71.124:3000/dialogflow', {
-      method: 'post',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      method: 'POST',
       body: JSON.stringify({
         query: query
       })
-    }).then(function(response) {
+    }).then(response => {
       return response.json();
-    }).then(function(data) {
+    }).then(data => {
       console.log(data);
-    });
-
-    let index = idx.search(query+"~1");
-    let results = [];
-    index.forEach(i => {
-      for (let doc of documents) {
-        if (i.ref == doc.title) {
-          doc.snippet = "";
-          Object.keys(i.matchData.metadata).forEach(el => {
-            i.matchData.metadata[el].text.position.forEach(pos => {
-              let end_position = doc.text.indexOf("\n", pos[0]);
-              end_position = doc.text.indexOf("\n", end_position+1);
-              let start_position = doc.text.indexOf("\n", pos[0] - (end_position - pos[0]));
-              let snippet = doc.text.substring(start_position, end_position).replace(/<[^>]+>/g, '');
-              snippet = snippet.toLowerCase();
-              query = query.toLowerCase();
-              snippet = snippet.replace(query, "<span class='highlight'>"+query+"</span>");
-              doc.snippet = doc.snippet + snippet + "<br/>";
-            })
-          })
-          results.push(doc);
+      for (let i = 0; i < data.length; i++) {
+        if (data[i].matchConfidence >= 0.95) {
+          oneshot_answer = data[i];
+          break;
         }
       }
-    })
 
-    this.state = {
-      query: query,
-      results: results
-    }
+      let index = idx.search(query+"~1");
+      let results = [];
+      index.forEach(i => {
+        for (let doc of documents) {
+          if (i.ref == doc.title) {
+            doc.snippet = "";
+            Object.keys(i.matchData.metadata).forEach(el => {
+              i.matchData.metadata[el].text.position.forEach(pos => {
+                let end_position = doc.text.indexOf("\n", pos[0]);
+                end_position = doc.text.indexOf("\n", end_position+1);
+                let start_position = doc.text.indexOf("\n", pos[0] - (end_position - pos[0]));
+                let snippet = doc.text.substring(start_position, end_position).replace(/<[^>]+>/g, '');
+                snippet = snippet.toLowerCase();
+                query = query.toLowerCase();
+                snippet = snippet.replace(query, "<span class='highlight'>"+query+"</span>");
+                doc.snippet = doc.snippet + snippet + "<br/>";
+              })
+            })
+            results.push(doc);
+          }
+        }
+      })
+      console.log(query, results, oneshot_answer);
+      this.setState({query: query, results: results, oneshot: oneshot_answer});
+    });
   }
 
   componentDidUpdate() {
     let query = this.props.location.search;
     query = decodeURI(query.substring(query.indexOf("=") + 1, query.length));
     query = query.substring(1, query.length - 1);
-    console.log(this.state.query , query);
     if (this.state.query != query) {
       let index = idx.search(query+"~1");
       let results = [];
@@ -118,26 +136,34 @@ class Search extends Component {
       <div>
           <NavBar2/>
 
-          <div className="container flex-row">
-            <div className="inner" style={{width: '100%', marginTop: 80, flexWrap: 'wrap'}}>
-              <div className="question-block">
-                <h1>"{this.state.query}"</h1>
-                <img className="speech-triangle" src={Triangle} />
-              </div>
-              <div className="answer-block">
-                <h1>Lorem ipsum telang sarasa?</h1>
-                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo consequat sapien, et volutpat lectus porttitor at. Proin egestas elementum orci. Cras finibus sed dolor at malesuada. Cras nec sapien a ligula posuere convallis. Cras velit neque, tincidunt vitae nisl ac, dignissim condimentum urna. Etiam ornare pharetra ante molestie suscipit. Integer orci tortor, porta ut enim sit amet, feugiat ullamcorper nisi.
-                </p>
-                <div style={{height: 2, display: 'flex', justifyContent: 'flex-end'}}>
-                  <img className="speech-triangle answer" src={Triangle2} />
+          {this.state.oneshot &&
+            <div className="container flex-row">
+              <div className="inner" style={{width: '100%', marginTop: 80, flexWrap: 'wrap'}}>
+                <div className="question-block">
+                  <h1>"{this.state.query}"</h1>
+                  <img className="speech-triangle" src={Triangle} />
+                </div>
+                <div className="answer-block">
+                  <h1>{this.state.oneshot.faqQuestion}</h1>
+                  <p> 
+                    {this.state.oneshot.answer}
+                  </p>
+                  <div style={{height: 2, display: 'flex', justifyContent: 'flex-end'}}>
+                    <img className="speech-triangle answer" src={Triangle2} />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          }
           <div className="container flex-row">
             <div className="inner flex-row" style={{marginTop: 80, justifyContent: 'space-between', alignItems: 'flex-start'}}>
               <div className="search-results">
-                <h1> Not what you were after? Try these: </h1>
+                {this.state.oneshot &&
+                  <h1> Not what you were after? Try these: </h1>
+                }
+                {!this.state.oneshot &&
+                  <h1> Results: </h1>
+                }
                 {this.state.results.map((item, i) => {
                   return (
                     <div className="search-result">
