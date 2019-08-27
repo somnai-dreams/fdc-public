@@ -6,6 +6,7 @@ import Triangle from './speech-triangle.svg';
 import Triangle2 from './speech-triangle2.svg';
 import ChevronRight from '../Home/chevron-right.svg';
 import PopularShape from '../Home/PopularShape.png';
+import Spinner from './spinner.svg';
 
 let ApplyingToBecomeProvider = require('../Content/template.html');
 
@@ -82,6 +83,7 @@ class Search extends Component {
 
     this.state = {
       query: "",
+      loading: false,
       results: [],
       all_answers: [],
       oneshot: null
@@ -96,12 +98,13 @@ class Search extends Component {
     this.runSearch();
   }
 
-  runSearch() {
+  runSearch = () => {
     let query = this.props.location.search;
     query = decodeURI(query.substring(query.indexOf("=") + 1, query.length));
     query = query.substring(1, query.length - 1);
     console.log(query.toLowerCase(), this.state.query, query.toLowerCase() != this.state.query);
     if (query.toLowerCase() != this.state.query) {
+      this.setState({loading: true});
       let dialogflow_answers = [];
       let oneshot_answer = null;
       //Get one shot answer
@@ -149,7 +152,7 @@ class Search extends Component {
           }
         })
         console.log(query, results, oneshot_answer);
-        this.setState({query: query, results: results, oneshot: oneshot_answer, all_answers: dialogflow_answers});
+        this.setState({loading: false, query: query, results: results, oneshot: oneshot_answer, all_answers: dialogflow_answers});
       });
     }
   }
@@ -158,8 +161,14 @@ class Search extends Component {
     return (
       <div>
           <NavBar2/>
-
-          {this.state.oneshot &&
+          {this.state.loading && 
+            <div className="container flex-row">
+              <div className="inner" style={{width: '100%', marginTop: 80, flexWrap: 'wrap'}}>
+                <img src={Spinner } />
+              </div>
+            </div>
+          }
+          {(this.state.oneshot && !this.state.loading) &&
             <div className="container flex-row">
               <div className="inner" style={{width: '100%', marginTop: 80, flexWrap: 'wrap'}}>
                 <div className="question-block">
@@ -180,29 +189,33 @@ class Search extends Component {
           }
           <div className="container flex-row">
             <div className="inner flex-row" style={{marginTop: 80, justifyContent: 'space-between', alignItems: 'flex-start'}}>
-              <div className="search-results">
-                {this.state.oneshot &&
-                  <h1> Not what you were after? Try these: </h1>
-                }
-                {!this.state.oneshot &&
-                  <h1> Results: </h1>
-                }
-                {this.state.results.length == 0 && 
-                  "No results..."
-                }
-                {this.state.results.map((item, i) => {
-                  return (
-                    <div key={i} className="search-result">
-                      <a href={"/Content/"+item.title.split(" ").join("_")}> {item.title}</a>
-                      <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} dangerouslySetInnerHTML={{__html: item.snippet}}/>
-                      <div className="flex-row" style={{display: 'none'}}>
-                        <div className="tag"> General Information </div> 
-                        <div className="date"> 19 Aug 2019 </div> 
+
+
+              {!this.state.loading && 
+                <div className="search-results">
+                  {this.state.oneshot &&
+                    <h1> Not what you were after? Try these: </h1>
+                  }
+                  {!this.state.oneshot &&
+                    <h1> Results: </h1>
+                  }
+                  {this.state.results.length == 0 && 
+                    "No results..."
+                  }
+                  {this.state.results.map((item, i) => {
+                    return (
+                      <div key={i} className="search-result">
+                        <a href={"/Content/"+item.title.split(" ").join("_")}> {item.title}</a>
+                        <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} dangerouslySetInnerHTML={{__html: item.snippet}}/>
+                        <div className="flex-row" style={{display: 'none'}}>
+                          <div className="tag"> General Information </div> 
+                          <div className="date"> 19 Aug 2019 </div> 
+                        </div>
                       </div>
-                    </div>
-                  )
-                })}
-              </div>
+                    )
+                  })}
+                </div>
+              }
               {this.state.all_answers.length > 0 &&
                 <div style={{width: '25%'}} className="also-asked mobile-hidden">
                   <h1> People also ask:</h1>

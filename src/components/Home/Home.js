@@ -89,9 +89,9 @@ class Home extends Component {
           </div>
           <div className="container" style={{paddingBottom: 50, flexWrap: 'wrap', alignItems: 'center'}}>
             <div className="inner collapsible" style={{marginTop: -70}}>
-              <div className="fdc-box" style={{backgroundImage: `url(${Journey1})`, backgroundColor: '#FFE0E6'}}>
+              <a href="/NewProvider" className="fdc-box" style={{backgroundImage: `url(${Journey1})`, backgroundColor: '#FFE0E6'}}>
                 <h2> I am a new provider</h2>
-              </div>
+              </a>
               <div className="fdc-box" style={{backgroundImage: `url(${Journey3})`, backgroundColor: '#b9c7f6'}}>
                 <h2> I need information</h2>
               </div>

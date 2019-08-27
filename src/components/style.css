@@ -334,7 +334,6 @@ p {
 .fdc-box3 img { 
   margin-left: 10px;
 }
-
 .fdc-box3 {
     left: 429px;
     width: 200px;
@@ -446,7 +445,18 @@ p {
     /*  padding: 15px;*/
     text-align: center;
     z-index: 5;
+    margin-bottom: 35px;
 }
+
+.fdc-box5 {
+  border-radius: 25px;
+  background-color: #FFE0E6;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 492px;
+  height: 277px;
+}
+
 
 .about-section {
     background-image: url('./Home/AboutBG.png');
