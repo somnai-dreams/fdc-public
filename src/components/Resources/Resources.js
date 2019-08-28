@@ -17,127 +17,240 @@ class Resources extends Component {
 
                     <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
                       <div className="search-result" style={{width: '85%'}}>
-                        <a href="/"> Resource</a>
+                        <a href="/">  Approach to compliance</a>
                         <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
                           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.
                         </p>
                         <div className="flex-row" >
-                          <div className="tag"> Tag </div> 
-                          <div className="tag"> Tag </div> 
-                          <div className="tag"> Tag </div> 
+                          <div className="tag"> Poster </div> 
+                          <div className="tag"> Compliance </div> 
+                          <div className="tag"> For Providers </div> 
                         </div>
                       </div>
                     </div>
-                    <div style={{width: '15%'}} className="also-asked ">
-                      <div className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
-                        <a href="/"> View</a>
+
+                    <div style={{width: '15%'}} className="also-asked mobile-hidden">
+                      <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/1+Approach+to+compliance.pdf" className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
+                        View
                         <img src={ChevronRight} style={{width: 8}}/>
-                      </div>
-                      <div className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
-                        <a href="/"> Download</a>
+                      </a>
+                      <a href="/https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/1+Approach+to+compliance.pdf" download className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
+                        Download
                         <img src={ChevronRight} style={{width: 8}}/>
-                      </div>
+                      </a>
                     </div>
 
 
                     <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
                       <div className="search-result" style={{width: '85%'}}>
-                        <a href="/"> Resource</a>
+                        <a href="/"> Response to non-compliance</a>
                         <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
                           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.
                         </p>
                         <div className="flex-row" >
-                          <div className="tag"> Tag </div> 
-                          <div className="tag"> Tag </div> 
-                          <div className="tag"> Tag </div> 
+                          <div className="tag"> Poster </div> 
+                          <div className="tag"> Compliance </div> 
+                          <div className="tag"> For Providers </div> 
                         </div>
                       </div>
                     </div>
-                    <div style={{width: '15%'}} className="also-asked ">
-                      <div className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
-                        <a href="/"> View</a>
+
+                    <div style={{width: '15%'}} className="also-asked mobile-hidden">
+                      <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/2+Response+to+non-compliance.pdf" className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
+                        View
                         <img src={ChevronRight} style={{width: 8}}/>
-                      </div>
-                      <div className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
-                        <a href="/"> Download</a>
+                      </a>
+                      <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/2+Response+to+non-compliance.pdf" download className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
+                        Download
                         <img src={ChevronRight} style={{width: 8}}/>
-                      </div>
+                      </a>
                     </div>
 
 
                     <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
                       <div className="search-result" style={{width: '85%'}}>
-                        <a href="/"> Resource</a>
+                        <a href="/">  What does good compliance look like for an FDC provider</a>
                         <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
                           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.
                         </p>
                         <div className="flex-row" >
-                          <div className="tag"> Tag </div> 
-                          <div className="tag"> Tag </div> 
-                          <div className="tag"> Tag </div> 
+                          <div className="tag"> Checklist </div> 
+                          <div className="tag"> Compliance </div> 
+                          <div className="tag"> For Providers </div> 
                         </div>
                       </div>
                     </div>
-                    <div style={{width: '15%'}} className="also-asked ">
-                      <div className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
-                        <a href="/"> View</a>
+
+                    <div style={{width: '15%'}} className="also-asked mobile-hidden">
+                      <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/3+What+does+good+compliance+look+like+for+an+FDC+provider.pdf" className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
+                        View
                         <img src={ChevronRight} style={{width: 8}}/>
-                      </div>
-                      <div className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
-                        <a href="/"> Download</a>
+                      </a>
+                      <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/3+What+does+good+compliance+look+like+for+an+FDC+provider.pdf" download className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
+                        Download
                         <img src={ChevronRight} style={{width: 8}}/>
-                      </div>
+                      </a>
                     </div>
 
 
                     <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
                       <div className="search-result" style={{width: '85%'}}>
-                        <a href="/"> Resource</a>
+                        <a href="/">  What does good compliance look like for an FDC educator</a>
                         <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
                           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.
                         </p>
                         <div className="flex-row" >
-                          <div className="tag"> Tag </div> 
-                          <div className="tag"> Tag </div> 
-                          <div className="tag"> Tag </div> 
+                          <div className="tag"> Checklist </div> 
+                          <div className="tag"> Compliance </div> 
+                          <div className="tag"> For educactors </div> 
                         </div>
                       </div>
                     </div>
-                    <div style={{width: '15%'}} className="also-asked ">
-                      <div className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
-                        <a href="/"> View</a>
+
+                    <div style={{width: '15%'}} className="also-asked mobile-hidden">
+                      <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/4+What+does+good+compliance+look+like+for+an+FDC+educator.pdf" className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
+                        View
                         <img src={ChevronRight} style={{width: 8}}/>
-                      </div>
-                      <div className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
-                        <a href="/"> Download</a>
+                      </a>
+                      <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/4+What+does+good+compliance+look+like+for+an+FDC+educator.pdf" download className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
+                        Download
                         <img src={ChevronRight} style={{width: 8}}/>
+                      </a>
+                    </div>
+
+                    <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
+                      <div className="search-result" style={{width: '85%'}}>
+                        <a href="/">  What does good compliance look like for a family</a>
+                        <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
+                          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.
+                        </p>
+                        <div className="flex-row" >
+                          <div className="tag"> Checklist </div> 
+                          <div className="tag"> Compliance </div> 
+                          <div className="tag"> For educactors </div> 
+                        </div>
                       </div>
+                    </div>
+
+                    <div style={{width: '15%'}} className="also-asked mobile-hidden">
+                      <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/5+What+does+good+compliance+look+like+for+a+family.pdf" className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
+                        View
+                        <img src={ChevronRight} style={{width: 8}}/>
+                      </a>
+                      <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/5+What+does+good+compliance+look+like+for+a+family.pdf" download className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
+                        Download
+                        <img src={ChevronRight} style={{width: 8}}/>
+                      </a>
+                    </div>
+
+
+
+                    <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
+                      <div className="search-result" style={{width: '85%'}}>
+                        <a href="/">  Caring for a relative </a>
+                        <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
+                          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.
+                        </p>
+                        <div className="flex-row" >
+                          <div className="tag"> Fact sheet </div> 
+                          <div className="tag"> Relatives </div> 
+                          <div className="tag"> For Providers </div> 
+                          <div className="tag"> For Educators</div> 
+                        </div>
+                      </div>
+                    </div>
+
+                    <div style={{width: '15%'}} className="also-asked mobile-hidden">
+                      <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/6+Caring+for+a+relative+.pdf" className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
+                        View
+                        <img src={ChevronRight} style={{width: 8}}/>
+                      </a>
+                      <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/6+Caring+for+a+relative+.pdf" download className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
+                        Download
+                        <img src={ChevronRight} style={{width: 8}}/>
+                      </a>
+                    </div>
+
+                    <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
+                      <div className="search-result" style={{width: '85%'}}>
+                        <a href="/">  Going away</a>
+                        <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
+                          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.
+                        </p>
+                        <div className="flex-row" >
+                          <div className="tag"> Overseas</div> 
+                          <div className="tag"> Relatives </div> 
+                          <div className="tag"> For Providers </div> 
+                          <div className="tag"> For Educators</div> 
+                        </div>
+                      </div>
+                    </div>
+
+                    <div style={{width: '15%'}} className="also-asked mobile-hidden">
+                      <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/7+Going+away.pdf" className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
+                        View
+                        <img src={ChevronRight} style={{width: 8}}/>
+                      </a>
+                      <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/7+Going+away.pdf" download className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
+                        Download
+                        <img src={ChevronRight} style={{width: 8}}/>
+                      </a>
+                    </div>
+
+                    <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
+                      <div className="search-result" style={{width: '85%'}}>
+                        <a href="/">  Having visitors over</a>
+                        <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
+                          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.
+                        </p>
+                        <div className="flex-row" >
+                          <div className="tag"> Fact sheet </div> 
+                          <div className="tag"> Visitors </div> 
+                          <div className="tag"> For Providers </div> 
+                          <div className="tag"> For Educators</div> 
+                        </div>
+                      </div>
+                    </div>
+
+                    <div style={{width: '15%'}} className="also-asked mobile-hidden">
+                      <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/8+Having+visitors+over.pdf" className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
+                        View
+                        <img src={ChevronRight} style={{width: 8}}/>
+                      </a>
+                      <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/8+Having+visitors+over.pdf" download className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
+                        Download
+                        <img src={ChevronRight} style={{width: 8}}/>
+                      </a>
                     </div>
 
 
                     <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
                       <div className="search-result" style={{width: '85%'}}>
-                        <a href="/"> Resource</a>
+                        <a href="/">  When a child is absent</a>
                         <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
                           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.
                         </p>
                         <div className="flex-row" >
-                          <div className="tag"> Tag </div> 
-                          <div className="tag"> Tag </div> 
-                          <div className="tag"> Tag </div> 
+                          <div className="tag"> Fact sheet </div> 
+                          <div className="tag"> Absences </div> 
+                          <div className="tag"> For Providers </div> 
+                          <div className="tag"> For Educators</div> 
                         </div>
                       </div>
                     </div>
-                    <div style={{width: '15%'}} className="also-asked ">
-                      <div className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
-                        <a href="/"> View</a>
+
+                    <div style={{width: '15%'}} className="also-asked mobile-hidden">
+                      <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/9+When+a+child+is+absent.pdf" className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
+                        View
                         <img src={ChevronRight} style={{width: 8}}/>
-                      </div>
-                      <div className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
-                        <a href="/"> Download</a>
+                      </a>
+                      <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/9+When+a+child+is+absent.pdf" download className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
+                        Download
                         <img src={ChevronRight} style={{width: 8}}/>
-                      </div>
+                      </a>
                     </div>
+
+
 
 
               </div>

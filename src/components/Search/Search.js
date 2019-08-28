@@ -62,6 +62,8 @@ var documents = [{
   "text": html12
 }]
 
+let loading = true;
+
 var idx = window.lunr(function () {
   this.ref('title');
   this.field('text');
@@ -83,7 +85,6 @@ class Search extends Component {
 
     this.state = {
       query: "",
-      loading: false,
       results: [],
       all_answers: [],
       oneshot: null
@@ -98,13 +99,17 @@ class Search extends Component {
     this.runSearch();
   }
 
-  runSearch = () => {
+  preSearch() {
+    this.runSearch();
+  }
+
+  runSearch() {
+    loading = true;
     let query = this.props.location.search;
-    query = decodeURI(query.substring(query.indexOf("=") + 1, query.length));
+    query = decodeURI(query.substring(query.indexOf("=") + 1, query.length).replace("%", "%25"));
     query = query.substring(1, query.length - 1);
     console.log(query.toLowerCase(), this.state.query, query.toLowerCase() != this.state.query);
     if (query.toLowerCase() != this.state.query) {
-      this.setState({loading: true});
       let dialogflow_answers = [];
       let oneshot_answer = null;
       //Get one shot answer
@@ -118,9 +123,9 @@ class Search extends Component {
           query: query
         })
       }).then(response => {
-        console.log(response);
         return response.json();
       }).then(data => {
+        console.log(data);
         dialogflow_answers = data;
         for (let i = 0; i < data.length; i++) {
           if (data[i].matchConfidence >= 0.95) {
@@ -152,7 +157,8 @@ class Search extends Component {
           }
         })
         console.log(query, results, oneshot_answer);
-        this.setState({loading: false, query: query, results: results, oneshot: oneshot_answer, all_answers: dialogflow_answers});
+        loading = false;
+        this.setState({query: query, results: results, oneshot: oneshot_answer, all_answers: dialogflow_answers});
       });
     }
   }
@@ -161,22 +167,23 @@ class Search extends Component {
     return (
       <div>
           <NavBar2/>
-          {this.state.loading && 
+          {loading && 
             <div className="container flex-row">
               <div className="inner" style={{width: '100%', marginTop: 80, flexWrap: 'wrap'}}>
                 <img src={Spinner } />
               </div>
             </div>
           }
-          {(this.state.oneshot && !this.state.loading) &&
+          {!loading &&
             <div className="container flex-row">
               <div className="inner" style={{width: '100%', marginTop: 80, flexWrap: 'wrap'}}>
                 <div className="question-block">
-                  <h1>"{this.state.query}"</h1>
+                  <h4>"{this.state.query}"</h4>
                   <img className="speech-triangle" src={Triangle} />
                 </div>
+                {this.state.oneshot &&
                 <div className="answer-block">
-                  <h1>{this.state.oneshot.faqQuestion}</h1>
+                  <h4>{this.state.oneshot.faqQuestion}</h4>
                   <p> 
                     {this.state.oneshot.answer}
                   </p>
@@ -184,6 +191,7 @@ class Search extends Component {
                     <img className="speech-triangle answer" src={Triangle2} />
                   </div>
                 </div>
+                }
               </div>
             </div>
           }
@@ -191,13 +199,13 @@ class Search extends Component {
             <div className="inner flex-row" style={{marginTop: 80, justifyContent: 'space-between', alignItems: 'flex-start'}}>
 
 
-              {!this.state.loading && 
+              {!loading && 
                 <div className="search-results">
                   {this.state.oneshot &&
-                    <h1> Not what you were after? Try these: </h1>
+                    <h4> Not what you were after? Try these: </h4>
                   }
                   {!this.state.oneshot &&
-                    <h1> Results: </h1>
+                    <h4> Results: </h4>
                   }
                   {this.state.results.length == 0 && 
                     "No results..."
@@ -216,9 +224,9 @@ class Search extends Component {
                   })}
                 </div>
               }
-              {this.state.all_answers.length > 0 &&
+              {(!loading && this.state.all_answers.length) > 0 &&
                 <div style={{width: '25%'}} className="also-asked mobile-hidden">
-                  <h1> People also ask:</h1>
+                  <h4> People also ask:</h4>
 
                   {this.state.all_answers.map((answer, i) => {
                     return (
@@ -241,19 +249,19 @@ class Search extends Component {
               </div>
             </div>
             <div className="inner flex-row" style={{flexWrap: 'wrap'}}>
-                  <a href="/content" className="fdc-box3">
+                  <a href="/content?=0" className="fdc-box3">
                     Become An Approved Provider
                     <img src={ChevronRight} style={{width: 8}}/>
                   </a>
-                  <a href="/content" className="fdc-box3">
+                  <a href="/content?=1" className="fdc-box3">
                     Set Up A Service
                     <img src={ChevronRight} style={{width: 8}}/>
                   </a>
-                  <a href="/content" className="fdc-box3">
+                  <a href="/content?=2" className="fdc-box3">
                     Enrol Children 
                     <img src={ChevronRight} style={{width: 8}}/>
                   </a>
-                  <a href="/content" className="fdc-box3">
+                  <a href="/content?=3" className="fdc-box3">
                     Report Sessions Of Care
                     <img src={ChevronRight} style={{width: 8}}/>
                   </a>

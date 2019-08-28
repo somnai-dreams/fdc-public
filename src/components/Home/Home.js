@@ -107,7 +107,10 @@ class Home extends Component {
               <h2 style={{width: '100%', color: '#FF6B77', marginBottom: 0}}> About </h2>
               <div className="flex-row" style={{justifyContent: 'space-between', position: 'relative'}}>
                 <div style={{width: '60%', color: '#1F2D76', fontSize: 20}}>
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam.
+                  This website is for Family Day Care providers. It has information to help you understand your compliance obligations. 
+                    <br/>
+                    <br/>
+              This website is part of the Department of Education's <a href="https://www.education.gov.au/early-childhood-and-child-care-0"> child care programme.</a>
                 </div>
                 <img style={{position: 'absolute', right: 0}} src={AboutShapes} />
               </div>
@@ -128,11 +131,11 @@ class Home extends Component {
                 <div className="btm-3" style={{backgroundImage: `url(${News3})`}}>
                 </div>
                 <div className="tag">POLICY UPDATE</div>
-                <h1> Policy Update </h1>
-                <h2> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod. </h2>
+                <h1> Additional Balancing</h1>
+                <h2> Frequently asked questions from our recent webinar </h2>
                 <div className="flex-row">
                   <img className="clock" src={Clock} />
-                  <span> 12 JULY 2018 </span>
+                  <span> 15 AUG 2019</span>
                 </div>
               </div>
              
@@ -140,11 +143,11 @@ class Home extends Component {
                 <div className="btm-3" style={{backgroundImage: `url(${News2})`}}>
                 </div>
                 <div className="tag">NEWS ITEM</div>
-                <h1> News Item </h1>
-                <h2> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod. </h2>
+                <h1> Update your details</h1>
+                <h2> Reminder to update your details on the Child Care Finder</h2>
                 <div className="flex-row">
                   <img className="clock" src={Clock} />
-                  <span> 12 JULY 2018 </span>
+                  <span> 09 AUG 2019</span>
                 </div>
               </div>
 
@@ -154,10 +157,10 @@ class Home extends Component {
                 </div>
                 <div className="tag">WEBINAR</div>
                 <h1> Latest Webinar</h1>
-                <h2> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod. </h2>
+                <h2> Understanding CCS balancing webcast for providers and services</h2>
                 <div className="flex-row">
                   <img className="clock" src={Clock} />
-                  <span> 12 JULY 2018 </span>
+                  <span> 16 JULY 2019 </span>
                 </div>
               </div>
               <img style={{cursor: 'pointer'}} src={ChevronRight} alt="more"/>
@@ -174,7 +177,7 @@ class Home extends Component {
             <div className="inner flex-row" style={{flexWrap: 'wrap'}}>
               {tags.map((item, i) => {
                 return (
-                  <a key={i} href={"/content"+"?="+(i)} className="fdc-box3">
+                  <a key={i} href={"/content"+"?="+(i)} className="fdc-box3" style={{width: 200}}>
                     {item.text}
                     <img src={ChevronRight} style={{width: 8}}/>
                   </a>

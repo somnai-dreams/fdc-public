@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Navicon from './navicon-round.svg'
 import { NavLink } from 'react-router-dom';
+import Shape from './headerSmall.png';
 
 import Logo from './DOE2.png';
 
@@ -39,6 +40,7 @@ class NavBar2 extends Component {
   return (<div>
     <div className="top-bar">
       <div className="inner flex-row">
+          <img src={Shape} className="shapes-2 mobile-hidden-1700"/>
           <div className="flex-row mobile-hidden" style={{justifyContent: 'space-between', width: '100%'}}>
             <div className="flex-row">
               <a href="/" style={{marginRight: 25}}>
@@ -69,14 +71,6 @@ class NavBar2 extends Component {
 
         <NavLink exact to="/" href="/" activeClassName="selected" className="nav-item no-ipad">
           <div className="text">Home</div>
-        </NavLink>
-
-        <NavLink to="/childcare" href="/childcare" activeClassName="selected" className="nav-item no-ipad">
-          <div className="text">Child Care</div>
-        </NavLink>
-
-        <NavLink to="/compliance" href="/compliance" activeClassName="selected" className="nav-item no-ipad">
-          <div className="text">Compliance</div>
         </NavLink>
 
         <NavLink to="/resources" href="/resources" activeClassName="selected" className="nav-item no-ipad">

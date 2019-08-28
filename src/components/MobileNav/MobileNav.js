@@ -29,7 +29,7 @@ class MobileNav extends Component {
                 <h1> Compliance </h1>
               </a>
 
-              <a href="/" className="item">
+              <a href="/Resources" className="item">
                 <h1> Resources </h1>
               </a>
 

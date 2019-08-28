@@ -26,23 +26,9 @@ class footer extends Component {
         <div className="container" style={{alignItems: 'center'}}>
           <div className="inner" style={{justifyContent: 'space-between', maxWidth: 1200}}>
             <img src={Logo} alt="Department of Education" className="logo" />
-            <div className="flex-row" style={{justifyContent: 'space-between', width: '100%', height: '100%', padding: '90px 150px 90px 100px'}}>
+            <div className="flex-row" style={{width: '100%', height: '100%', padding: '90px 150px 90px 100px'}}>
 
-              <div className="list">
-                <a href="/" style={{fontSize: 18, fontWeight: 600, marginBottom: 5}}> Family Day Care </a>
-                <a href="/" style={{fontSize: 14}}> Lorem ipsum </a>
-                <a href="/" style={{fontSize: 14}}> Lorem ipsum </a>
-              </div>
-
-
-              <div className="list">
-                <a href="/" style={{fontSize: 18, fontWeight: 600, marginBottom: 5}}> Compliance </a>
-                <a href="/" style={{fontSize: 14}}> Lorem ipsum </a>
-                <a href="/" style={{fontSize: 14}}> Lorem ipsum </a>
-              </div>
-
-
-              <div className="list">
+              <div className="list" style={{marginRight: 50}}>
                 <a href="/" style={{fontSize: 18, fontWeight: 600, marginBottom: 5}}> Resources </a>
                 <a href="/" style={{fontSize: 14}}> Lorem ipsum </a>
                 <a href="/" style={{fontSize: 14}}> Lorem ipsum </a>

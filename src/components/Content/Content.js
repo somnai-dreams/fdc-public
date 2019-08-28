@@ -7,6 +7,8 @@ import ChevronRight from '../Home/chevron-right.svg';
 import PopularShape from '../Home/PopularShape.png';
 import ScrollableAnchor from 'react-scrollable-anchor';
 
+import Shapes1 from './shapes1.png';
+
 var html1  = require('./1.html');
 var html2  = require('./2.html');
 var html3  = require('./3.html');
@@ -164,6 +166,7 @@ class Content extends Component {
 
           <div className="container flex-row">
             <div className="inner flex-row" style={{minHeight: 'calc(100vh - 200px)', marginTop: 80, justifyContent: 'space-between', alignItems: 'flex-start'}}>
+              <img src={Shapes1} className="shapes-1 mobile-hidden-1700"/>
               <div className="search-results">
                 {current_faq.length > 0 &&
                   <div>
@@ -284,19 +287,19 @@ class Content extends Component {
               </div>
             </div>
             <div className="inner flex-row" style={{flexWrap: 'wrap'}}>
-                  <a href="/content" className="fdc-box3">
+                  <a href="/content?=0" className="fdc-box3">
                     Become An Approved Provider
                     <img src={ChevronRight} style={{width: 8}}/>
                   </a>
-                  <a href="/content" className="fdc-box3">
+                  <a href="/content?=1" className="fdc-box3">
                     Set Up A Service
                     <img src={ChevronRight} style={{width: 8}}/>
                   </a>
-                  <a href="/content" className="fdc-box3">
+                  <a href="/content?=2" className="fdc-box3">
                     Enrol Children 
                     <img src={ChevronRight} style={{width: 8}}/>
                   </a>
-                  <a href="/content" className="fdc-box3">
+                  <a href="/content?=3" className="fdc-box3">
                     Report Sessions Of Care
                     <img src={ChevronRight} style={{width: 8}}/>
                   </a>

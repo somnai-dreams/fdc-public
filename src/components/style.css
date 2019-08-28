@@ -169,6 +169,16 @@ p {
   background-color: rgb(232, 237, 252);
 }
 
+.shapes-2 {
+  position: absolute;
+  right: -125px;
+  top: -42px;
+}
+.shapes-1 {
+  position: absolute;
+  left: -200px;
+}
+
 #sticky-nav {
   padding: 10px;
   z-index: 15;
@@ -249,6 +259,7 @@ p {
 
 .answer-block p {
     color: #1F2D76;
+    font-size: 18px;
 }
 
 .answer-block {
@@ -260,6 +271,7 @@ p {
     margin-left: auto;
 }
 
+
 .question-block {
     background-color: #4864C8;
     padding: 10px 30px;
@@ -270,7 +282,7 @@ p {
     margin-bottom: 40px;
 }
 
-.question-block h1 {
+.question-block h4 {
     color: #FFF;
 }
 
@@ -300,6 +312,28 @@ p {
     padding: 15px;
     padding-right: 40px;
 }
+
+.new-provider .banner {
+  background-color: #719fff;
+  height: 362px;
+  background-image: url('./Home/Journeys1.png');
+  background-size: contain;
+  background-position-x: right;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; 
+}
+.new-provider .banner h1 {
+  width: 100%;
+}
+
+.new-provider .banner p {
+  font-weight: 600;
+  color: #1f2d76;
+  font-size: 18px;
+
+}
+
 
 .banner {
 /*    background-image: url('./Home/Banner3.png');*/
@@ -336,8 +370,8 @@ p {
 }
 .fdc-box3 {
     left: 429px;
-    width: 200px;
-    height: 63px;
+    min-width: 200px;
+    min-height: 63px;
     background-color: #FFF;
     border-radius: 17px;
     display: flex;
@@ -1265,6 +1299,22 @@ p {
 
 @media only screen and (max-width: 1050px) {
 
+    .new-provider .fdc-box5 {
+     display: none; 
+    }
+    .new-provider .fdc-box h2 {
+      margin-right: auto;
+      margin-left: 0;
+    }
+    .new-provider .fdc-box {
+      height: 150px;
+      background-size: 175px !important;
+    }
+    .new-provider .fdc-box div{
+     display: none; 
+    }
+
+
     .mobile-hidden {
         display: none;
     }
@@ -1570,8 +1620,8 @@ li {
 }
 
 .close-icon {
-    width: 60px;
-    margin: 40px 20px 0 20px;
+    width: 30px;
+    margin: 40px 20px 0 35px;
 }
 
 .footer {

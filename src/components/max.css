@@ -50,6 +50,15 @@
         display: unset;
     }
 
+@media only screen and (max-width: 1700px) {
+
+    .mobile-hidden-1700 {
+        display: none;
+    }
+
+
+}
+
 @media only screen and (max-width: 800px) {
 
     .mobile-hidden-800 {
