@@ -29,7 +29,14 @@ class footer extends Component {
             <div className="flex-row" style={{width: '100%', height: '100%', padding: '90px 150px 90px 100px'}}>
 
               <div className="list" style={{marginRight: 50}}>
-                <a href="/" style={{fontSize: 18, fontWeight: 600, marginBottom: 5}}> Resources </a>
+                <a href="/topics" style={{fontSize: 18, fontWeight: 600, marginBottom: 5}}> Topics </a>
+                <a href="/" style={{fontSize: 14}}> Lorem ipsum </a>
+                <a href="/" style={{fontSize: 14}}> Lorem ipsum </a>
+              </div>
+
+
+              <div className="list" style={{marginRight: 50}}>
+                <a href="/resources" style={{fontSize: 18, fontWeight: 600, marginBottom: 5}}> Resources </a>
                 <a href="/" style={{fontSize: 14}}> Lorem ipsum </a>
                 <a href="/" style={{fontSize: 14}}> Lorem ipsum </a>
               </div>

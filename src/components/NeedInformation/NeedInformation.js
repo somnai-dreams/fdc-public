@@ -10,14 +10,14 @@ let tags = [
   {text: "Provider and service eligibility"},
   {text: "Exempt services"},
 ]
-class NewProvider extends Component {
+class NeedInformation extends Component {
   render() {
     return (
       <div className="new-provider">
         <NavBar2/> 
           <div className="banner container" style={{alignItems: 'center'}}>
             <div className="inner" style={{flexWrap: 'wrap', justifyContent: 'flex-start'}}>
-              <h1 style={{color: '#FFF'}}> I need to become a provider </h1>
+              <h1 style={{color: '#FFF'}}> I am operating a family day care service</h1>
               <p style={{width: 400}}> 
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam.
               </p>
@@ -28,39 +28,32 @@ class NewProvider extends Component {
             <div className="inner collapsible" style={{marginTop: -70, flexWrap: 'wrap'}}>
 
               <div className="fdc-box" style={{textAlign: 'left',display: 'flex', alignItems: 'flex-start', backgroundImage: `url(${Journey1})`, backgroundRepeat: 'no-repeat', backgroundPositionY: 'bottom', backgroundSize: 220, flexWrap: 'wrap', backgroundColor: '#B9C7F6'}} >
-                <h2 > What is family day care?</h2>
-                <div style={{color: '#4864C8', marginLeft: 36, marginTop: -128}}> Read More </div>
+                <h2 > Stay up to date with the law, regulations and current issues</h2>
               </div>
 
 
               <div className="fdc-box" style={{textAlign: 'left',display: 'flex', alignItems: 'flex-start', backgroundImage: `url(${Journey1})`, backgroundRepeat: 'no-repeat', backgroundPositionY: 'bottom', backgroundSize: 220, flexWrap: 'wrap', backgroundColor: '#B9C7F6'}} >
-                <h2 > What does a good family day care provider look like?</h2>
-                <div style={{color: '#4864C8', marginLeft: 36, marginTop: -93}}> Read More </div>
+                <h2 > Check the rules for my situation</h2>
               </div>
 
 
               <div className="fdc-box" style={{textAlign: 'left',display: 'flex', alignItems: 'flex-start', backgroundImage: `url(${Journey1})`, backgroundRepeat: 'no-repeat', backgroundPositionY: 'bottom', backgroundSize: 220, flexWrap: 'wrap', backgroundColor: '#B9C7F6'}} >
-                <h2 > Key contacts</h2>
-                <div style={{color: '#4864C8', marginLeft: 36, marginTop: -128}}> Read More </div>
+                <h2 > Resources to explain family day care to Educators and Families</h2>
               </div>
 
             </div>
           </div>
 
-          <div className="container flex-row">
-            <div className="inner flex-row" style={{marginTop: 80, justifyContent: 'space-between', alignItems: 'flex-start'}}>
-              <h2> Related Topics</h2>
-            </div>
-          </div>
           <div className="resources topics container flex-row">
             <div className="inner flex-row" style={{flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'flex-start'}}>
+                  <h2 style={{zIndex: 2, width: '100%'}}> Related Topics</h2>
 
-                  <a href="/content/?=0" className="flex-row border" style={{justifyContent: 'space-between'}}>
+                  <a href="/content/?=4" className="flex-row border" style={{justifyContent: 'space-between'}}>
                     <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
                       <div className="search-result" style={{width: '85%'}}>
-                        <a > Becoming an approved provider</a>
+                        <a >How child care subsidy is paid</a>
                         <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
-                          The responsibilities of a child care provider and the key business requirements that are part of being a provider
+                          How Child Care Subsidy payment amounts are determined, how and when payments are made to providers, circumstances where payments are made to families, managing gap fees, reconciliation, overpayments and debt
                         </p>
                       </div>
                     </div>
@@ -68,12 +61,12 @@ class NewProvider extends Component {
                    </a>
 
 
-                  <a href="/content/?=1" className="flex-row border" style={{justifyContent: 'space-between'}}>
+                  <a href="/content/?=5" className="flex-row border" style={{justifyContent: 'space-between'}}>
                     <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
                       <div className="search-result" style={{width: '85%'}}>
-                        <a > Applying to be an approved provider</a>
+                        <a > Child care subsidy</a>
                         <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
-                          Applying for approval for the first time, seeking to add or remove a service from the provider approval, and registration of personnel.
+                          Child Care Subsidy policy, including your responsibilities under the program and the roles of the Department of Education and Centrelink.
                         </p>
                       </div>
                     </div>
@@ -81,12 +74,12 @@ class NewProvider extends Component {
                    </a>
 
 
-                  <a href="/content/?=2" className="flex-row border" style={{justifyContent: 'space-between'}}>
+                  <a href="/content/?=6" className="flex-row border" style={{justifyContent: 'space-between'}}>
                     <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
                       <div className="search-result" style={{width: '85%'}}>
-                        <a > Provider and service eligibility</a>
+                        <a > Additional child care subsidy</a>
                         <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
-                          Eligibility requirements that providers and services must meet to be eligible for approval under Family Assistance Law.
+                          The different types of Additional Child Care Subsidy, when this subsidy is payable and the different rates.
                         </p>
                       </div>
                     </div>
@@ -94,12 +87,12 @@ class NewProvider extends Component {
                    </a>
 
 
-                  <a href="/content/?=3" className="flex-row border" style={{justifyContent: 'space-between'}}>
+                  <a href="/content/?=7" className="flex-row border" style={{justifyContent: 'space-between'}}>
                     <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
                       <div className="search-result" style={{width: '85%'}}>
-                        <a> Exempt services</a>
+                        <a > Enrolling children</a>
                         <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
-                          Types of services that are not covered by the National Law and provides information on the requirements exempt services must meet.
+                          Tge steps that need to be taken to put in place an arrangement with the individual responsible for the child - usually a parent - and the process for enrolling that child.
                         </p>
                       </div>
                     </div>
@@ -107,17 +100,30 @@ class NewProvider extends Component {
                    </a>
 
 
-                  <a href="/content/?=10" className="flex-row border" style={{justifyContent: 'space-between'}}>
+                  <a href="/content/?=8" className="flex-row border" style={{justifyContent: 'space-between'}}>
                     <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
                       <div className="search-result" style={{width: '85%'}}>
-                        <a > Support for providers</a>
+                        <a > Managing and reporting sessions of care</a>
                         <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
-                          The Inclusion Support Program and the Community Child Care Fund (including Connected Beginnings) and how each program is delivered
+                          What a session of care is and what you need to do to ensure the sessions of care you provide are managed and reported correctly, and how to handle absences and business continuity payments.
                         </p>
                       </div>
                     </div>
                     <img style={{cursor: 'pointer'}} src={ChevronRight} alt="more"/>
-                   </a>
+                  </a>
+
+                  <a href="/content/?=9" className="flex-row border" style={{justifyContent: 'space-between'}}>
+                    <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
+                      <div className="search-result" style={{width: '85%'}}>
+                        <a > Record keeping and notifications</a>
+                        <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
+                          Your record-keeping responsibilities, including specific Family Day Care record-keeping requirements, and notifications that need to be made to comply with provider obligations.
+                        </p>
+                      </div>
+                    </div>
+                    <img style={{cursor: 'pointer'}} src={ChevronRight} alt="more"/>
+                  </a>
+
 
              </div>
            </div>
@@ -129,4 +135,4 @@ class NewProvider extends Component {
   }
 }
 
-export default NewProvider;
+export default NeedInformation;

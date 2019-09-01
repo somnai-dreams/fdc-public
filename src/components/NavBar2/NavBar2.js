@@ -33,7 +33,7 @@ class NavBar2 extends Component {
   }
 
   goSearch = () => {
-    this.props.history.push("/search?query='"+this.state.searchVal+"'");
+    this.props.history.push("/search?query='"+this.state.searchVal.replace("%", "%25")+"'");
   }
 
   render() {
@@ -72,6 +72,11 @@ class NavBar2 extends Component {
         <NavLink exact to="/" href="/" activeClassName="selected" className="nav-item no-ipad">
           <div className="text">Home</div>
         </NavLink>
+
+        <NavLink to="/topics" href="/topics" activeClassName="selected" className="nav-item no-ipad">
+          <div className="text">Topics</div>
+        </NavLink>
+
 
         <NavLink to="/resources" href="/resources" activeClassName="selected" className="nav-item no-ipad">
           <div className="text">Resources</div>

@@ -137,6 +137,31 @@ p {
 
 
 /* --------- End Color --------------*/
+.resources.topics .border {
+  width: 48%; 
+  margin: 10px 0;
+  height: 200px;
+  overflow: hidden;
+}
+
+.resources .border{
+  padding: 15px;
+  border: 2px solid #c9cdde;
+  border-radius: 19px;
+  margin: 25px 0;
+}
+
+.resources.topics .search-result p {
+  height: 100px;
+}
+.resources .search-result {
+  margin: 0;
+}
+
+.resources .also-asked{
+  margin-left: -70px;
+}
+
 .search-results .title {
   color: #FF6B77; 
   font-weight: 600;
@@ -240,7 +265,8 @@ p {
 }
 
 .search-result .tag {
-    background-color: #d8eaf0;
+    background-color: #78a4ff;
+    color: #FFF;
     padding: 10px;
     border-radius: 15px;
     margin-right: 15px;
@@ -1299,6 +1325,16 @@ p {
 
 @media only screen and (max-width: 1050px) {
 
+    .resources .border{
+      flex-wrap: wrap; 
+    }
+
+    .resources .also-asked{
+      width: 100% !important;
+      margin-left: 0px;
+      margin-top: 10px;
+    }
+
     .new-provider .fdc-box5 {
      display: none; 
     }
@@ -1309,6 +1345,15 @@ p {
     .new-provider .fdc-box {
       height: 150px;
       background-size: 175px !important;
+      margin: 10px 0;
+      padding: 15px;
+      width: calc(100% - 30px);
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      background-position: right;
+      background-size: contain;
+      background-repeat: no-repeat;
     }
     .new-provider .fdc-box div{
      display: none; 
@@ -1331,6 +1376,9 @@ p {
 
 
 @media only screen and (max-width: 800px) {
+    .resources.topics .search-result p {
+      display: none;
+    }
     .container .inner.collapsible {
         flex-direction: column;
     }

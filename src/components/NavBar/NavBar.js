@@ -39,6 +39,11 @@ const NavBar = (props) => {
           <div className="text">Home</div>
         </NavLink>
 
+        <NavLink to="/topics" href="/topics" activeClassName="selected" className="nav-item no-ipad">
+          <div className="text">Topics</div>
+        </NavLink>
+
+
         <NavLink to="/resources" href="/resources" activeClassName="selected" className="nav-item no-ipad">
           <div className="text">Resources</div>
         </NavLink>

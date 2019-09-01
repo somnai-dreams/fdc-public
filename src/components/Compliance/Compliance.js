@@ -10,14 +10,14 @@ let tags = [
   {text: "Provider and service eligibility"},
   {text: "Exempt services"},
 ]
-class NewProvider extends Component {
+class Compliance extends Component {
   render() {
     return (
       <div className="new-provider">
         <NavBar2/> 
           <div className="banner container" style={{alignItems: 'center'}}>
             <div className="inner" style={{flexWrap: 'wrap', justifyContent: 'flex-start'}}>
-              <h1 style={{color: '#FFF'}}> I need to become a provider </h1>
+              <h1 style={{color: '#FFF'}}> I need help with compliance</h1>
               <p style={{width: 400}}> 
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam.
               </p>
@@ -55,12 +55,12 @@ class NewProvider extends Component {
           <div className="resources topics container flex-row">
             <div className="inner flex-row" style={{flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'flex-start'}}>
 
-                  <a href="/content/?=0" className="flex-row border" style={{justifyContent: 'space-between'}}>
+                  <a href="/content/?=9" className="flex-row border" style={{justifyContent: 'space-between'}}>
                     <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
                       <div className="search-result" style={{width: '85%'}}>
-                        <a > Becoming an approved provider</a>
+                        <a > Record keeping and notifications</a>
                         <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
-                          The responsibilities of a child care provider and the key business requirements that are part of being a provider
+                          Your record-keeping responsibilities, including specific Family Day Care record-keeping requirements, and notificatoins taht need to be made to comply with provider obligations.
                         </p>
                       </div>
                     </div>
@@ -68,51 +68,12 @@ class NewProvider extends Component {
                    </a>
 
 
-                  <a href="/content/?=1" className="flex-row border" style={{justifyContent: 'space-between'}}>
+                  <a href="/content/?=11" className="flex-row border" style={{justifyContent: 'space-between'}}>
                     <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
                       <div className="search-result" style={{width: '85%'}}>
-                        <a > Applying to be an approved provider</a>
+                        <a > Compliance</a>
                         <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
-                          Applying for approval for the first time, seeking to add or remove a service from the provider approval, and registration of personnel.
-                        </p>
-                      </div>
-                    </div>
-                    <img style={{cursor: 'pointer'}} src={ChevronRight} alt="more"/>
-                   </a>
-
-
-                  <a href="/content/?=2" className="flex-row border" style={{justifyContent: 'space-between'}}>
-                    <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
-                      <div className="search-result" style={{width: '85%'}}>
-                        <a > Provider and service eligibility</a>
-                        <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
-                          Eligibility requirements that providers and services must meet to be eligible for approval under Family Assistance Law.
-                        </p>
-                      </div>
-                    </div>
-                    <img style={{cursor: 'pointer'}} src={ChevronRight} alt="more"/>
-                   </a>
-
-
-                  <a href="/content/?=3" className="flex-row border" style={{justifyContent: 'space-between'}}>
-                    <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
-                      <div className="search-result" style={{width: '85%'}}>
-                        <a> Exempt services</a>
-                        <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
-                          Types of services that are not covered by the National Law and provides information on the requirements exempt services must meet.
-                        </p>
-                      </div>
-                    </div>
-                    <img style={{cursor: 'pointer'}} src={ChevronRight} alt="more"/>
-                   </a>
-
-
-                  <a href="/content/?=10" className="flex-row border" style={{justifyContent: 'space-between'}}>
-                    <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
-                      <div className="search-result" style={{width: '85%'}}>
-                        <a > Support for providers</a>
-                        <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
-                          The Inclusion Support Program and the Community Child Care Fund (including Connected Beginnings) and how each program is delivered
+                          What you need to do to maintain ongoing approval under Family Assistance Law and the action that can be taken by the Department of Education if you fail to meet those obligations
                         </p>
                       </div>
                     </div>
@@ -129,4 +90,4 @@ class NewProvider extends Component {
   }
 }
 
-export default NewProvider;
+export default Compliance;

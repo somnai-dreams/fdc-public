@@ -8,13 +8,13 @@ import PopularShape from '../Home/PopularShape.png';
 class Resources extends Component {
   render() {
     return (
-      <div>
+      <div className="resources">
           <NavBar2/>
           <div className="container flex-row">
             <div className="inner flex-row" style={{marginTop: 80, justifyContent: 'space-between', alignItems: 'flex-start'}}>
               <div className="search-results flex-row" style={{width: '100%', flexWrap: 'wrap'}}>
                   <h1 style={{color: '#FF6B77', width: '100%'}}> Resources </h1>
-
+                  <div className="flex-row border">
                     <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
                       <div className="search-result" style={{width: '85%'}}>
                         <a href="/">  Approach to compliance</a>
@@ -29,7 +29,7 @@ class Resources extends Component {
                       </div>
                     </div>
 
-                    <div style={{width: '15%'}} className="also-asked mobile-hidden">
+                    <div style={{width: '15%'}} className="also-asked">
                       <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/1+Approach+to+compliance.pdf" className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
                         View
                         <img src={ChevronRight} style={{width: 8}}/>
@@ -39,8 +39,10 @@ class Resources extends Component {
                         <img src={ChevronRight} style={{width: 8}}/>
                       </a>
                     </div>
+                  </div>
 
 
+                  <div className="flex-row border">
                     <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
                       <div className="search-result" style={{width: '85%'}}>
                         <a href="/"> Response to non-compliance</a>
@@ -55,7 +57,7 @@ class Resources extends Component {
                       </div>
                     </div>
 
-                    <div style={{width: '15%'}} className="also-asked mobile-hidden">
+                    <div style={{width: '15%'}} className="also-asked">
                       <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/2+Response+to+non-compliance.pdf" className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
                         View
                         <img src={ChevronRight} style={{width: 8}}/>
@@ -65,8 +67,9 @@ class Resources extends Component {
                         <img src={ChevronRight} style={{width: 8}}/>
                       </a>
                     </div>
+                   </div>
 
-
+                  <div className="flex-row border">
                     <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
                       <div className="search-result" style={{width: '85%'}}>
                         <a href="/">  What does good compliance look like for an FDC provider</a>
@@ -81,7 +84,7 @@ class Resources extends Component {
                       </div>
                     </div>
 
-                    <div style={{width: '15%'}} className="also-asked mobile-hidden">
+                    <div style={{width: '15%'}} className="also-asked">
                       <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/3+What+does+good+compliance+look+like+for+an+FDC+provider.pdf" className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
                         View
                         <img src={ChevronRight} style={{width: 8}}/>
@@ -91,8 +94,9 @@ class Resources extends Component {
                         <img src={ChevronRight} style={{width: 8}}/>
                       </a>
                     </div>
+                  </div>
 
-
+                  <div className="flex-row border">
                     <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
                       <div className="search-result" style={{width: '85%'}}>
                         <a href="/">  What does good compliance look like for an FDC educator</a>
@@ -107,7 +111,7 @@ class Resources extends Component {
                       </div>
                     </div>
 
-                    <div style={{width: '15%'}} className="also-asked mobile-hidden">
+                    <div style={{width: '15%'}} className="also-asked">
                       <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/4+What+does+good+compliance+look+like+for+an+FDC+educator.pdf" className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
                         View
                         <img src={ChevronRight} style={{width: 8}}/>
@@ -117,7 +121,9 @@ class Resources extends Component {
                         <img src={ChevronRight} style={{width: 8}}/>
                       </a>
                     </div>
+                  </div>
 
+                  <div className="flex-row border">
                     <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
                       <div className="search-result" style={{width: '85%'}}>
                         <a href="/">  What does good compliance look like for a family</a>
@@ -132,7 +138,7 @@ class Resources extends Component {
                       </div>
                     </div>
 
-                    <div style={{width: '15%'}} className="also-asked mobile-hidden">
+                    <div style={{width: '15%'}} className="also-asked">
                       <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/5+What+does+good+compliance+look+like+for+a+family.pdf" className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
                         View
                         <img src={ChevronRight} style={{width: 8}}/>
@@ -142,9 +148,10 @@ class Resources extends Component {
                         <img src={ChevronRight} style={{width: 8}}/>
                       </a>
                     </div>
+                  </div>
 
 
-
+                  <div className="flex-row border">
                     <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
                       <div className="search-result" style={{width: '85%'}}>
                         <a href="/">  Caring for a relative </a>
@@ -160,7 +167,7 @@ class Resources extends Component {
                       </div>
                     </div>
 
-                    <div style={{width: '15%'}} className="also-asked mobile-hidden">
+                    <div style={{width: '15%'}} className="also-asked">
                       <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/6+Caring+for+a+relative+.pdf" className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
                         View
                         <img src={ChevronRight} style={{width: 8}}/>
@@ -170,7 +177,9 @@ class Resources extends Component {
                         <img src={ChevronRight} style={{width: 8}}/>
                       </a>
                     </div>
+                   </div>
 
+                  <div className="flex-row border">
                     <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
                       <div className="search-result" style={{width: '85%'}}>
                         <a href="/">  Going away</a>
@@ -186,7 +195,7 @@ class Resources extends Component {
                       </div>
                     </div>
 
-                    <div style={{width: '15%'}} className="also-asked mobile-hidden">
+                    <div style={{width: '15%'}} className="also-asked">
                       <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/7+Going+away.pdf" className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
                         View
                         <img src={ChevronRight} style={{width: 8}}/>
@@ -196,7 +205,9 @@ class Resources extends Component {
                         <img src={ChevronRight} style={{width: 8}}/>
                       </a>
                     </div>
+                   </div>
 
+                  <div className="flex-row border">
                     <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
                       <div className="search-result" style={{width: '85%'}}>
                         <a href="/">  Having visitors over</a>
@@ -212,7 +223,7 @@ class Resources extends Component {
                       </div>
                     </div>
 
-                    <div style={{width: '15%'}} className="also-asked mobile-hidden">
+                    <div style={{width: '15%'}} className="also-asked">
                       <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/8+Having+visitors+over.pdf" className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
                         View
                         <img src={ChevronRight} style={{width: 8}}/>
@@ -222,8 +233,9 @@ class Resources extends Component {
                         <img src={ChevronRight} style={{width: 8}}/>
                       </a>
                     </div>
+                   </div>
 
-
+                  <div className="flex-row border">
                     <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
                       <div className="search-result" style={{width: '85%'}}>
                         <a href="/">  When a child is absent</a>
@@ -239,7 +251,7 @@ class Resources extends Component {
                       </div>
                     </div>
 
-                    <div style={{width: '15%'}} className="also-asked mobile-hidden">
+                    <div style={{width: '15%'}} className="also-asked">
                       <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/9+When+a+child+is+absent.pdf" className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
                         View
                         <img src={ChevronRight} style={{width: 8}}/>
@@ -249,7 +261,7 @@ class Resources extends Component {
                         <img src={ChevronRight} style={{width: 8}}/>
                       </a>
                     </div>
-
+                  </div>
 
 
 

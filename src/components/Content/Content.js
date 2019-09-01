@@ -33,6 +33,21 @@ var faq12 = require('./12.json');
 let all_faq = [[], faq2, [], [], faq5, [], faq7, faq8, faq9, [], [], faq12];
 let all_html = [html1, html2, html3, html4, html5, html6, html7, html8, html9, html10, html11, html12];
 
+let headlines = [
+  {text: "Becoming an approved provider"},
+  {text: "Applying to become an approved provider"},
+  {text: "Provider and service eligibility"},
+  {text: "Exempt services"},
+  {text: "How child care subsidy is paid"},
+  {text: "Child Care Subsidy"},
+  {text: "Additional Child Care Subsidy"},
+  {text: "Enrolling children"},
+  {text: "Managing and reporting sessions of care"},
+  {text: "Record keeping and notifications"},
+  {text: "Support for Providers"},
+  {text: "Compliance"},
+]
+
 let current_html = null;
 let current_faq = null;
 let doc_no = null;
@@ -165,8 +180,14 @@ class Content extends Component {
           <NavBar2/>
 
           <div className="container flex-row">
+            <div className="inner flex-row" style={{marginTop: 15}}>
+              <h1> {headlines[doc_no].text}</h1>
+            </div>
+          </div>
+          <div className="container flex-row">
             <div className="inner flex-row" style={{minHeight: 'calc(100vh - 200px)', marginTop: 80, justifyContent: 'space-between', alignItems: 'flex-start'}}>
               <img src={Shapes1} className="shapes-1 mobile-hidden-1700"/>
+
               <div className="search-results">
                 {current_faq.length > 0 &&
                   <div>

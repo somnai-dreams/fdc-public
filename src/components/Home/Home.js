@@ -61,7 +61,7 @@ class Home extends Component {
   }
 
   goSearch = () => {
-    this.props.history.push("/search?query='"+this.state.searchVal+"'");
+    this.props.history.push("/search?query='"+this.state.searchVal.replace("%", "%25")+"'");
   }
 
   render() {
@@ -76,7 +76,7 @@ class Home extends Component {
                   </div>
                 </div>
                 <div className="inner" style={{position: 'relative'}}>
-                  <input onKeyDown={this.keyPress} value={this.state.searchVal} onChange={this.handleChange} className="home-search" name="searchVal" type="text" placeholder="What you are looking for today?"/>
+                  <input onKeyDown={this.keyPress} value={this.state.searchVal} onChange={this.handleChange} className="home-search" name="searchVal" type="text" placeholder="What are you looking for today?"/>
                   <div>
                   <img onClick={this.goSearch} src={SearchIcon} alt="search" className="search-icon"/>
                   </div>
@@ -90,13 +90,13 @@ class Home extends Component {
           </div>
           <div className="container" style={{paddingBottom: 50, flexWrap: 'wrap', alignItems: 'center'}}>
             <div className="inner collapsible" style={{marginTop: -70}}>
-              <a href="/NewProvider" className="fdc-box" style={{backgroundImage: `url(${Journey1})`, backgroundColor: '#FFE0E6'}}>
+              <a href="/NewProvider" className="fdc-box" style={{backgroundImage: `url(${Journey1})`, backgroundColor: '#B9C7F6'}}>
                 <h2> I am a new provider</h2>
               </a>
-              <div className="fdc-box" style={{backgroundImage: `url(${Journey3})`, backgroundColor: '#b9c7f6'}}>
+              <a href="/NeedInformation" className="fdc-box" style={{backgroundImage: `url(${Journey3})`, backgroundColor: '#719FFF'}}>
                 <h2> I need information</h2>
-              </div>
-              <div className="fdc-box" style={{backgroundImage: `url(${Journey2})`}}>
+              </a>
+              <div className="fdc-box" style={{backgroundColor: '#4864C8', backgroundImage: `url(${Journey2})`}}>
                 <h2 style={{color: '#FFF'}}> Help with compliance </h2>
               </div>
             </div>

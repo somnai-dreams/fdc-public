@@ -26,40 +26,52 @@ var html12 = require('../Content/12.html');
 
 var documents = [{
   "title": "Becoming an approved provider",
-  "text": html1
+  "text": html1,
+  "num": 0
 }, {
   "title": "Applying to become an approved provider",
-  "text": html2
+  "text": html2,
+  "num": 1
 }, {
   "title": "Provider and service eligibility",
-  "text": html3
+  "text": html3,
+  "num": 2
 }, {
   "title": "Exempt services",
-  "text": html4
+  "text": html4,
+  "num": 3
 }, {
   "title": "How child care subsidy is paid",
-  "text": html5
+  "text": html5,
+  "num": 4
 }, {
   "title": "Child Care Subsidy",
-  "text": html6
+  "text": html6,
+  "num": 5
 }, {
   "title": "Additional Child Care Subsidy",
-  "text": html7
+  "text": html7,
+  "num": 6
 }, {
   "title": "Enrolling children",
-  "text": html8
+  "text": html8,
+  "num": 7
 }, {
   "title": "Managing and reporting sessions of care",
-  "text": html9
+  "text": html9,
+  "num": 8
 }, {
   "title": "Record keeping and notifications",
-  "text": html10
+  "text": html10,
+  "num": 9
 }, {
   "title": "Support for Providers",
-  "text": html11
+  "text": html11,
+  "num": 10
 }, {
   "title": "Compliance",
-  "text": html12
+  "text": html12,
+  "num": 11
 }]
 
 let loading = true;
@@ -106,7 +118,7 @@ class Search extends Component {
   runSearch() {
     loading = true;
     let query = this.props.location.search;
-    query = decodeURI(query.substring(query.indexOf("=") + 1, query.length).replace("%", "%25"));
+    query = decodeURI(query.substring(query.indexOf("=") + 1, query.length));
     query = query.substring(1, query.length - 1);
     console.log(query.toLowerCase(), this.state.query, query.toLowerCase() != this.state.query);
     if (query.toLowerCase() != this.state.query) {
@@ -213,7 +225,7 @@ class Search extends Component {
                   {this.state.results.map((item, i) => {
                     return (
                       <div key={i} className="search-result">
-                        <a href={"/Content/"+item.title.split(" ").join("_")}> {item.title}</a>
+                        <a href={"/Content?="+item.num}> {item.title}</a>
                         <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} dangerouslySetInnerHTML={{__html: item.snippet}}/>
                         <div className="flex-row" style={{display: 'none'}}>
                           <div className="tag"> General Information </div> 
@@ -231,7 +243,7 @@ class Search extends Component {
                   {this.state.all_answers.map((answer, i) => {
                     return (
                       <div key={i} className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
-                        <a href={'/search?query="'+answer.faqQuestion+'"'}> {answer.faqQuestion}</a>
+                        <a href={'/search?query="'+answer.faqQuestion.replace("%", "%25")+'"'}> {answer.faqQuestion}</a>
                         <img src={ChevronRight} style={{width: 8}}/>
                       </div>
                     )
