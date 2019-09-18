@@ -145,6 +145,7 @@ p {
 }
 
 .resources .border{
+  width: 100%;
   padding: 15px;
   border: 2px solid #c9cdde;
   border-radius: 19px;
@@ -207,7 +208,7 @@ p {
 #sticky-nav {
   padding: 10px;
   z-index: 15;
-  overflow-y: scroll;
+  overflow-y: visible;
   max-height: 90vh;
   background-color: #fff;
   border-radius: 10px;
@@ -228,13 +229,17 @@ p {
 }
 
 #sticky-nav .heading {
-  color: #939EB5;
+  color: #65676d;
   font-size: 18px;
   margin-top: 10px;
 }
 
+#sticky-nav .bolded {
+  font-weight: 800;
+}
+
 #sticky-nav .sub-heading {
-  color: #C3CAD9;
+  color: #636977;
   font-size: 14px;
   margin-left: 15px;
   margin-top: 5px;

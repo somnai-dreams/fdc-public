@@ -153,16 +153,18 @@ class Search extends Component {
             if (i.ref == doc.title) {
               doc.snippet = "";
               Object.keys(i.matchData.metadata).forEach(el => {
-                i.matchData.metadata[el].text.position.forEach(pos => {
-                  let end_position = doc.text.indexOf("\n", pos[0]);
-                  end_position = doc.text.indexOf("\n", end_position+1);
-                  let start_position = doc.text.indexOf("\n", pos[0] - (end_position - pos[0]));
-                  let snippet = doc.text.substring(start_position, end_position).replace(/<[^>]+>/g, '');
-                  snippet = snippet.toLowerCase();
-                  query = query.toLowerCase();
-                  snippet = snippet.replace(query, "<span class='highlight'>"+query+"</span>");
-                  doc.snippet =  doc.snippet + snippet + " ... <br/>";
-                })
+                if (i.matchData.metadata[el].text) {
+                  i.matchData.metadata[el].text.position.forEach(pos => {
+                    let end_position = doc.text.indexOf("\n", pos[0]);
+                    end_position = doc.text.indexOf("\n", end_position+1);
+                    let start_position = doc.text.indexOf("\n", pos[0] - (end_position - pos[0]));
+                    let snippet = doc.text.substring(start_position, end_position).replace(/<[^>]+>/g, '');
+                    snippet = snippet.toLowerCase();
+                    query = query.toLowerCase();
+                    snippet = snippet.replace(query, "<span class='highlight'>"+query+"</span>");
+                    doc.snippet =  doc.snippet + snippet + " ... <br/>";
+                  })
+                }
               })
               results.push(doc);
             }

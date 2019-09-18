@@ -52,6 +52,8 @@ let current_html = null;
 let current_faq = null;
 let doc_no = null;
 let table_headings = null;
+let toc_divs = [];
+let anchor_divs = [];
 
 class Content extends Component {
   //---- Start window resize trigger ----
@@ -158,6 +160,29 @@ class Content extends Component {
 
   componentDidMount = () => {
     window.addEventListener('scroll', this.didScroll);
+    console.log(table_headings);
+    let heading_list = Object.keys(table_headings);
+    for (let i = 0; i < heading_list.length; i++) {
+      toc_divs.push(document.getElementById("toc-"+heading_list[i].split(" ").join("_"))); 
+      anchor_divs.push(document.getElementById(heading_list[i].split(" ").join("_"))); 
+      for (let j = 0; j < table_headings[heading_list[i]].length; j++) {
+        toc_divs.push(document.getElementById("toc-"+table_headings[heading_list[i]][j].split(" ").join("_"))); 
+        anchor_divs.push(document.getElementById(table_headings[heading_list[i]][j].split(" ").join("_"))); 
+      }
+    }
+    console.log(toc_divs);
+    console.log(anchor_divs);
+  }
+
+  getPosition = (element) => {
+    var yPosition = 0;
+
+    while(element) {
+        yPosition += (element.offsetTop - element.scrollTop + element.clientTop);
+        element = element.offsetParent;
+    }
+
+    return yPosition;
   }
 
   //---- End window resize trigger -----
@@ -171,6 +196,23 @@ class Content extends Component {
         nav.classList.remove("sticky-nav");
       }
     }
+
+    let lowestDiv = null;
+    for (let anchor of anchor_divs) {
+      //console.log(window.pageYOffset , this.getPosition(anchor), anchor);
+      if ( (window.pageYOffset ) >= this.getPosition(anchor)) {
+        lowestDiv = anchor;
+      }
+    }
+    if (lowestDiv) {
+      for (let tocItem of toc_divs) {
+        if (tocItem.innerText == lowestDiv.innerText) {
+          tocItem.classList.add("bolded");
+        } else {
+          tocItem.classList.remove("bolded");
+        }
+      }
+    }
   }
 
 
@@ -181,17 +223,17 @@ class Content extends Component {
 
           <div className="container flex-row">
             <div className="inner flex-row" style={{marginTop: 15}}>
-              <h1> {headlines[doc_no].text}</h1>
+              <h1 style={{color: '#FF6B77'}}> {headlines[doc_no].text}</h1>
             </div>
           </div>
-          <div className="container flex-row">
+          <div className="container flex-row" style={{marginTop: -100}}>
             <div className="inner flex-row" style={{minHeight: 'calc(100vh - 200px)', marginTop: 80, justifyContent: 'space-between', alignItems: 'flex-start'}}>
               <img src={Shapes1} className="shapes-1 mobile-hidden-1700"/>
 
               <div className="search-results">
                 {current_faq.length > 0 &&
                   <div>
-                    <h1> Frequently Asked Questions </h1>
+                    <h2> Frequently Asked Questions </h2>
                     {current_faq.map((item, i) => {
                       if (i < 5) {
                         return (
@@ -285,10 +327,10 @@ class Content extends Component {
                   {Object.keys(table_headings).map((item, i) => {
                     return (
                       <div style={{display: 'flex', flexWrap: 'wrap'}}>
-                        <a href={"/content/?="+doc_no+"#"+item.split(" ").join("_")} className="heading">{item}</a>
+                        <a id={"toc-"+item.split(" ").join("_")} href={"/content/?="+doc_no+"#"+item.split(" ").join("_")} className="heading">{item}</a>
                         {table_headings[item].map((sub, i) => {
                           return(
-                            <a href={"/content/?="+doc_no+"#"+sub.split(" ").join("_")} className="sub-heading">{sub}</a>
+                            <a id={"toc-"+sub.split(" ").join("_")} href={"/content/?="+doc_no+"#"+sub.split(" ").join("_")} className="sub-heading">{sub}</a>
                           )
                         })}
                       </div>

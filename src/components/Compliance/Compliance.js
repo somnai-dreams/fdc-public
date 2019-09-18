@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import NavBar2 from '../NavBar2/NavBar2';
 import Footer from '../footer/footer';
-import Journey1 from '../Home/Journeys1.png';
+import Journey2 from '../Home/Journeys2.png';
 import PopularShape from '../Home/PopularShape.png';
 import ChevronRight from '../Home/chevron-right.svg';
 let tags = [
@@ -15,11 +15,11 @@ class Compliance extends Component {
     return (
       <div className="new-provider">
         <NavBar2/> 
-          <div className="banner container" style={{alignItems: 'center'}}>
+          <div className="banner container" style={{alignItems: 'center',  backgroundImage: `url(${Journey2})`, backgroundColor: '#4864c8'}}>
             <div className="inner" style={{flexWrap: 'wrap', justifyContent: 'flex-start'}}>
               <h1 style={{color: '#FFF'}}> I need help with compliance</h1>
-              <p style={{width: 400}}> 
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam.
+              <p style={{width: 400, color: '#FFF'}}> 
+                Stay on top of your compliance obligations and learn how to set up your service to be a model of compliance
               </p>
             </div>
           </div>
@@ -27,19 +27,19 @@ class Compliance extends Component {
           <div className="container" style={{paddingBottom: 50, alignItems: 'center', flexWrap: 'wrap', marginTop: 40}}>
             <div className="inner collapsible" style={{marginTop: -70, flexWrap: 'wrap'}}>
 
-              <div className="fdc-box" style={{textAlign: 'left',display: 'flex', alignItems: 'flex-start', backgroundImage: `url(${Journey1})`, backgroundRepeat: 'no-repeat', backgroundPositionY: 'bottom', backgroundSize: 220, flexWrap: 'wrap', backgroundColor: '#B9C7F6'}} >
+             <div className="fdc-box" style={{textAlign: 'left',display: 'flex', alignItems: 'flex-start', backgroundImage: `url(${Journey2})`, backgroundRepeat: 'no-repeat', backgroundPositionY: 'bottom', backgroundSize: 220, flexWrap: 'wrap', backgroundColor: '#B9C7F6'}} >
                 <h2 > What is family day care?</h2>
                 <div style={{color: '#4864C8', marginLeft: 36, marginTop: -128}}> Read More </div>
               </div>
 
 
-              <div className="fdc-box" style={{textAlign: 'left',display: 'flex', alignItems: 'flex-start', backgroundImage: `url(${Journey1})`, backgroundRepeat: 'no-repeat', backgroundPositionY: 'bottom', backgroundSize: 220, flexWrap: 'wrap', backgroundColor: '#B9C7F6'}} >
+              <div className="fdc-box" style={{textAlign: 'left',display: 'flex', alignItems: 'flex-start', backgroundImage: `url(${Journey2})`, backgroundRepeat: 'no-repeat', backgroundPositionY: 'bottom', backgroundSize: 220, flexWrap: 'wrap', backgroundColor: '#B9C7F6'}} >
                 <h2 > What does a good family day care provider look like?</h2>
                 <div style={{color: '#4864C8', marginLeft: 36, marginTop: -93}}> Read More </div>
               </div>
 
 
-              <div className="fdc-box" style={{textAlign: 'left',display: 'flex', alignItems: 'flex-start', backgroundImage: `url(${Journey1})`, backgroundRepeat: 'no-repeat', backgroundPositionY: 'bottom', backgroundSize: 220, flexWrap: 'wrap', backgroundColor: '#B9C7F6'}} >
+              <div className="fdc-box" style={{textAlign: 'left',display: 'flex', alignItems: 'flex-start', backgroundImage: `url(${Journey2})`, backgroundRepeat: 'no-repeat', backgroundPositionY: 'bottom', backgroundSize: 220, flexWrap: 'wrap', backgroundColor: '#B9C7F6'}} >
                 <h2 > Key contacts</h2>
                 <div style={{color: '#4864C8', marginLeft: 36, marginTop: -128}}> Read More </div>
               </div>

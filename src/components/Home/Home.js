@@ -96,9 +96,9 @@ class Home extends Component {
               <a href="/NeedInformation" className="fdc-box" style={{backgroundImage: `url(${Journey3})`, backgroundColor: '#719FFF'}}>
                 <h2> I need information</h2>
               </a>
-              <div className="fdc-box" style={{backgroundColor: '#4864C8', backgroundImage: `url(${Journey2})`}}>
+              <a href="/Compliance" className="fdc-box" style={{backgroundColor: '#4864C8', backgroundImage: `url(${Journey2})`}}>
                 <h2 style={{color: '#FFF'}}> Help with compliance </h2>
-              </div>
+              </a>
             </div>
           </div>
 

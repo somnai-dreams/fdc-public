@@ -19,7 +19,7 @@ class Resources extends Component {
                       <div className="search-result" style={{width: '85%'}}>
                         <a href="/">  Approach to compliance</a>
                         <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
-                          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.
+                          A poster on how the department actively monitors compliance
                         </p>
                         <div className="flex-row" >
                           <div className="tag"> Poster </div> 
@@ -47,7 +47,7 @@ class Resources extends Component {
                       <div className="search-result" style={{width: '85%'}}>
                         <a href="/"> Response to non-compliance</a>
                         <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
-                          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.
+                          A poster on how the Department responds to non-compliance
                         </p>
                         <div className="flex-row" >
                           <div className="tag"> Poster </div> 
@@ -74,7 +74,7 @@ class Resources extends Component {
                       <div className="search-result" style={{width: '85%'}}>
                         <a href="/">  What does good compliance look like for an FDC provider</a>
                         <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
-                          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.
+                          A self-assessment checklist for FDC providers on good compliance practices
                         </p>
                         <div className="flex-row" >
                           <div className="tag"> Checklist </div> 
@@ -101,7 +101,7 @@ class Resources extends Component {
                       <div className="search-result" style={{width: '85%'}}>
                         <a href="/">  What does good compliance look like for an FDC educator</a>
                         <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
-                          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.
+                          A self-assessment checklist for FDC educators on good compliance practices
                         </p>
                         <div className="flex-row" >
                           <div className="tag"> Checklist </div> 
@@ -128,7 +128,7 @@ class Resources extends Component {
                       <div className="search-result" style={{width: '85%'}}>
                         <a href="/">  What does good compliance look like for a family</a>
                         <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
-                          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.
+                          A self-assessment checklist for families on good compliance practices to look for in a provider
                         </p>
                         <div className="flex-row" >
                           <div className="tag"> Checklist </div> 
@@ -156,7 +156,7 @@ class Resources extends Component {
                       <div className="search-result" style={{width: '85%'}}>
                         <a href="/">  Caring for a relative </a>
                         <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
-                          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.
+                          A fact sheet on the rules around caring for relatives as an FDC educator
                         </p>
                         <div className="flex-row" >
                           <div className="tag"> Fact sheet </div> 
@@ -184,7 +184,7 @@ class Resources extends Component {
                       <div className="search-result" style={{width: '85%'}}>
                         <a href="/">  Going away</a>
                         <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
-                          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.
+                          A fact sheet on what to do if you're taking a break as an FDC educator
                         </p>
                         <div className="flex-row" >
                           <div className="tag"> Overseas</div> 
@@ -212,7 +212,7 @@ class Resources extends Component {
                       <div className="search-result" style={{width: '85%'}}>
                         <a href="/">  Having visitors over</a>
                         <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
-                          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.
+                          A fact sheet on what to do if you have visitors over to your FDC home
                         </p>
                         <div className="flex-row" >
                           <div className="tag"> Fact sheet </div> 
@@ -240,7 +240,7 @@ class Resources extends Component {
                       <div className="search-result" style={{width: '85%'}}>
                         <a href="/">  When a child is absent</a>
                         <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
-                          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.
+                          A fact sheet on what to do when a child is absent from your FDC service
                         </p>
                         <div className="flex-row" >
                           <div className="tag"> Fact sheet </div> 

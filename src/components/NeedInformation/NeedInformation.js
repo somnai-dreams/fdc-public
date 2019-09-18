@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import NavBar2 from '../NavBar2/NavBar2';
 import Footer from '../footer/footer';
 import Journey1 from '../Home/Journeys1.png';
+import Journey3 from '../Home/Journeys3.png';
 import PopularShape from '../Home/PopularShape.png';
 import ChevronRight from '../Home/chevron-right.svg';
 let tags = [
@@ -15,11 +16,13 @@ class NeedInformation extends Component {
     return (
       <div className="new-provider">
         <NavBar2/> 
-          <div className="banner container" style={{alignItems: 'center'}}>
+          <div className="banner container" style={{alignItems: 'center', backgroundImage:  `url(${Journey3}`}}>
             <div className="inner" style={{flexWrap: 'wrap', justifyContent: 'flex-start'}}>
-              <h1 style={{color: '#FFF'}}> I am operating a family day care service</h1>
+              <div style={{width: '100%'}}>
+              <h1 style={{color: '#FFF', width: 600, marginBottom: 0}}> I am operating a family day care service</h1>
+              </div>
               <p style={{width: 400}}> 
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam.
+                Stay on top of your compliance obligations and updates to legislation and rules
               </p>
             </div>
           </div>
@@ -27,17 +30,17 @@ class NeedInformation extends Component {
           <div className="container" style={{paddingBottom: 50, alignItems: 'center', flexWrap: 'wrap', marginTop: 40}}>
             <div className="inner collapsible" style={{marginTop: -70, flexWrap: 'wrap'}}>
 
-              <div className="fdc-box" style={{textAlign: 'left',display: 'flex', alignItems: 'flex-start', backgroundImage: `url(${Journey1})`, backgroundRepeat: 'no-repeat', backgroundPositionY: 'bottom', backgroundSize: 220, flexWrap: 'wrap', backgroundColor: '#B9C7F6'}} >
+              <div className="fdc-box" style={{textAlign: 'left',display: 'flex', alignItems: 'flex-start', backgroundImage: `url(${Journey3})`, backgroundRepeat: 'no-repeat', backgroundPositionY: 'bottom', backgroundPositionX: 'right', backgroundSize: 220, flexWrap: 'wrap', backgroundColor: '#B9C7F6'}} >
                 <h2 > Stay up to date with the law, regulations and current issues</h2>
               </div>
 
 
-              <div className="fdc-box" style={{textAlign: 'left',display: 'flex', alignItems: 'flex-start', backgroundImage: `url(${Journey1})`, backgroundRepeat: 'no-repeat', backgroundPositionY: 'bottom', backgroundSize: 220, flexWrap: 'wrap', backgroundColor: '#B9C7F6'}} >
+              <div className="fdc-box" style={{textAlign: 'left',display: 'flex', alignItems: 'flex-start', backgroundImage: `url(${Journey3})`, backgroundRepeat: 'no-repeat', backgroundPositionY: 'bottom', backgroundPositionX: 'right', backgroundSize: 220, flexWrap: 'wrap', backgroundColor: '#B9C7F6'}} >
                 <h2 > Check the rules for my situation</h2>
               </div>
 
 
-              <div className="fdc-box" style={{textAlign: 'left',display: 'flex', alignItems: 'flex-start', backgroundImage: `url(${Journey1})`, backgroundRepeat: 'no-repeat', backgroundPositionY: 'bottom', backgroundSize: 220, flexWrap: 'wrap', backgroundColor: '#B9C7F6'}} >
+              <div className="fdc-box" style={{textAlign: 'left',display: 'flex', alignItems: 'flex-start', backgroundImage: `url(${Journey3})`, backgroundRepeat: 'no-repeat', backgroundPositionY: 'bottom', backgroundPositionX: 'right', backgroundSize: 220, flexWrap: 'wrap', backgroundColor: '#B9C7F6'}} >
                 <h2 > Resources to explain family day care to Educators and Families</h2>
               </div>
 

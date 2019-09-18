@@ -15,11 +15,11 @@ class NewProvider extends Component {
     return (
       <div className="new-provider">
         <NavBar2/> 
-          <div className="banner container" style={{alignItems: 'center'}}>
+          <div className="banner container" style={{alignItems: 'center', backgroundColor: '#b9c7f6'}}>
             <div className="inner" style={{flexWrap: 'wrap', justifyContent: 'flex-start'}}>
-              <h1 style={{color: '#FFF'}}> I need to become a provider </h1>
+              <h1 style={{color: '#202E77'}}> I am a new provider </h1>
               <p style={{width: 400}}> 
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam.
+                Learn about family day care and how to become an approved provider. Set your service up for success!
               </p>
             </div>
           </div>
@@ -27,19 +27,19 @@ class NewProvider extends Component {
           <div className="container" style={{paddingBottom: 50, alignItems: 'center', flexWrap: 'wrap', marginTop: 40}}>
             <div className="inner collapsible" style={{marginTop: -70, flexWrap: 'wrap'}}>
 
-              <div className="fdc-box" style={{textAlign: 'left',display: 'flex', alignItems: 'flex-start', backgroundImage: `url(${Journey1})`, backgroundRepeat: 'no-repeat', backgroundPositionY: 'bottom', backgroundSize: 220, flexWrap: 'wrap', backgroundColor: '#B9C7F6'}} >
+              <div className="fdc-box" style={{textAlign: 'left',display: 'flex', alignItems: 'flex-start', backgroundImage: `url(${Journey1})`, backgroundRepeat: 'no-repeat', backgroundPositionY: 'bottom', backgroundSize: 220, flexWrap: 'wrap'}} >
                 <h2 > What is family day care?</h2>
                 <div style={{color: '#4864C8', marginLeft: 36, marginTop: -128}}> Read More </div>
               </div>
 
 
-              <div className="fdc-box" style={{textAlign: 'left',display: 'flex', alignItems: 'flex-start', backgroundImage: `url(${Journey1})`, backgroundRepeat: 'no-repeat', backgroundPositionY: 'bottom', backgroundSize: 220, flexWrap: 'wrap', backgroundColor: '#B9C7F6'}} >
+              <div className="fdc-box" style={{textAlign: 'left',display: 'flex', alignItems: 'flex-start', backgroundImage: `url(${Journey1})`, backgroundRepeat: 'no-repeat', backgroundPositionY: 'bottom', backgroundSize: 220, flexWrap: 'wrap'}} >
                 <h2 > What does a good family day care provider look like?</h2>
                 <div style={{color: '#4864C8', marginLeft: 36, marginTop: -93}}> Read More </div>
               </div>
 
 
-              <div className="fdc-box" style={{textAlign: 'left',display: 'flex', alignItems: 'flex-start', backgroundImage: `url(${Journey1})`, backgroundRepeat: 'no-repeat', backgroundPositionY: 'bottom', backgroundSize: 220, flexWrap: 'wrap', backgroundColor: '#B9C7F6'}} >
+              <div className="fdc-box" style={{textAlign: 'left',display: 'flex', alignItems: 'flex-start', backgroundImage: `url(${Journey1})`, backgroundRepeat: 'no-repeat', backgroundPositionY: 'bottom', backgroundSize: 220, flexWrap: 'wrap'}} >
                 <h2 > Key contacts</h2>
                 <div style={{color: '#4864C8', marginLeft: 36, marginTop: -128}}> Read More </div>
               </div>
