@@ -137,6 +137,19 @@ p {
 
 
 /* --------- End Color --------------*/
+.mobile-toc .title{
+  padding: 15px;
+  font-size: 20px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.mobile-toc {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
 .resources.topics .border {
   width: 48%; 
   margin: 10px 0;
@@ -1243,7 +1256,7 @@ p {
 /*--------- Mobile Nav ---------*/
 
 .mobile-nav {
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .mobile-nav .menu {
@@ -1257,12 +1270,18 @@ p {
     font-size: 26px;
 }
 
+.mobile-nav .item h3 {
+    font-size: 20px;
+    color: #9ba5ca;
+}
+
 .mobile-nav .item {
     border-bottom: 1px solid #1FB3C4;
     display: flex;
     align-items: center;
     font-size: 14px;
     cursor: pointer;
+    width: 100%;
 }
 
 .mobile-nav .carer-icon.right-align {

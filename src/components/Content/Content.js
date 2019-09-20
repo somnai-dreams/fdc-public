@@ -1,11 +1,15 @@
 import React, { Component } from "react";
 
+import Navicon from '../NavBar2/navicon-round.svg'
 import NavBar2 from '../NavBar2/NavBar2';
+import MobileTOC from '../MobileTOC/MobileTOC';
 import Footer from '../footer/footer';
 import FAQBox from '../FAQBox/FAQBox';
 import ChevronRight from '../Home/chevron-right.svg';
 import PopularShape from '../Home/PopularShape.png';
 import ScrollableAnchor from 'react-scrollable-anchor';
+import { goToAnchor } from 'react-scrollable-anchor'
+import { goToTop } from 'react-scrollable-anchor'
 
 import Shapes1 from './shapes1.png';
 
@@ -56,12 +60,19 @@ let toc_divs = [];
 let anchor_divs = [];
 
 class Content extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { 
+      showMobileTOC: false,
+      openMobileTOC: false,
+      currentTitle: ""
+    }
+  }
   //---- Start window resize trigger ----
   componentWillMount = () => {
     doc_no = parseInt(this.props.location.search.replace("?=",""))
     current_html = all_html[doc_no];
     current_faq = all_faq[doc_no];
-    console.log(current_faq);
     let html_array = current_html.split("\n");
     table_headings = [];
     let current_h1 = "";
@@ -178,17 +189,24 @@ class Content extends Component {
     var yPosition = 0;
 
     while(element) {
+        //console.log(element, element.offsetTop, element.scrollTop, element.clientTop);
         yPosition += (element.offsetTop - element.scrollTop + element.clientTop);
         element = element.offsetParent;
     }
-
+    /*
+    var rect = element.getBoundingClientRect(),
+    scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+    scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    let yDistance = rect.top + scrollTop
+    console.log(element, yDistance);
+    */
+    //console.log(yPosition);
     return yPosition;
   }
 
   //---- End window resize trigger -----
   didScroll = () => {
     let nav = document.getElementById("sticky-nav");
-    console.log(nav, window.pageYOffset , window.innerHeight);
     if (nav) {
       if(window.pageYOffset > window.innerHeight) {
         nav.classList.add("sticky-nav");
@@ -208,139 +226,94 @@ class Content extends Component {
       for (let tocItem of toc_divs) {
         if (tocItem.innerText == lowestDiv.innerText) {
           tocItem.classList.add("bolded");
+          this.setState({currentTitle: tocItem.innerText})
         } else {
           tocItem.classList.remove("bolded");
         }
       }
     }
+    if (window.pageYOffset > 100 && !this.state.showMobileTOC) {
+      this.setState({showMobileTOC: true});
+    } else if(this.state.showMobileTOC && window.pageYOffset < 100 ) {
+      this.setState({showMobileTOC: false});
+    }
   }
 
+  toggleOpenMobileTOC = (path) => {
+    this.setState({openMobileTOC : !this.state.openMobileTOC});
+    if (typeof path === 'string') {
+      setTimeout(() =>  {goToAnchor(path);window.scrollBy(0,-100)}, 200);
+    } else {
+      goToTop();
+    }
+  }
 
   render() {
     return (
       <div className="content">
-          <NavBar2/>
-
-          <div className="container flex-row">
-            <div className="inner flex-row" style={{marginTop: 15}}>
-              <h1 style={{color: '#FF6B77'}}> {headlines[doc_no].text}</h1>
+            <NavBar2/>
+          {( this.state.showMobileTOC && !this.state.openMobileTOC ) &&
+            <div className="mobile-only nav-bar teal-light mobile-toc" style={{backgroundColor: '#202E77', height: 75, paddingTop: 0}}>
+              <div className="inner">
+                <a onClick={this.toggleOpenMobileTOC} className="flex-row">
+                  <img src={Navicon} alt="menu" className="nav-icon only-ipad" /> 
+                </a>
+                <div className="flex-row title">
+                  {this.state.currentTitle}
+                </div>
+              </div>
             </div>
-          </div>
-          <div className="container flex-row" style={{marginTop: -100}}>
-            <div className="inner flex-row" style={{minHeight: 'calc(100vh - 200px)', marginTop: 80, justifyContent: 'space-between', alignItems: 'flex-start'}}>
-              <img src={Shapes1} className="shapes-1 mobile-hidden-1700"/>
+          }
+          {this.state.openMobileTOC &&
+            <MobileTOC docNo={doc_no} closeMethod={this.toggleOpenMobileTOC} titles={table_headings}/>
+          }
+            <div className="container flex-row">
+              <div className="inner flex-row" style={{marginTop: 15}}>
+                <h1 style={{color: '#FF6B77'}}> {headlines[doc_no].text}</h1>
+              </div>
+            </div>
+            <div className="container flex-row" style={{marginTop: -100}}>
+              <div className="inner flex-row" style={{minHeight: 'calc(100vh - 200px)', marginTop: 80, justifyContent: 'space-between', alignItems: 'flex-start'}}>
+                <img src={Shapes1} className="shapes-1 mobile-hidden-1700"/>
 
-              <div className="search-results">
-                {current_faq.length > 0 &&
-                  <div>
-                    <h2> Frequently Asked Questions </h2>
-                    {current_faq.map((item, i) => {
-                      if (i < 5) {
-                        return (
-                          <FAQBox question={item.Question} answer={item.Answer}/>
-                        )
-                      }
+                <div className="search-results">
+                  {current_faq.length > 0 &&
+                    <div>
+                      <h2> Frequently Asked Questions </h2>
+                      {current_faq.map((item, i) => {
+                        if (i < 5) {
+                          return (
+                            <FAQBox question={item.Question} answer={item.Answer}/>
+                          )
+                        }
+                      })}
+                    </div>
+                  }
+                  <div dangerouslySetInnerHTML={{__html: current_html}}/>
+
+                </div>
+
+                <div style={{width: '25%'}} className="also-asked mobile-hidden">
+
+                  <div id="sticky-nav" >
+                    <div className="title"> Table of Contents </div>
+                    {Object.keys(table_headings).map((item, i) => {
+                      return (
+                        <div style={{display: 'flex', flexWrap: 'wrap'}}>
+                          <a id={"toc-"+item.split(" ").join("_")} href={"/content/?="+doc_no+"#"+item.split(" ").join("_")} className="heading">{item}</a>
+                          {table_headings[item].map((sub, i) => {
+                            return(
+                              <a id={"toc-"+sub.split(" ").join("_")} href={"/content/?="+doc_no+"#"+sub.split(" ").join("_")} className="sub-heading">{sub}</a>
+                            )
+                          })}
+                        </div>
+                      )
                     })}
                   </div>
-                }
-                {/*
-                <h1 style={{color: '#FF6B77'}}> Becoming an approved provider</h1>
-                <h2  style={{color: '#1F2D76', fontStyle: 'italic', fontSize: 20}}> This chapter provides information about the responsibilities of a child care provider and the key business requirements that are part of being a provider.</h2>
 
-                <div className="fdc-box4" style={{justifyContent: 'space-between'}}> 
-                  <div className="flex-row" >
-                    <h3>Do educators need a working with children check and a national police check or does the working with children check cover the police check?
-                    </h3>
-                    <img src={ChevronRight} style={{width: 10, transform: 'rotate(90deg)', marginRight: -25}}/>
-                  </div>
                 </div>
-
-
-                <div className="fdc-box4"> 
-                  <div className="flex-row" style={{justifyContent: 'space-between'}}>
-                    <h3>
-                      What are the requirements for people working in child care?
-                    </h3>
-                    <img src={ChevronRight} style={{width: 10, transform: 'rotate(90deg)', marginRight: -25}}/>
-                  </div>
-                </div>
-
-                <div className="flex-row" style={{flexWrap: 'wrap'}}>
-                  <div className="fdc-box3" style={{backgroundColor: '#b9c7f6', color: '#1F2D76'}}> 
-                      What is an approved provider?
-                      <img src={ChevronRight} style={{width: 8}}/>
-                  </div>
-
-
-                  <div className="fdc-box3" style={{backgroundColor: '#b9c7f6', color: '#1F2D76'}}> 
-                      What approvals or licences are required?
-                      <img src={ChevronRight} style={{width: 8}}/>
-                  </div>
-
-
-                  <div className="fdc-box3" style={{backgroundColor: '#b9c7f6', color: '#1F2D76'}}> 
-                      Provider approval
-                      <img src={ChevronRight} style={{width: 8}}/>
-                  </div>
-
-
-                  <div className="fdc-box3" style={{backgroundColor: '#b9c7f6', color: '#1F2D76'}}> 
-                      Service approval
-                      <img src={ChevronRight} style={{width: 8}}/>
-                  </div>
-                </div>
-                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo consequat sapien, et volutpat lectus porttitor at. Proin egestas elementum orci. Cras finibus sed dolor at malesuada. Cras nec sapien a ligula posuere convallis. Cras velit neque, tincidunt vitae nisl ac, dignissim condimentum urna. Etiam ornare pharetra ante molestie suscipit. Integer orci tortor, porta ut enim sit amet, feugiat ullamcorper nisi.
-                </p>
-                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam commodo consequat sapien, et volutpat lectus porttitor at. Proin egestas elementum orci. Cras finibus sed dolor at malesuada. Cras nec sapien a ligula posuere convallis. Cras velit neque, tincidunt vitae nisl ac, dignissim condimentum urna. Etiam ornare pharetra ante molestie suscipit. Integer orci tortor, porta ut enim sit amet, feugiat ullamcorper nisi.
-                </p>
-                */}
-                <div dangerouslySetInnerHTML={{__html: current_html}}/>
-
-              </div>
-
-              <div style={{width: '25%'}} className="also-asked mobile-hidden">
-                {/*
-                <div style={{paddingBottom: 20}}>
-                  <h1 style={{fontSize: 25}}>Relevant Material</h1>
-
-                  <div className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
-                    <a> Lorem ipsum dolor sit amet</a>
-                    <img src={ChevronRight} style={{width: 8}}/>
-                  </div>
-
-
-                  <div className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
-                    <a> Lorem ipsum dolor sit amet</a>
-                    <img src={ChevronRight} style={{width: 8}}/>
-                  </div>
-
-
-                  <div className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
-                    <a> Lorem ipsum dolor sit amet</a>
-                    <img src={ChevronRight} style={{width: 8}}/>
-                  </div>
-                </div>
-                */}
-
-                <div id="sticky-nav" >
-                  <div className="title"> Table of Contents </div>
-                  {Object.keys(table_headings).map((item, i) => {
-                    return (
-                      <div style={{display: 'flex', flexWrap: 'wrap'}}>
-                        <a id={"toc-"+item.split(" ").join("_")} href={"/content/?="+doc_no+"#"+item.split(" ").join("_")} className="heading">{item}</a>
-                        {table_headings[item].map((sub, i) => {
-                          return(
-                            <a id={"toc-"+sub.split(" ").join("_")} href={"/content/?="+doc_no+"#"+sub.split(" ").join("_")} className="sub-heading">{sub}</a>
-                          )
-                        })}
-                      </div>
-                    )
-                  })}
-                </div>
-
               </div>
             </div>
-          </div>
           <div className="container flex-row popular-section" style={{backgroundColor: '#1F2D76', flexWrap: 'wrap', paddingTop: 50, paddingBottom: 70}}>
             <div className="inner" style={{width: '100%', maxWidth: 'none'}}>
               <div className="flex-row" style={{justifyContent: 'space-between', width: '100%', maxWidth: 1020}}>
@@ -369,8 +342,7 @@ class Content extends Component {
             </div>
           </div>
 
-
-          <Footer/>
+            <Footer/>
       </div> 
 
     )
