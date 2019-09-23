@@ -137,6 +137,36 @@ p {
 
 
 /* --------- End Color --------------*/
+.content .tabs {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: 11px solid #4864C8;
+  margin-bottom: 50px;
+}
+
+.content .tabs .tab:hover {
+  background-color: #719FFF;
+}
+
+.content .tabs .tab.active {
+  margin-top: -10px;
+  height: 65px;
+  background-color: #4864C8;
+  color: #FFF;
+}
+
+.content .tabs .tab {
+  background-color: #B9C7F6;
+  height: 55px;
+  width: 31%;
+  color: #1F2D76;
+  font-size: 21px;
+  padding: 0 20px;
+  border-radius: 20px 20px 0 0 ;
+  cursor: pointer;
+}
+
 .mobile-toc .title{
   padding: 15px;
   font-size: 20px;

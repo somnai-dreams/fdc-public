@@ -65,6 +65,7 @@ class Content extends Component {
     this.state = { 
       showMobileTOC: false,
       openMobileTOC: false,
+      currentTab: 'Handbook',
       currentTitle: ""
     }
   }
@@ -248,6 +249,10 @@ class Content extends Component {
     }
   }
 
+  switchTab = (newTab) => {
+    this.setState({currentTab: newTab});
+  }
+
   render() {
     return (
       <div className="content">
@@ -272,14 +277,78 @@ class Content extends Component {
                 <h1 style={{color: '#FF6B77'}}> {headlines[doc_no].text}</h1>
               </div>
             </div>
-            <div className="container flex-row" style={{marginTop: -100}}>
-              <div className="inner flex-row" style={{minHeight: 'calc(100vh - 200px)', marginTop: 80, justifyContent: 'space-between', alignItems: 'flex-start'}}>
-                <img src={Shapes1} className="shapes-1 mobile-hidden-1700"/>
+            <div className="container flex-row">
+              <div className="inner flex-row" style={{marginTop: 15}}>
+                <div className="tabs">
+                  <div onClick={e => {this.switchTab('Handbook')}} 
+                    className={`tab flex-row ${this.state.currentTab === 'Handbook' ? 'active' : ''}`}>Handbook</div>
+                  <div onClick={e => {this.switchTab('FAQs')}} 
+                    className={`tab flex-row ${this.state.currentTab === 'FAQs' ? 'active' : ''}`}>FAQs</div>
+                  <div onClick={e => {this.switchTab('Resources')}} 
+                    className={`tab flex-row ${this.state.currentTab === 'Resources' ? 'active' : ''}`}>Resources</div>
+                </div>
+              </div>
+            </div>
 
-                <div className="search-results">
-                  {current_faq.length > 0 &&
+            {this.state.currentTab == "Resource" &&
+              <div className="container flex-row" style={{marginTop: -100}}>
+                <div className="inner flex-row" style={{minHeight: 'calc(100vh - 200px)', marginTop: 80, justifyContent: 'space-between', alignItems: 'flex-start'}}>
+
+              <div className="search-results flex-row" style={{width: '100%', flexWrap: 'wrap'}}>
+                  <h1 style={{color: '#FF6B77', width: '100%'}}> Resources </h1>
+                  <div className="flex-row border">
+                    <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
+                      <div className="search-result" style={{width: '85%'}}>
+                        <a href="/">  Approach to compliance</a>
+                        <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
+                          A poster on how the department actively monitors compliance
+                        </p>
+                        <div className="flex-row" >
+                          <div className="tag"> Poster </div> 
+                          <div className="tag"> Compliance </div> 
+                          <div className="tag"> For Providers </div> 
+                        </div>
+                      </div>
+                    </div>
+
+                    <div style={{width: '15%'}} className="also-asked">
+                      <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/1+Approach+to+compliance.pdf" className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
+                        View
+                        <img src={ChevronRight} style={{width: 8}}/>
+                      </a>
+                      <a href="/https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/1+Approach+to+compliance.pdf" download className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
+                        Download
+                        <img src={ChevronRight} style={{width: 8}}/>
+                      </a>
+                    </div>
+                  </div>
+
+
+                  <div className="flex-row border">
+                    <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
+                      <div className="search-result" style={{width: '85%'}}>
+                        <a href="/"> Response to non-compliance</a>
+                        <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
+                          A poster on how the Department responds to non-compliance
+                        </p>
+                        <div className="flex-row" >
+                          <div className="tag"> Poster </div> 
+                          <div className="tag"> Compliance </div> 
+                          <div className="tag"> For Providers </div> 
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                </div>
+              </div>
+            }
+            {this.state.currentTab == "FAQs" &&
+              <div className="container flex-row" style={{marginTop: -100}}>
+                <div className="inner flex-row" style={{minHeight: 'calc(100vh - 200px)', marginTop: 80, justifyContent: 'space-between', alignItems: 'flex-start'}}>
+                  {current_faq.length > 0 ?
                     <div>
-                      <h2> Frequently Asked Questions </h2>
                       {current_faq.map((item, i) => {
                         if (i < 5) {
                           return (
@@ -288,32 +357,43 @@ class Content extends Component {
                         }
                       })}
                     </div>
+                    :
+                    "No FAQs for this topic..."
                   }
-                  <div dangerouslySetInnerHTML={{__html: current_html}}/>
-
-                </div>
-
-                <div style={{width: '25%'}} className="also-asked mobile-hidden">
-
-                  <div id="sticky-nav" >
-                    <div className="title"> Table of Contents </div>
-                    {Object.keys(table_headings).map((item, i) => {
-                      return (
-                        <div style={{display: 'flex', flexWrap: 'wrap'}}>
-                          <a id={"toc-"+item.split(" ").join("_")} href={"/content/?="+doc_no+"#"+item.split(" ").join("_")} className="heading">{item}</a>
-                          {table_headings[item].map((sub, i) => {
-                            return(
-                              <a id={"toc-"+sub.split(" ").join("_")} href={"/content/?="+doc_no+"#"+sub.split(" ").join("_")} className="sub-heading">{sub}</a>
-                            )
-                          })}
-                        </div>
-                      )
-                    })}
-                  </div>
-
                 </div>
               </div>
-            </div>
+            }
+            {this.state.currentTab == "Handbook" &&
+              <div className="container flex-row" style={{marginTop: -100}}>
+                <div className="inner flex-row" style={{minHeight: 'calc(100vh - 200px)', marginTop: 80, justifyContent: 'space-between', alignItems: 'flex-start'}}>
+                  <img src={Shapes1} className="shapes-1 mobile-hidden-1700"/>
+
+                  <div className="search-results">
+                    <div dangerouslySetInnerHTML={{__html: current_html}}/>
+                  </div>
+
+                  <div style={{width: '25%'}} className="also-asked mobile-hidden">
+
+                    <div id="sticky-nav" >
+                      <div className="title"> Table of Contents </div>
+                      {Object.keys(table_headings).map((item, i) => {
+                        return (
+                          <div style={{display: 'flex', flexWrap: 'wrap'}}>
+                            <a id={"toc-"+item.split(" ").join("_")} href={"/content/?="+doc_no+"#"+item.split(" ").join("_")} className="heading">{item}</a>
+                            {table_headings[item].map((sub, i) => {
+                              return(
+                                <a id={"toc-"+sub.split(" ").join("_")} href={"/content/?="+doc_no+"#"+sub.split(" ").join("_")} className="sub-heading">{sub}</a>
+                              )
+                            })}
+                          </div>
+                        )
+                      })}
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            }
           <div className="container flex-row popular-section" style={{backgroundColor: '#1F2D76', flexWrap: 'wrap', paddingTop: 50, paddingBottom: 70}}>
             <div className="inner" style={{width: '100%', maxWidth: 'none'}}>
               <div className="flex-row" style={{justifyContent: 'space-between', width: '100%', maxWidth: 1020}}>
