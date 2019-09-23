@@ -245,10 +245,12 @@ class Search extends Component {
                   {this.state.all_answers.map((answer, i) => {
                     if (answer.faqQuestion.trim() != this.state.oneshot.faqQuestion.trim()) {
                       return (
-                        <div key={i} className="fdc-box3" style={{padding: 15, width: '100%', margin: 0, marginBottom: 15}}>
-                          <a href={'/search?query="'+answer.faqQuestion.replace("%", "%25")+'"'}> {answer.faqQuestion}</a>
-                          <img src={ChevronRight} style={{width: 8}}/>
-                        </div>
+                        <a href={'/search?query="'+answer.faqQuestion.replace("%", "%25")+'"'}> 
+                          <div key={i} className="fdc-box3" style={{padding: 15, width: '100%', margin: 0, marginBottom: 15}}>
+                            {answer.faqQuestion}
+                            <img src={ChevronRight} style={{width: 8}}/>
+                          </div>
+                        </a>
                       )
                     }
                   })}

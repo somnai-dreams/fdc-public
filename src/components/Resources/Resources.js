@@ -278,19 +278,19 @@ class Resources extends Component {
               </div>
             </div>
             <div className="inner flex-row" style={{flexWrap: 'wrap'}}>
-                  <a href="/content" className="fdc-box3">
+                  <a href="/content?=0" className="fdc-box3">
                     Become An Approved Provider
                     <img src={ChevronRight} style={{width: 8}}/>
                   </a>
-                  <a href="/content" className="fdc-box3">
+                  <a href="/content?=1" className="fdc-box3">
                     Set Up A Service
                     <img src={ChevronRight} style={{width: 8}}/>
                   </a>
-                  <a href="/content" className="fdc-box3">
+                  <a href="/content?=2" className="fdc-box3">
                     Enrol Children 
                     <img src={ChevronRight} style={{width: 8}}/>
                   </a>
-                  <a href="/content" className="fdc-box3">
+                  <a href="/content?=3" className="fdc-box3">
                     Report Sessions Of Care
                     <img src={ChevronRight} style={{width: 8}}/>
                   </a>
