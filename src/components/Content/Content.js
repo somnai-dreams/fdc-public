@@ -217,8 +217,8 @@ class Content extends Component {
 
     let lowestDiv = null;
     for (let anchor of anchor_divs) {
-      //console.log(window.pageYOffset , this.getPosition(anchor), anchor);
-      if ( (window.pageYOffset ) >= this.getPosition(anchor)) {
+      console.log(window.pageYOffset , this.getPosition(anchor), anchor);
+      if ( (window.pageYOffset ) >= this.getPosition(anchor) && anchor !== null) {
         lowestDiv = anchor;
       }
     }

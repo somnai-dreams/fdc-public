@@ -120,7 +120,7 @@ class Search extends Component {
     let query = this.props.location.search;
     query = decodeURI(query.substring(query.indexOf("=") + 1, query.length));
     query = query.substring(1, query.length - 1);
-    console.log(query.toLowerCase(), this.state.query, query.toLowerCase() != this.state.query);
+    //console.log(query.toLowerCase(), this.state.query, query.toLowerCase() != this.state.query);
     if (query.toLowerCase() != this.state.query) {
       let dialogflow_answers = [];
       let oneshot_answer = null;
@@ -140,10 +140,10 @@ class Search extends Component {
         console.log(data);
         dialogflow_answers = data;
         for (let i = 0; i < data.length; i++) {
-          if (data[i].matchConfidence >= 0.95) {
+          if (data[i] && data[i].matchConfidence >= 0.95) {
             oneshot_answer = data[i];
             data.shift();
-            console.log(data);
+            //console.log(data);
             break;
           }
         }
@@ -172,7 +172,7 @@ class Search extends Component {
             }
           }
         })
-        console.log(query, results, oneshot_answer);
+        //console.log(query, results, oneshot_answer);
         loading = false;
         this.setState({query: query, results: results, oneshot: oneshot_answer, all_answers: dialogflow_answers});
       });
@@ -200,9 +200,7 @@ class Search extends Component {
                 {this.state.oneshot &&
                 <div className="answer-block">
                   <h4>{this.state.oneshot.faqQuestion}</h4>
-                  <p> 
-                    {this.state.oneshot.answer}
-                  </p>
+                  <p dangerouslySetInnerHTML={{__html: this.state.oneshot.answer}}/> 
                   <div style={{height: 2, display: 'flex', justifyContent: 'flex-end'}}>
                     <img className="speech-triangle answer" src={Triangle2} />
                   </div>
@@ -245,12 +243,14 @@ class Search extends Component {
                   <h4> People also ask:</h4>
 
                   {this.state.all_answers.map((answer, i) => {
-                    return (
-                      <div key={i} className="fdc-box3" style={{padding: 15, width: '100%', margin: 0, marginBottom: 15}}>
-                        <a href={'/search?query="'+answer.faqQuestion.replace("%", "%25")+'"'}> {answer.faqQuestion}</a>
-                        <img src={ChevronRight} style={{width: 8}}/>
-                      </div>
-                    )
+                    if (answer.faqQuestion.trim() != this.state.oneshot.faqQuestion.trim()) {
+                      return (
+                        <div key={i} className="fdc-box3" style={{padding: 15, width: '100%', margin: 0, marginBottom: 15}}>
+                          <a href={'/search?query="'+answer.faqQuestion.replace("%", "%25")+'"'}> {answer.faqQuestion}</a>
+                          <img src={ChevronRight} style={{width: 8}}/>
+                        </div>
+                      )
+                    }
                   })}
                 </div>
               }
