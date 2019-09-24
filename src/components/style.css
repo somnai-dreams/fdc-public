@@ -343,8 +343,21 @@ p {
     max-width: 80%;
     min-width: 60%;
     margin-left: auto;
+    margin-right: 100px;
 }
 
+.answer-block .avatar {
+  position: absolute;
+  margin-left: 120px;
+  margin-top: -25px;
+}
+
+
+.question-block .avatar {
+  position: absolute;
+  margin-left: -120px;
+  margin-top: -25px;
+}
 
 .question-block {
     background-color: #4864C8;
@@ -354,6 +367,7 @@ p {
     min-width: 60%;
     margin-right: auto;
     margin-bottom: 40px;
+    margin-left: 70px;
 }
 
 .question-block h4 {
@@ -361,18 +375,21 @@ p {
 }
 
 .speech-triangle.answer {
-    margin-top: -36px;
+    margin-top: -48px;
+    margin-right: -55px;
     position: relative;
     width: 51px;
     height: 90px;
+    z-index: 2;
 }
 
 .speech-triangle {
     width: 45px;
     height: 38px;
     position: absolute;
-    margin-top: 9px;
-    margin-left: 8px;
+    margin-top: -22px;
+    margin-left: -49px;
+    z-index: 2;
 }
 
 .nav-search {

@@ -2,11 +2,15 @@ import React, { Component } from "react";
 
 import NavBar2 from '../NavBar2/NavBar2';
 import Footer from '../footer/footer';
-import Triangle from './speech-triangle.svg';
-import Triangle2 from './speech-triangle2.svg';
+import Triangle from './qtriangle.svg';
+import Triangle2 from './atriangle.svg';
 import ChevronRight from '../Home/chevron-right.svg';
 import PopularShape from '../Home/PopularShape.png';
 import Spinner from './spinner.svg';
+import StopWords from './stop_words.json';
+
+import Human from './human.svg';
+import Bot from './bot.svg';
 
 let ApplyingToBecomeProvider = require('../Content/template.html');
 
@@ -150,6 +154,7 @@ class Search extends Component {
 
         let index = idx.search(query+"~1");
         let results = [];
+        let queryWords = query.toLowerCase().split(" ");
         index.forEach(i => {
           for (let doc of documents) {
             if (i.ref == doc.title) {
@@ -162,8 +167,11 @@ class Search extends Component {
                     let start_position = doc.text.indexOf("\n", pos[0] - (end_position - pos[0]));
                     let snippet = doc.text.substring(start_position, end_position).replace(/<[^>]+>/g, '');
                     snippet = snippet.toLowerCase();
-                    query = query.toLowerCase();
-                    snippet = snippet.replace(query, "<span class='highlight'>"+query+"</span>");
+                    for (let word of queryWords) {
+                      if (StopWords.indexOf(word) === -1) {
+                        snippet = snippet.replace(word, "<span class='highlight'>"+word+"</span>");
+                      }
+                    }
                     doc.snippet =  doc.snippet + snippet + " ... <br/>";
                   })
                 }
@@ -187,15 +195,17 @@ class Search extends Component {
             <div className="container flex-row">
               <div className="inner" style={{width: '100%', marginTop: 80, flexWrap: 'wrap'}}>
                 <img src={Spinner } />
+                Trying to answer your query
               </div>
             </div>
           }
           {!loading &&
-            <div className="container flex-row">
+            <div className="container flex-row" style={{backgroundColor: '#f8f9fe', paddingBottom: 80}}>
               <div className="inner" style={{width: '100%', marginTop: 80, flexWrap: 'wrap'}}>
                 <div className="question-block">
                   <h4>"{this.state.query}"</h4>
                   <img className="speech-triangle" src={Triangle} />
+                  <img className="avatar" src={Human} />
                 </div>
                 {this.state.oneshot &&
                 <div className="answer-block">
@@ -203,6 +213,7 @@ class Search extends Component {
                   <p dangerouslySetInnerHTML={{__html: this.state.oneshot.answer}}/> 
                   <div style={{height: 2, display: 'flex', justifyContent: 'flex-end'}}>
                     <img className="speech-triangle answer" src={Triangle2} />
+                    <img className="avatar" src={Bot} />
                   </div>
                 </div>
                 }
@@ -210,7 +221,7 @@ class Search extends Component {
             </div>
           }
           <div className="container flex-row">
-            <div className="inner flex-row" style={{marginTop: 80, justifyContent: 'space-between', alignItems: 'flex-start'}}>
+            <div className="inner flex-row" style={{ justifyContent: 'space-between', alignItems: 'flex-start'}}>
 
 
               {!loading && 

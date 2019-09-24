@@ -269,7 +269,7 @@ class Resources extends Component {
             </div>
           </div>
 
-          <div className="container flex-row popular-section" style={{backgroundColor: '#1F2D76', flexWrap: 'wrap', paddingTop: 50, paddingBottom: 70}}>
+          <div className="container flex-row popular-section" style={{zIndex: -2, backgroundColor: '#1F2D76', flexWrap: 'wrap', paddingTop: 50, paddingBottom: 70}}>
             <div className="inner" style={{width: '100%', maxWidth: 'none'}}>
               <div className="flex-row" style={{justifyContent: 'space-between', width: '100%', maxWidth: 1020}}>
                 <img src={PopularShape} style={{position: 'absolute', marginLeft: -81, marginTop: -53}}/>
