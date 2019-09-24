@@ -383,6 +383,15 @@ p {
     z-index: 2;
 }
 
+.also-asked .speech-triangle {
+    width: 34px;
+    height: 38px;
+    position: absolute;
+    margin-top: -44px;
+    margin-left: -16px;
+    z-index: -2;
+}
+
 .speech-triangle {
     width: 45px;
     height: 38px;

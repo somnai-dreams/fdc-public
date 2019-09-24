@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import NavBar2 from '../NavBar2/NavBar2';
 import Footer from '../footer/footer';
 import Triangle from './qtriangle.svg';
+import QTriangle from './qtriangle2.svg';
 import Triangle2 from './atriangle.svg';
 import ChevronRight from '../Home/chevron-right.svg';
 import PopularShape from '../Home/PopularShape.png';
@@ -125,7 +126,7 @@ class Search extends Component {
     query = decodeURI(query.substring(query.indexOf("=") + 1, query.length));
     query = query.substring(1, query.length - 1);
     //console.log(query.toLowerCase(), this.state.query, query.toLowerCase() != this.state.query);
-    if (query.toLowerCase() != this.state.query) {
+    if (query.toLowerCase() != this.state.query.toLowerCase()) {
       let dialogflow_answers = [];
       let oneshot_answer = null;
       //Get one shot answer
@@ -141,7 +142,6 @@ class Search extends Component {
       }).then(response => {
         return response.json();
       }).then(data => {
-        console.log(data);
         dialogflow_answers = data;
         for (let i = 0; i < data.length; i++) {
           if (data[i] && data[i].matchConfidence >= 0.95) {
@@ -195,7 +195,7 @@ class Search extends Component {
             <div className="container flex-row">
               <div className="inner" style={{width: '100%', marginTop: 80, flexWrap: 'wrap'}}>
                 <img src={Spinner } />
-                Trying to answer your query
+                Answering your query...
               </div>
             </div>
           }
@@ -256,11 +256,12 @@ class Search extends Component {
                   {this.state.all_answers.map((answer, i) => {
                     if (answer.faqQuestion.trim() != this.state.oneshot.faqQuestion.trim()) {
                       return (
-                        <a href={'/search?query="'+answer.faqQuestion.replace("%", "%25")+'"'}> 
-                          <div key={i} className="fdc-box3" style={{padding: 15, width: '100%', margin: 0, marginBottom: 15}}>
+                        <a key={i} href={'/search?query="'+answer.faqQuestion.replace("%", "%25")+'"'}> 
+                          <div className="fdc-box3" style={{padding: 15, width: '100%', margin: 0, marginBottom: 15}}>
                             {answer.faqQuestion}
                             <img src={ChevronRight} style={{width: 8}}/>
                           </div>
+                            <img className="speech-triangle" src={QTriangle} />
                         </a>
                       )
                     }
