@@ -254,7 +254,7 @@ class Search extends Component {
                   <h4> People also ask:</h4>
 
                   {this.state.all_answers.map((answer, i) => {
-                    if (answer.faqQuestion.trim() != this.state.oneshot.faqQuestion.trim()) {
+                    if (answer && this.state.oneshot && (answer.faqQuestion.trim() != this.state.oneshot.faqQuestion.trim())) {
                       return (
                         <a key={i} href={'/search?query="'+answer.faqQuestion.replace("%", "%25")+'"'}> 
                           <div className="fdc-box3" style={{padding: 15, width: '100%', margin: 0, marginBottom: 15}}>

@@ -172,7 +172,7 @@ class Content extends Component {
 
   componentDidMount = () => {
     window.addEventListener('scroll', this.didScroll);
-    console.log(table_headings);
+    //console.log(table_headings);
     let heading_list = Object.keys(table_headings);
     for (let i = 0; i < heading_list.length; i++) {
       toc_divs.push(document.getElementById("toc-"+heading_list[i].split(" ").join("_"))); 
@@ -182,8 +182,8 @@ class Content extends Component {
         anchor_divs.push(document.getElementById(table_headings[heading_list[i]][j].split(" ").join("_"))); 
       }
     }
-    console.log(toc_divs);
-    console.log(anchor_divs);
+    //console.log(toc_divs);
+    //console.log(anchor_divs);
   }
 
   getPosition = (element) => {
@@ -218,7 +218,7 @@ class Content extends Component {
 
     let lowestDiv = null;
     for (let anchor of anchor_divs) {
-      console.log(window.pageYOffset , this.getPosition(anchor), anchor);
+      //console.log(window.pageYOffset , this.getPosition(anchor), anchor);
       if ( (window.pageYOffset ) >= this.getPosition(anchor) && anchor !== null) {
         lowestDiv = anchor;
       }
@@ -282,20 +282,50 @@ class Content extends Component {
                 <div className="tabs">
                   <div onClick={e => {this.switchTab('Handbook')}} 
                     className={`tab flex-row ${this.state.currentTab === 'Handbook' ? 'active' : ''}`}>Handbook</div>
-                  <div onClick={e => {this.switchTab('FAQs')}} 
-                    className={`tab flex-row ${this.state.currentTab === 'FAQs' ? 'active' : ''}`}>FAQs</div>
+                  {current_faq.length > 0 &&
+                    <div onClick={e => {this.switchTab('FAQs')}} 
+                      className={`tab flex-row ${this.state.currentTab === 'FAQs' ? 'active' : ''}`}>FAQs</div>
+                  }
                   <div onClick={e => {this.switchTab('Resources')}} 
                     className={`tab flex-row ${this.state.currentTab === 'Resources' ? 'active' : ''}`}>Resources</div>
                 </div>
               </div>
             </div>
 
-            {this.state.currentTab == "Resource" &&
-              <div className="container flex-row" style={{marginTop: -100}}>
+            {this.state.currentTab == "Resources" &&
+              <div className="container flex-row resources" style={{marginTop: -100}}>
                 <div className="inner flex-row" style={{minHeight: 'calc(100vh - 200px)', marginTop: 80, justifyContent: 'space-between', alignItems: 'flex-start'}}>
 
               <div className="search-results flex-row" style={{width: '100%', flexWrap: 'wrap'}}>
                   <h1 style={{color: '#FF6B77', width: '100%'}}> Resources </h1>
+
+                  <div className="flex-row border">
+                    <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
+                      <div className="search-result" style={{width: '85%'}}>
+                        <a href="/">  Approach to compliance</a>
+                        <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
+                          A poster on how the department actively monitors compliance
+                        </p>
+                        <div className="flex-row" >
+                          <div className="tag"> Poster </div> 
+                          <div className="tag"> Compliance </div> 
+                          <div className="tag"> For Providers </div> 
+                        </div>
+                      </div>
+                    </div>
+
+                    <div style={{width: '15%'}} className="also-asked">
+                      <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/1+Approach+to+compliance.pdf" className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
+                        View
+                        <img src={ChevronRight} style={{width: 8}}/>
+                      </a>
+                      <a href="/https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/1+Approach+to+compliance.pdf" download className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
+                        Download
+                        <img src={ChevronRight} style={{width: 8}}/>
+                      </a>
+                    </div>
+                  </div>
+
                   <div className="flex-row border">
                     <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
                       <div className="search-result" style={{width: '85%'}}>
@@ -324,21 +354,6 @@ class Content extends Component {
                   </div>
 
 
-                  <div className="flex-row border">
-                    <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
-                      <div className="search-result" style={{width: '85%'}}>
-                        <a href="/"> Response to non-compliance</a>
-                        <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
-                          A poster on how the Department responds to non-compliance
-                        </p>
-                        <div className="flex-row" >
-                          <div className="tag"> Poster </div> 
-                          <div className="tag"> Compliance </div> 
-                          <div className="tag"> For Providers </div> 
-                        </div>
-                      </div>
-                    </div>
-                  </div>
 
                 </div>
                 </div>
