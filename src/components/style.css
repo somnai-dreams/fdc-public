@@ -188,18 +188,53 @@ p {
 }
 
 .resources .border{
-  width: 100%;
-  padding: 15px;
+  width: calc(50% - 40px);
+  padding: 10px;
   border: 2px solid #c9cdde;
   border-radius: 19px;
-  margin: 25px 0;
+  margin: 25px 10px;
+  height: 144px;
 }
+.resources .search-result p{
+  margin-bottom: 0;
+  height: 50px;
+}
+
+.resources .border .search-result a{
+  font-style: italic;
+  font-size: 16px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.resources .border img{
+  height: 30px;
+}
+
+.resources .border .tags{
+  position: absolute;
+  margin-top: 105px;
+}
+
+.resources .border .tags .tag{
+  font-size: 13px;
+  font-weight: 600;
+}
+
 
 .resources.topics .search-result p {
   height: 100px;
 }
 .resources .search-result {
   margin: 0;
+}
+
+.resources .border .search-results .search-result {
+  height: 104px;
+}
+
+.resources .border .search-results {
+  height: 104px;
 }
 
 .resources .also-asked{
@@ -312,7 +347,7 @@ p {
     margin: 50px 0;
 }
 
-.search-result .tag {
+.search-results .tag {
     background-color: #78a4ff;
     color: #FFF;
     padding: 10px;
@@ -1407,6 +1442,7 @@ p {
 
     .resources .border{
       flex-wrap: wrap; 
+      width: 100%;
     }
 
     .resources .also-asked{

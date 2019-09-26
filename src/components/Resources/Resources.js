@@ -4,264 +4,188 @@ import NavBar2 from '../NavBar2/NavBar2';
 import Footer from '../footer/footer';
 import ChevronRight from '../Home/chevron-right.svg';
 import PopularShape from '../Home/PopularShape.png';
+import leftShape from './leftShape.svg';
 
 class Resources extends Component {
   render() {
     return (
       <div className="resources">
           <NavBar2/>
+          <img style={{left: -600, top: 100}} src={leftShape} className="shapes-2 mobile-hidden-1700"/>
           <div className="container flex-row">
             <div className="inner flex-row" style={{marginTop: 80, justifyContent: 'space-between', alignItems: 'flex-start'}}>
               <div className="search-results flex-row" style={{width: '100%', flexWrap: 'wrap'}}>
                   <h1 style={{color: '#FF6B77', width: '100%'}}> Resources </h1>
-                  <div className="flex-row border">
-                    <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
-                      <div className="search-result" style={{width: '85%'}}>
+                  <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/1+Approach+to+compliance.pdf" className="flex-row border">
+                    <div className="search-results" style={{width: '90%', paddingBottom: 0}}>
+                      <div className="flex-row tags" >
+                        <div className="tag"> Poster </div> 
+                        <div className="tag"> Compliance </div> 
+                        <div className="tag"> For Providers </div> 
+                      </div>
+                      <div className="search-result" style={{width: '90%'}}>
                         <a href="/">  Approach to compliance</a>
                         <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
                           A poster on how the department actively monitors compliance
                         </p>
-                        <div className="flex-row" >
-                          <div className="tag"> Poster </div> 
-                          <div className="tag"> Compliance </div> 
-                          <div className="tag"> For Providers </div> 
-                        </div>
                       </div>
                     </div>
 
-                    <div style={{width: '15%'}} className="also-asked">
-                      <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/1+Approach+to+compliance.pdf" className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
-                        View
-                        <img src={ChevronRight} style={{width: 8}}/>
-                      </a>
-                      <a href="/https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/1+Approach+to+compliance.pdf" download className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
-                        Download
-                        <img src={ChevronRight} style={{width: 8}}/>
-                      </a>
-                    </div>
-                  </div>
+                    <img src={ChevronRight} />
+                  </a>
 
 
-                  <div className="flex-row border">
-                    <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
-                      <div className="search-result" style={{width: '85%'}}>
+                  <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/2+Response+to+non-compliance.pdf"  className="flex-row border">
+                    <div className="search-results" style={{width: '90%', paddingBottom: 0}}>
+
+                      <div className="flex-row tags" >
+                        <div className="tag"> Poster </div> 
+                        <div className="tag"> Compliance </div> 
+                        <div className="tag"> For Providers </div> 
+                      </div>
+                      <div className="search-result" style={{width: '90%'}}>
                         <a href="/"> Response to non-compliance</a>
                         <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
                           A poster on how the Department responds to non-compliance
                         </p>
-                        <div className="flex-row" >
-                          <div className="tag"> Poster </div> 
-                          <div className="tag"> Compliance </div> 
-                          <div className="tag"> For Providers </div> 
-                        </div>
                       </div>
                     </div>
 
-                    <div style={{width: '15%'}} className="also-asked">
-                      <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/2+Response+to+non-compliance.pdf" className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
-                        View
-                        <img src={ChevronRight} style={{width: 8}}/>
-                      </a>
-                      <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/2+Response+to+non-compliance.pdf" download className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
-                        Download
-                        <img src={ChevronRight} style={{width: 8}}/>
-                      </a>
-                    </div>
-                   </div>
+                        <img src={ChevronRight} />
+                   </a>
 
-                  <div className="flex-row border">
-                    <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
-                      <div className="search-result" style={{width: '85%'}}>
+                  <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/3+What+does+good+compliance+look+like+for+an+FDC+provider.pdf" className="flex-row border">
+                    <div className="search-results" style={{width: '90%', paddingBottom: 0}}>
+
+                      <div className="flex-row tags" >
+                        <div className="tag"> Checklist </div> 
+                        <div className="tag"> Compliance </div> 
+                        <div className="tag"> For Providers </div> 
+                      </div>
+                      <div className="search-result" style={{width: '90%'}}>
                         <a href="/">  What does good compliance look like for an FDC provider</a>
                         <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
                           A self-assessment checklist for FDC providers on good compliance practices
                         </p>
-                        <div className="flex-row" >
-                          <div className="tag"> Checklist </div> 
-                          <div className="tag"> Compliance </div> 
-                          <div className="tag"> For Providers </div> 
-                        </div>
                       </div>
                     </div>
 
-                    <div style={{width: '15%'}} className="also-asked">
-                      <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/3+What+does+good+compliance+look+like+for+an+FDC+provider.pdf" className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
-                        View
-                        <img src={ChevronRight} style={{width: 8}}/>
-                      </a>
-                      <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/3+What+does+good+compliance+look+like+for+an+FDC+provider.pdf" download className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
-                        Download
-                        <img src={ChevronRight} style={{width: 8}}/>
-                      </a>
-                    </div>
-                  </div>
+                        <img src={ChevronRight} />
+                  </a>
 
-                  <div className="flex-row border">
-                    <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
-                      <div className="search-result" style={{width: '85%'}}>
+                  <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/4+What+does+good+compliance+look+like+for+an+FDC+educator.pdf" className="flex-row border">
+                    <div className="search-results" style={{width: '90%', paddingBottom: 0}}>
+
+                      <div className="flex-row tags" >
+                        <div className="tag"> Checklist </div> 
+                        <div className="tag"> Compliance </div> 
+                        <div className="tag"> For educactors </div> 
+                      </div>
+                      <div className="search-result" style={{width: '90%'}}>
                         <a href="/">  What does good compliance look like for an FDC educator</a>
                         <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
                           A self-assessment checklist for FDC educators on good compliance practices
                         </p>
-                        <div className="flex-row" >
-                          <div className="tag"> Checklist </div> 
-                          <div className="tag"> Compliance </div> 
-                          <div className="tag"> For educactors </div> 
-                        </div>
                       </div>
                     </div>
 
-                    <div style={{width: '15%'}} className="also-asked">
-                      <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/4+What+does+good+compliance+look+like+for+an+FDC+educator.pdf" className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
-                        View
-                        <img src={ChevronRight} style={{width: 8}}/>
-                      </a>
-                      <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/4+What+does+good+compliance+look+like+for+an+FDC+educator.pdf" download className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
-                        Download
-                        <img src={ChevronRight} style={{width: 8}}/>
-                      </a>
-                    </div>
-                  </div>
+                    <img src={ChevronRight} />
+                  </a>
 
-                  <div className="flex-row border">
-                    <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
-                      <div className="search-result" style={{width: '85%'}}>
+                  <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/5+What+does+good+compliance+look+like+for+a+family.pdf"  className="flex-row border">
+                    <div className="search-results" style={{width: '90%', paddingBottom: 0}}>
+                      <div className="flex-row tags" >
+                        <div className="tag"> Checklist </div> 
+                        <div className="tag"> Compliance </div> 
+                        <div className="tag"> For educactors </div> 
+                      </div>
+                      <div className="search-result" style={{width: '90%'}}>
                         <a href="/">  What does good compliance look like for a family</a>
                         <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
                           A self-assessment checklist for families on good compliance practices to look for in a provider
                         </p>
-                        <div className="flex-row" >
-                          <div className="tag"> Checklist </div> 
-                          <div className="tag"> Compliance </div> 
-                          <div className="tag"> For educactors </div> 
-                        </div>
                       </div>
                     </div>
 
-                    <div style={{width: '15%'}} className="also-asked">
-                      <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/5+What+does+good+compliance+look+like+for+a+family.pdf" className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
-                        View
-                        <img src={ChevronRight} style={{width: 8}}/>
-                      </a>
-                      <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/5+What+does+good+compliance+look+like+for+a+family.pdf" download className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
-                        Download
-                        <img src={ChevronRight} style={{width: 8}}/>
-                      </a>
-                    </div>
-                  </div>
+                        <img src={ChevronRight} />
+                  </a>
 
 
-                  <div className="flex-row border">
-                    <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
-                      <div className="search-result" style={{width: '85%'}}>
+                  <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/6+Caring+for+a+relative+.pdf"  className="flex-row border">
+                    <div className="search-results" style={{width: '90%', paddingBottom: 0}}>
+                      <div className="flex-row tags" >
+                        <div className="tag"> Fact sheet </div> 
+                        <div className="tag"> Relatives </div> 
+                        <div className="tag"> For Providers </div> 
+                        <div className="tag"> For Educators</div> 
+                      </div>
+                      <div className="search-result" style={{width: '90%'}}>
                         <a href="/">  Caring for a relative </a>
                         <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
                           A fact sheet on the rules around caring for relatives as an FDC educator
                         </p>
-                        <div className="flex-row" >
-                          <div className="tag"> Fact sheet </div> 
-                          <div className="tag"> Relatives </div> 
-                          <div className="tag"> For Providers </div> 
-                          <div className="tag"> For Educators</div> 
-                        </div>
                       </div>
                     </div>
 
-                    <div style={{width: '15%'}} className="also-asked">
-                      <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/6+Caring+for+a+relative+.pdf" className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
-                        View
-                        <img src={ChevronRight} style={{width: 8}}/>
-                      </a>
-                      <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/6+Caring+for+a+relative+.pdf" download className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
-                        Download
-                        <img src={ChevronRight} style={{width: 8}}/>
-                      </a>
-                    </div>
-                   </div>
+                        <img src={ChevronRight} />
+                   </a>
 
-                  <div className="flex-row border">
-                    <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
-                      <div className="search-result" style={{width: '85%'}}>
+                  <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/7+Going+away.pdf"  className="flex-row border">
+                    <div className="search-results" style={{width: '90%', paddingBottom: 0}}>
+
+                      <div className="flex-row tags" >
+                        <div className="tag"> Overseas</div> 
+                        <div className="tag"> Relatives </div> 
+                        <div className="tag"> For Providers </div> 
+                        <div className="tag"> For Educators</div> 
+                      </div>
+                      <div className="search-result" style={{width: '90%'}}>
                         <a href="/">  Going away</a>
                         <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
                           A fact sheet on what to do if you're taking a break as an FDC educator
                         </p>
-                        <div className="flex-row" >
-                          <div className="tag"> Overseas</div> 
-                          <div className="tag"> Relatives </div> 
-                          <div className="tag"> For Providers </div> 
-                          <div className="tag"> For Educators</div> 
-                        </div>
                       </div>
                     </div>
 
-                    <div style={{width: '15%'}} className="also-asked">
-                      <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/7+Going+away.pdf" className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
-                        View
-                        <img src={ChevronRight} style={{width: 8}}/>
-                      </a>
-                      <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/7+Going+away.pdf" download className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
-                        Download
-                        <img src={ChevronRight} style={{width: 8}}/>
-                      </a>
-                    </div>
-                   </div>
+                    <img src={ChevronRight} />
+                   </a>
 
-                  <div className="flex-row border">
-                    <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
-                      <div className="search-result" style={{width: '85%'}}>
+                  <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/8+Having+visitors+over.pdf"  className="flex-row border">
+                    <div className="search-results" style={{width: '90%', paddingBottom: 0}}>
+                      <div className="flex-row tags" >
+                        <div className="tag"> Fact sheet </div> 
+                        <div className="tag"> Visitors </div> 
+                        <div className="tag"> For Providers </div> 
+                        <div className="tag"> For Educators</div> 
+                      </div>
+                      <div className="search-result" style={{width: '90%'}}>
                         <a href="/">  Having visitors over</a>
                         <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
                           A fact sheet on what to do if you have visitors over to your FDC home
                         </p>
-                        <div className="flex-row" >
-                          <div className="tag"> Fact sheet </div> 
-                          <div className="tag"> Visitors </div> 
-                          <div className="tag"> For Providers </div> 
-                          <div className="tag"> For Educators</div> 
-                        </div>
                       </div>
                     </div>
 
-                    <div style={{width: '15%'}} className="also-asked">
-                      <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/8+Having+visitors+over.pdf" className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
-                        View
-                        <img src={ChevronRight} style={{width: 8}}/>
-                      </a>
-                      <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/8+Having+visitors+over.pdf" download className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
-                        Download
-                        <img src={ChevronRight} style={{width: 8}}/>
-                      </a>
-                    </div>
-                   </div>
+                    <img src={ChevronRight} />
+                   </a>
 
-                  <div className="flex-row border">
-                    <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
-                      <div className="search-result" style={{width: '85%'}}>
+                  <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/9+When+a+child+is+absent.pdf"  className="flex-row border">
+                    <div className="search-results" style={{width: '90%', paddingBottom: 0}}>
+                      <div className="flex-row tags" >
+                        <div className="tag"> Fact sheet </div> 
+                        <div className="tag"> Absences </div> 
+                        <div className="tag"> For Providers </div> 
+                        <div className="tag"> For Educators</div> 
+                      </div>
+                      <div className="search-result" style={{width: '90%'}}>
                         <a href="/">  When a child is absent</a>
                         <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
                           A fact sheet on what to do when a child is absent from your FDC service
                         </p>
-                        <div className="flex-row" >
-                          <div className="tag"> Fact sheet </div> 
-                          <div className="tag"> Absences </div> 
-                          <div className="tag"> For Providers </div> 
-                          <div className="tag"> For Educators</div> 
-                        </div>
                       </div>
                     </div>
-
-                    <div style={{width: '15%'}} className="also-asked">
-                      <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/9+When+a+child+is+absent.pdf" className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
-                        View
-                        <img src={ChevronRight} style={{width: 8}}/>
-                      </a>
-                      <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/9+When+a+child+is+absent.pdf" download className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
-                        Download
-                        <img src={ChevronRight} style={{width: 8}}/>
-                      </a>
-                    </div>
-                  </div>
+                    <img src={ChevronRight} />
+                  </a>
 
 
 
