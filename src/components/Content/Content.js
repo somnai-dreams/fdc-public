@@ -58,6 +58,7 @@ let doc_no = null;
 let table_headings = null;
 let toc_divs = [];
 let anchor_divs = [];
+let navOffset =  null;
 
 class Content extends Component {
   constructor(props) {
@@ -172,6 +173,7 @@ class Content extends Component {
 
   componentDidMount = () => {
     window.addEventListener('scroll', this.didScroll);
+    navOffset =  document.getElementById("sticky-nav").offsetTop;
     //console.log(table_headings);
     let heading_list = Object.keys(table_headings);
     for (let i = 0; i < heading_list.length; i++) {
@@ -208,8 +210,9 @@ class Content extends Component {
   //---- End window resize trigger -----
   didScroll = () => {
     let nav = document.getElementById("sticky-nav");
+    
     if (nav) {
-      if(window.pageYOffset > window.innerHeight) {
+      if(window.pageYOffset > navOffset) {
         nav.classList.add("sticky-nav");
       } else {
         nav.classList.remove("sticky-nav");

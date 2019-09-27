@@ -260,8 +260,8 @@ class Search extends Component {
                           <a key={i} href={'/search?query="'+answer.faqQuestion.replace("%", "%25")+'"'} style={{marginBottom: 20}}> 
                             <div className="fdc-box3" style={{padding: 15, width: '100%', margin: 0, marginBottom: 20}}>
                               {answer.faqQuestion}
+                                <img className="speech-triangle" src={QTriangle} />
                             </div>
-                              <img className="speech-triangle" src={QTriangle} />
                           </a>
                         )
                       }

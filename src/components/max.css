@@ -101,3 +101,7 @@
     }
 
 }
+
+
+H1, H2, H3 {margin-bottom: 0.125em;}
+H1 + *, H2 + *, H3 + * {margin-top: 0.125em;}
