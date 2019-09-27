@@ -1,5 +1,4 @@
 /node_modules/
 /build/
 *.swp
-!/node_modules/react-scripts/
-!/node_modules/html-loader/
+!/node_modules/react-scripts/config/webpack.config.js
