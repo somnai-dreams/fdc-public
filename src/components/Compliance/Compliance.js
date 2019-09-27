@@ -20,7 +20,9 @@ class Compliance extends Component {
         <NavBar2/> 
           <div className="banner container" style={{alignItems: 'center',  backgroundImage: `url(${Journey2})`, backgroundColor: '#4864c8'}}>
             <div className="inner" style={{flexWrap: 'wrap', justifyContent: 'flex-start'}}>
-              <h1 style={{color: '#FFF', margin: 0}}> I need help with compliance</h1>
+              <div style={{width: '100%'}}>
+                <h1 style={{color: '#FFF', margin: 0}}> I need help with compliance</h1>
+              </div>
               <p style={{width: 400, color: '#FFF'}}> 
                 Stay on top of your compliance obligations and learn how to set up your service to be a model of compliance
               </p>

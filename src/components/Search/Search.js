@@ -142,12 +142,13 @@ class Search extends Component {
       }).then(response => {
         return response.json();
       }).then(data => {
+        console.log(data);
         dialogflow_answers = data;
         for (let i = 0; i < data.length; i++) {
           if (data[i] && data[i].matchConfidence >= 0.95) {
             oneshot_answer = data[i];
             data.shift();
-            //console.log(data);
+            console.log(data);
             break;
           }
         }
@@ -182,6 +183,7 @@ class Search extends Component {
         })
         //console.log(query, results, oneshot_answer);
         loading = false;
+        console.log(dialogflow_answers);
         this.setState({query: query, results: results, oneshot: oneshot_answer, all_answers: dialogflow_answers});
       });
     }
@@ -250,15 +252,19 @@ class Search extends Component {
                   <h4> People also ask:</h4>
 
                   {this.state.all_answers.map((answer, i) => {
-                    if (answer && this.state.oneshot && (answer.faqQuestion.trim() != this.state.oneshot.faqQuestion.trim())) {
-                      return (
-                        <a key={i} href={'/search?query="'+answer.faqQuestion.replace("%", "%25")+'"'} style={{marginBottom: 20}}> 
-                          <div className="fdc-box3" style={{padding: 15, width: '100%', margin: 0, marginBottom: 20}}>
-                            {answer.faqQuestion}
-                          </div>
-                            <img className="speech-triangle" src={QTriangle} />
-                        </a>
-                      )
+                    console.log(answer);
+                    if (answer) {
+                      if (this.state.oneshot && answer.faqQuestion.trim() == this.state.oneshot.faqQuestion.trim()) {
+                      } else {
+                        return (
+                          <a key={i} href={'/search?query="'+answer.faqQuestion.replace("%", "%25")+'"'} style={{marginBottom: 20}}> 
+                            <div className="fdc-box3" style={{padding: 15, width: '100%', margin: 0, marginBottom: 20}}>
+                              {answer.faqQuestion}
+                            </div>
+                              <img className="speech-triangle" src={QTriangle} />
+                          </a>
+                        )
+                      }
                     }
                   })}
                 </div>

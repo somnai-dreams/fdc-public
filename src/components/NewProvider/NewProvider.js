@@ -21,7 +21,9 @@ class NewProvider extends Component {
 
           <div className="banner container" style={{alignItems: 'center', backgroundColor: '#b9c7f6'}}>
             <div className="inner" style={{flexWrap: 'wrap', justifyContent: 'flex-start'}}>
-              <h1 style={{color: '#202E77', margin: 0}}> I am a new provider </h1>
+              <div style={{width: '100%'}}>
+                <h1 style={{color: '#202E77', margin: 0}}> I am a new provider </h1>
+              </div>
               <p style={{width: 400}}> 
                 Learn about family day care and how to become an approved provider. Set your service up for success!
               </p>
