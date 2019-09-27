@@ -1,3 +1,5 @@
 /node_modules
 /build
 *.swp
+!/node_modules/react-scripts
+!/node_modules/html-loader
