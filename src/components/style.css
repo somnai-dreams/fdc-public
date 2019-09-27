@@ -137,6 +137,23 @@ p {
 
 
 /* --------- End Color --------------*/
+.new-provider .fdc-box h2 {
+  font-size: 19px;
+}
+.new-provider .fdc-box {
+  text-align: left;
+  display: flex;
+  align-items: flex-start;
+  background-image: url(/static/media/Journeys3.5c145403.png);
+  background-repeat: no-repeat;
+  background-position: 100% 90%;
+  background-position-x: center;
+  background-size: 140px;
+  flex-wrap: wrap;
+  background-color: #FFF;
+  border: 1px solid #1F2D763D;
+}
+
 .content .tabs {
   display: flex;
   width: 100%;
@@ -183,13 +200,12 @@ p {
 .resources.topics .border {
   width: 48%; 
   margin: 10px 0;
-  height: 200px;
   overflow: hidden;
 }
 
 .resources .border{
   width: calc(50% - 40px);
-  padding: 10px;
+  padding: 15px;
   border: 2px solid #c9cdde;
   border-radius: 19px;
   margin: 25px 10px;
@@ -422,7 +438,7 @@ p {
     width: 34px;
     height: 38px;
     position: absolute;
-    margin-top: -44px;
+    margin-top: -69px;
     margin-left: -16px;
     z-index: -2;
 }
@@ -460,6 +476,7 @@ p {
 }
 .new-provider .banner h1 {
   width: 100%;
+  max-width: 600px;
 }
 
 .new-provider .banner p {
@@ -597,10 +614,10 @@ p {
     width: 162px;
     font-weight: normal;
     /*  font-style: italic;*/
-    margin: 15px auto;
+    margin: 25px;
     font-size: 21px;
     font-weight: 600;
-    font-style:italic;
+    text-align: left;
 }
 
 .fdc-box {
@@ -611,10 +628,13 @@ p {
     border-radius: 28px;
     margin-right: 25px;
     margin-left: 25px;
-    /*  padding: 15px;*/
     text-align: center;
     z-index: 5;
     margin-bottom: 35px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    border: 1px solid #202e7754;
 }
 
 .fdc-box5 {
@@ -1439,7 +1459,6 @@ p {
 }
 
 @media only screen and (max-width: 1050px) {
-
     .resources .border{
       flex-wrap: wrap; 
       width: 100%;
@@ -1457,18 +1476,20 @@ p {
     .new-provider .fdc-box h2 {
       margin-right: auto;
       margin-left: 0;
+      margin: 0;
+      width: 60%;
     }
     .new-provider .fdc-box {
-      height: 150px;
-      background-size: 175px !important;
+      height: 130px;
+      background-size: 100px !important;
       margin: 10px 0;
       padding: 15px;
       width: calc(100% - 30px);
       display: flex;
       align-items: center;
       justify-content: flex-start;
-      background-position: right;
-      background-size: contain;
+      background-position: right 15px center;
+      background-size: 150px;
       background-repeat: no-repeat;
     }
     .new-provider .fdc-box div{
@@ -1492,9 +1513,18 @@ p {
 
 
 @media only screen and (max-width: 800px) {
+    .new-provider .banner{
+      background-size: 0;
+    }
+
+    .content .tabs .tab {
+      font-size: 15px;
+    }
+
     .resources.topics .search-result p {
       display: none;
     }
+
     .container .inner.collapsible {
         flex-direction: column;
     }

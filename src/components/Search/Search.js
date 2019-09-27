@@ -193,9 +193,8 @@ class Search extends Component {
           <NavBar2/>
           {loading && 
             <div className="container flex-row">
-              <div className="inner" style={{width: '100%', marginTop: 80, flexWrap: 'wrap'}}>
-                <img src={Spinner } />
-                Answering your query...
+              <div className="inner" style={{width: '100%', marginTop: 80, flexWrap: 'wrap', marginBottom: 80}}>
+                <img height="150" alt="Answering Query" src={Spinner } />
               </div>
             </div>
           }
@@ -203,13 +202,13 @@ class Search extends Component {
             <div className="container flex-row" style={{backgroundColor: '#f8f9fe', paddingBottom: 80}}>
               <div className="inner" style={{width: '100%', marginTop: 80, flexWrap: 'wrap'}}>
                 <div className="question-block">
-                  <h4>"{this.state.query}"</h4>
+                  <h4 style={{margin: '1rem 0'}}>{this.state.query}</h4>
                   <img className="speech-triangle" src={Triangle} />
                   <img className="avatar" src={Human} />
                 </div>
                 {this.state.oneshot &&
                 <div className="answer-block">
-                  <h4>{this.state.oneshot.faqQuestion}</h4>
+                  <h4 style={{margin: '1rem 0'}}>{this.state.oneshot.faqQuestion}</h4>
                   <p dangerouslySetInnerHTML={{__html: this.state.oneshot.answer}}/> 
                   <div style={{height: 2, display: 'flex', justifyContent: 'flex-end'}}>
                     <img className="speech-triangle answer" src={Triangle2} />
@@ -226,10 +225,9 @@ class Search extends Component {
 
               {!loading && 
                 <div className="search-results">
-                  {this.state.oneshot &&
+                  {this.state.oneshot ?
                     <h4> Not what you were after? Try these: </h4>
-                  }
-                  {!this.state.oneshot &&
+                  :
                     <h4> Results: </h4>
                   }
                   {this.state.results.length == 0 && 
@@ -237,14 +235,12 @@ class Search extends Component {
                   }
                   {this.state.results.map((item, i) => {
                     return (
-                      <div key={i} className="search-result">
-                        <a href={"/Content?="+item.num}> {item.title}</a>
-                        <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} dangerouslySetInnerHTML={{__html: item.snippet}}/>
-                        <div className="flex-row" style={{display: 'none'}}>
-                          <div className="tag"> General Information </div> 
-                          <div className="date"> 19 Aug 2019 </div> 
+                      <a href={"/Content?="+item.num} key={i} className="search-result">
+                        <div>
+                          <a> {item.title}</a>
+                          <p style={{marginTop: 5, maxHeight: 150, overflow: 'hidden', lineHeight: 1.5, marginBottom: 40}} dangerouslySetInnerHTML={{__html: item.snippet}}/>
                         </div>
-                      </div>
+                      </a>
                     )
                   })}
                 </div>
@@ -256,10 +252,9 @@ class Search extends Component {
                   {this.state.all_answers.map((answer, i) => {
                     if (answer && this.state.oneshot && (answer.faqQuestion.trim() != this.state.oneshot.faqQuestion.trim())) {
                       return (
-                        <a key={i} href={'/search?query="'+answer.faqQuestion.replace("%", "%25")+'"'}> 
-                          <div className="fdc-box3" style={{padding: 15, width: '100%', margin: 0, marginBottom: 15}}>
+                        <a key={i} href={'/search?query="'+answer.faqQuestion.replace("%", "%25")+'"'} style={{marginBottom: 20}}> 
+                          <div className="fdc-box3" style={{padding: 15, width: '100%', margin: 0, marginBottom: 20}}>
                             {answer.faqQuestion}
-                            <img src={ChevronRight} style={{width: 8}}/>
                           </div>
                             <img className="speech-triangle" src={QTriangle} />
                         </a>
