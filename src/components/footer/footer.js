@@ -22,7 +22,7 @@ class footer extends Component {
           </div>
         </div>
       </div>
-      <div className="subfooter mobile-hidden">
+      <div style={{background: 'white'}} className="subfooter mobile-hidden">
         <div className="container" style={{alignItems: 'center'}}>
           <div className="inner" style={{justifyContent: 'space-between', maxWidth: 1200}}>
             <img src={Logo} alt="Department of Education" className="logo" />
@@ -51,7 +51,7 @@ class footer extends Component {
             </div>
           </div>
         </div>
-        <img src={Shape} style={{position: 'absolute', marginTop: -135, right: 0}}/>
+        <img alt="" src={Shape} style={{position: 'absolute', marginTop: -135, right: 0}}/>
       </div>
 
       <div className="footer flex-row"  style={{justifyContent: 'center'}}>

@@ -160,6 +160,7 @@ p {
     border-bottom: 6px solid #4864C8;
     margin-bottom: 50px;
     align-items: flex-end;
+    justify-content: space-between;
 }
 
 .content .tabs .tab:hover {
@@ -182,7 +183,7 @@ p {
     padding: 0 20px;
     border-radius: 20px 20px 0 0;
     cursor: pointer;
-    margin-right: 20px;
+/*    margin-right: 20px;*/
     opacity: 0.8;
 }
 
@@ -212,7 +213,14 @@ p {
   border-radius: 19px;
   margin: 25px 10px;
   height: 144px;
+  transition: all 0.2s ease;
 }
+
+.resources .border:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 9px 15px -15px #0000004f;
+}
+
 .resources .search-result p{
   margin-bottom: 0;
   height: 50px;
@@ -309,6 +317,7 @@ p {
   background-color: #fff;
   border-radius: 10px;
   max-width: 262px;
+/*    z-index: -30;*/
 }
 
 .sticky-nav {
@@ -474,6 +483,11 @@ p {
     padding: 15px;
     font-style: italic;
     padding-right: 40px;
+    transition: all 0.2s ease;
+}
+
+.nav-search:focus{
+    box-shadow: 0 0 0px 2px #c9cdde;
 }
 
 .new-provider .banner {
@@ -719,10 +733,15 @@ p {
     margin-left: -10px;
     font-size: 16px;
     z-index: 1;
+    transition: all ease 0.2s;
 }
 
 .home-search::placeholder{
     color: rgba(31, 45, 118, 0.4);
+}
+
+.home-search:focus{
+    box-shadow: 0 0 0px 5px #ffffff38;
 }
 
 .banner .inner h1 {
@@ -1425,10 +1444,14 @@ p {
 /*--------- End Mobile Nav ---------*/
 .fdc-box4 {
   cursor: pointer;
-  background-color: #f0f3fd;
-  padding: 10px 53px 10px 15px;
+/*  background-color: #f0f3fd;*/
+  padding: 20px 53px 20px 15px;
   border-radius: 17px;
   margin-bottom: 16px;
+    transition: all ease 0.3s;
+    border: 2px solid #c9cdde;
+  border-radius: 19px;
+  margin: 25px 10px;
 }
 
 .fdc-box4 h3 {
@@ -1437,6 +1460,7 @@ p {
   padding: 0;
   margin: 0;
   font-size: 16px;
+    font-weight: 600;
 }
 
 .wrapper {

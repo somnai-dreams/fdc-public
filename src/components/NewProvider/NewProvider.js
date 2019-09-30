@@ -7,6 +7,8 @@ import ChevronRight from '../Home/chevron-right.svg';
 import Img1 from './1.png';
 import Img2 from './2.png';
 import Img3 from './3.png';
+import leftShape from './leftShape.svg';
+
 let tags = [
   {text: "Becoming an approved provider"},
   {text: "Applying to become an approved provider"},
@@ -18,7 +20,7 @@ class NewProvider extends Component {
     return (
       <div className="new-provider">
         <NavBar2/> 
-
+          <img alt="" style={{left: -600, top: 400}} src={leftShape} className="shapes-2 mobile-hidden-1700"/>
           <div className="banner container" style={{alignItems: 'center', backgroundColor: '#b9c7f6'}}>
             <div className="inner" style={{flexWrap: 'wrap', justifyContent: 'flex-start'}}>
               <div style={{width: '100%'}}>

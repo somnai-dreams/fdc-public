@@ -1,3 +1,7 @@
+If not working, you need to git pull, npm install and then git reset --hard. Don't ask why
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

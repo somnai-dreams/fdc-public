@@ -196,25 +196,25 @@ class Search extends Component {
           {loading && 
             <div className="container flex-row">
               <div className="inner" style={{width: '100%', marginTop: 80, flexWrap: 'wrap', marginBottom: 80}}>
-                <img height="150" alt="Answering Query" src={Spinner } />
+                <img alt="Loading responses" height="150" alt="Answering Query" src={Spinner } />
               </div>
             </div>
           }
           {!loading &&
             <div className="container flex-row" style={{backgroundColor: '#f8f9fe', paddingBottom: 80}}>
               <div className="inner" style={{width: '100%', marginTop: 80, flexWrap: 'wrap'}}>
-                <div className="question-block">
+                <div alt="Your Query" className="question-block">
                   <h4 style={{margin: '1rem 0'}}>{this.state.query}</h4>
-                  <img className="speech-triangle" src={Triangle} />
-                  <img className="avatar" src={Human} />
+                  <img alt="" className="speech-triangle" src={Triangle} />
+                  <img alt="" className="avatar" src={Human} />
                 </div>
                 {this.state.oneshot &&
-                <div className="answer-block">
+                <div alt="One shot answer" className="answer-block">
                   <h4 style={{margin: '1rem 0'}}>{this.state.oneshot.faqQuestion}</h4>
                   <p dangerouslySetInnerHTML={{__html: this.state.oneshot.answer}}/> 
                   <div style={{height: 2, display: 'flex', justifyContent: 'flex-end'}}>
-                    <img className="speech-triangle answer" src={Triangle2} />
-                    <img className="avatar" src={Bot} />
+                    <img alt="" className="speech-triangle answer" src={Triangle2} />
+                    <img alt="" className="avatar" src={Bot} />
                   </div>
                 </div>
                 }
@@ -226,7 +226,7 @@ class Search extends Component {
 
 
               {!loading && 
-                <div className="search-results">
+                <div alt="Other search results" className="search-results">
                   {this.state.oneshot ?
                     <h4> Not what you were after? Try these: </h4>
                   :
@@ -248,7 +248,7 @@ class Search extends Component {
                 </div>
               }
               {(!loading && this.state.all_answers.length) > 0 &&
-                <div style={{width: '25%'}} className="also-asked mobile-hidden">
+                <div alt="related questions" style={{width: '25%'}} className="also-asked mobile-hidden">
                   <h4> People also ask:</h4>
 
                   {this.state.all_answers.map((answer, i) => {
@@ -260,7 +260,7 @@ class Search extends Component {
                           <a key={i} href={'/search?query="'+answer.faqQuestion.replace("%", "%25")+'"'} style={{marginBottom: 20}}> 
                             <div className="fdc-box3" style={{padding: 15, width: '100%', margin: 0, marginBottom: 20}}>
                               {answer.faqQuestion}
-                                <img className="speech-triangle" src={QTriangle} />
+                                <img alt="" className="speech-triangle" src={QTriangle} />
                             </div>
                           </a>
                         )
@@ -274,7 +274,7 @@ class Search extends Component {
           <div className="container flex-row popular-section" style={{backgroundColor: '#1F2D76', flexWrap: 'wrap', paddingTop: 50, paddingBottom: 70}}>
             <div className="inner" style={{width: '100%', maxWidth: 'none'}}>
               <div className="flex-row" style={{justifyContent: 'space-between', width: '100%', maxWidth: 1020}}>
-                <img src={PopularShape} style={{position: 'absolute', marginLeft: -81, marginTop: -53}}/>
+                <img alt="" src={PopularShape} style={{position: 'absolute', marginLeft: -81, marginTop: -53}}/>
                 <h1 style={{color: '#FFF', zIndex: 2}}> Popular Topics </h1>
                 <h2 style={{cursor: 'pointer', color: '#FFF'}}> View All</h2>
               </div>
@@ -282,19 +282,19 @@ class Search extends Component {
             <div className="inner flex-row" style={{flexWrap: 'wrap'}}>
                   <a href="/content?=0" className="fdc-box3">
                     Become An Approved Provider
-                    <img src={ChevronRight} style={{width: 8}}/>
+                    <img alt="View"  src={ChevronRight} style={{width: 8}}/>
                   </a>
                   <a href="/content?=1" className="fdc-box3">
                     Set Up A Service
-                    <img src={ChevronRight} style={{width: 8}}/>
+                    <img alt="View"  src={ChevronRight} style={{width: 8}}/>
                   </a>
                   <a href="/content?=2" className="fdc-box3">
                     Enrol Children 
-                    <img src={ChevronRight} style={{width: 8}}/>
+                    <img alt="View"  src={ChevronRight} style={{width: 8}}/>
                   </a>
                   <a href="/content?=3" className="fdc-box3">
                     Report Sessions Of Care
-                    <img src={ChevronRight} style={{width: 8}}/>
+                    <img alt="View"  src={ChevronRight} style={{width: 8}}/>
                   </a>
             </div>
           </div>

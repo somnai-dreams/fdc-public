@@ -59,6 +59,8 @@ let table_headings = null;
 let toc_divs = [];
 let anchor_divs = [];
 let navOffset =  null;
+let navHeight =  null;
+let bottomOffset = null;
 
 class Content extends Component {
   constructor(props) {
@@ -174,6 +176,7 @@ class Content extends Component {
   componentDidMount = () => {
     window.addEventListener('scroll', this.didScroll);
     navOffset =  document.getElementById("sticky-nav").offsetTop;
+    navHeight = document.getElementById("sticky-nav").clientHeight;
     //console.log(table_headings);
     let heading_list = Object.keys(table_headings);
     for (let i = 0; i < heading_list.length; i++) {
@@ -210,12 +213,23 @@ class Content extends Component {
   //---- End window resize trigger -----
   didScroll = () => {
     let nav = document.getElementById("sticky-nav");
-    
+    bottomOffset = document.getElementById("popular-section").getBoundingClientRect().top;
+    console.log(bottomOffset - navHeight);
+     
     if (nav) {
       if(window.pageYOffset > navOffset) {
         nav.classList.add("sticky-nav");
       } else {
         nav.classList.remove("sticky-nav");
+      }
+    }
+      if (nav) {
+      if(bottomOffset - navHeight < 100) {
+        nav.style.bottom = window.innerHeight - bottomOffset + 100+ "px";
+        nav.style.top = "unset";
+      } else {
+        nav.style.bottom = "";
+        nav.style.top = "";
       }
     }
 
@@ -277,7 +291,7 @@ class Content extends Component {
           }
             <div className="container flex-row">
               <div className="inner flex-row" style={{marginTop: 15}}>
-                <h1 style={{color: '#FF6B77'}}> {headlines[doc_no].text}</h1>
+                <h1 id="content-title" style={{color: '#FF6B77'}}> {headlines[doc_no].text}</h1>
               </div>
             </div>
             <div className="container flex-row">
@@ -302,60 +316,43 @@ class Content extends Component {
               <div className="search-results flex-row" style={{width: '100%', flexWrap: 'wrap'}}>
                   <h1 style={{color: '#FF6B77', width: '100%'}}> Resources </h1>
 
-                  <div className="flex-row border">
-                    <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
-                      <div className="search-result" style={{width: '85%'}}>
-                        <a href="/">  Approach to compliance</a>
+                  <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/2+Response+to+non-compliance.pdf"  className="flex-row border">
+                    <div className="search-results" style={{width: '90%', paddingBottom: 0}}>
+
+                      <div className="flex-row tags" >
+                        <div className="tag"> Poster </div> 
+                        <div className="tag"> Compliance </div> 
+                        <div className="tag"> For Providers </div> 
+                      </div>
+                      <div className="search-result" style={{width: '90%'}}>
+                        <a href="/"> Response to non-compliance</a>
                         <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
-                          A poster on how the department actively monitors compliance
+                          A poster on how the Department responds to non-compliance
                         </p>
-                        <div className="flex-row" >
-                          <div className="tag"> Poster </div> 
-                          <div className="tag"> Compliance </div> 
-                          <div className="tag"> For Providers </div> 
-                        </div>
                       </div>
                     </div>
 
-                    <div style={{width: '15%'}} className="also-asked">
-                      <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/1+Approach+to+compliance.pdf" className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
-                        View
-                        <img src={ChevronRight} style={{width: 8}}/>
-                      </a>
-                      <a href="/https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/1+Approach+to+compliance.pdf" download className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
-                        Download
-                        <img src={ChevronRight} style={{width: 8}}/>
-                      </a>
-                    </div>
-                  </div>
+                        <img src={ChevronRight} />
+                   </a>
 
-                  <div className="flex-row border">
-                    <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
-                      <div className="search-result" style={{width: '85%'}}>
-                        <a href="/">  Approach to compliance</a>
+                <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/2+Response+to+non-compliance.pdf"  className="flex-row border">
+                    <div className="search-results" style={{width: '90%', paddingBottom: 0}}>
+
+                      <div className="flex-row tags" >
+                        <div className="tag"> Poster </div> 
+                        <div className="tag"> Compliance </div> 
+                        <div className="tag"> For Providers </div> 
+                      </div>
+                      <div className="search-result" style={{width: '90%'}}>
+                        <a href="/"> Response to non-compliance</a>
                         <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
-                          A poster on how the department actively monitors compliance
+                          A poster on how the Department responds to non-compliance
                         </p>
-                        <div className="flex-row" >
-                          <div className="tag"> Poster </div> 
-                          <div className="tag"> Compliance </div> 
-                          <div className="tag"> For Providers </div> 
-                        </div>
                       </div>
                     </div>
 
-                    <div style={{width: '15%'}} className="also-asked">
-                      <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/1+Approach+to+compliance.pdf" className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
-                        View
-                        <img src={ChevronRight} style={{width: 8}}/>
-                      </a>
-                      <a href="/https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/1+Approach+to+compliance.pdf" download className="fdc-box3" style={{width: '100%', margin: 0, marginBottom: 15}}>
-                        Download
-                        <img src={ChevronRight} style={{width: 8}}/>
-                      </a>
-                    </div>
-                  </div>
-
+                        <img src={ChevronRight} />
+                   </a>
 
 
                 </div>
@@ -412,7 +409,7 @@ class Content extends Component {
                 </div>
               </div>
             }
-          <div className="container flex-row popular-section" style={{backgroundColor: '#1F2D76', flexWrap: 'wrap', paddingTop: 50, paddingBottom: 70}}>
+          <div id="popular-section" className="container flex-row popular-section" style={{backgroundColor: '#1F2D76', flexWrap: 'wrap', paddingTop: 50, paddingBottom: 70, marginTop: 40}}>
             <div className="inner" style={{width: '100%', maxWidth: 'none'}}>
               <div className="flex-row" style={{justifyContent: 'space-between', width: '100%', maxWidth: 1020}}>
                 <img src={PopularShape} style={{position: 'absolute', marginLeft: -81, marginTop: -53}}/>

@@ -11,7 +11,7 @@ class Resources extends Component {
     return (
       <div className="resources">
           <NavBar2/>
-          <img style={{left: -600, top: 100}} src={leftShape} className="shapes-2 mobile-hidden-1700"/>
+          <img alt="" style={{left: -600, top: 100}} src={leftShape} className="shapes-2 mobile-hidden-1700"/>
           <div className="container flex-row">
             <div className="inner flex-row" style={{marginTop: 80, justifyContent: 'space-between', alignItems: 'flex-start'}}>
               <div className="search-results flex-row" style={{width: '100%', flexWrap: 'wrap'}}>
@@ -31,7 +31,7 @@ class Resources extends Component {
                       </div>
                     </div>
 
-                    <img src={ChevronRight} />
+                    <img alt="view" src={ChevronRight} />
                   </a>
 
 
@@ -51,7 +51,7 @@ class Resources extends Component {
                       </div>
                     </div>
 
-                        <img src={ChevronRight} />
+                        <img alt="view" src={ChevronRight} />
                    </a>
 
                   <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/3+What+does+good+compliance+look+like+for+an+FDC+provider.pdf" className="flex-row border">
@@ -70,7 +70,7 @@ class Resources extends Component {
                       </div>
                     </div>
 
-                        <img src={ChevronRight} />
+                        <img alt="view" src={ChevronRight} />
                   </a>
 
                   <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/4+What+does+good+compliance+look+like+for+an+FDC+educator.pdf" className="flex-row border">
@@ -89,7 +89,7 @@ class Resources extends Component {
                       </div>
                     </div>
 
-                    <img src={ChevronRight} />
+                    <img alt="view" src={ChevronRight} />
                   </a>
 
                   <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/5+What+does+good+compliance+look+like+for+a+family.pdf"  className="flex-row border">
@@ -107,7 +107,7 @@ class Resources extends Component {
                       </div>
                     </div>
 
-                        <img src={ChevronRight} />
+                        <img alt="view" src={ChevronRight} />
                   </a>
 
 
@@ -127,7 +127,7 @@ class Resources extends Component {
                       </div>
                     </div>
 
-                        <img src={ChevronRight} />
+                        <img alt="view" src={ChevronRight} />
                    </a>
 
                   <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/7+Going+away.pdf"  className="flex-row border">
@@ -147,7 +147,7 @@ class Resources extends Component {
                       </div>
                     </div>
 
-                    <img src={ChevronRight} />
+                    <img alt="view" src={ChevronRight} />
                    </a>
 
                   <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/8+Having+visitors+over.pdf"  className="flex-row border">
@@ -166,7 +166,7 @@ class Resources extends Component {
                       </div>
                     </div>
 
-                    <img src={ChevronRight} />
+                    <img alt="view" src={ChevronRight} />
                    </a>
 
                   <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/9+When+a+child+is+absent.pdf"  className="flex-row border">
@@ -184,7 +184,7 @@ class Resources extends Component {
                         </p>
                       </div>
                     </div>
-                    <img src={ChevronRight} />
+                    <img alt="view" src={ChevronRight} />
                   </a>
 
 
@@ -196,7 +196,7 @@ class Resources extends Component {
           <div className="container flex-row popular-section" style={{zIndex: -2, backgroundColor: '#1F2D76', flexWrap: 'wrap', paddingTop: 50, paddingBottom: 70}}>
             <div className="inner" style={{width: '100%', maxWidth: 'none'}}>
               <div className="flex-row" style={{justifyContent: 'space-between', width: '100%', maxWidth: 1020}}>
-                <img src={PopularShape} style={{position: 'absolute', marginLeft: -81, marginTop: -53}}/>
+                <img alt="" src={PopularShape} style={{position: 'absolute', marginLeft: -81, marginTop: -53}}/>
                 <h1 style={{color: '#FFF', zIndex: 2}}> Popular Topics </h1>
                 <h2 style={{cursor: 'pointer', color: '#FFF'}}> View All</h2>
               </div>
@@ -204,19 +204,19 @@ class Resources extends Component {
             <div className="inner flex-row" style={{flexWrap: 'wrap'}}>
                   <a href="/content?=0" className="fdc-box3">
                     Become An Approved Provider
-                    <img src={ChevronRight} style={{width: 8}}/>
+                    <img alt="view" src={ChevronRight} style={{width: 8}}/>
                   </a>
                   <a href="/content?=1" className="fdc-box3">
                     Set Up A Service
-                    <img src={ChevronRight} style={{width: 8}}/>
+                    <img alt="view" src={ChevronRight} style={{width: 8}}/>
                   </a>
                   <a href="/content?=2" className="fdc-box3">
                     Enrol Children 
-                    <img src={ChevronRight} style={{width: 8}}/>
+                    <img alt="view" src={ChevronRight} style={{width: 8}}/>
                   </a>
                   <a href="/content?=3" className="fdc-box3">
                     Report Sessions Of Care
-                    <img src={ChevronRight} style={{width: 8}}/>
+                    <img alt="view"  src={ChevronRight} style={{width: 8}}/>
                   </a>
             </div>
           </div>

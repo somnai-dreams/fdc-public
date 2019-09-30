@@ -40,7 +40,7 @@ class NavBar2 extends Component {
   return (<div>
     <div className="top-bar">
       <div className="inner flex-row">
-          <img src={Shape} className="shapes-2 mobile-hidden-1700"/>
+          <img alt="" src={Shape} className="shapes-2 mobile-hidden-1700"/>
           <div className="flex-row mobile-hidden" style={{justifyContent: 'space-between', width: '100%'}}>
             <div className="flex-row">
               <a href="/" style={{marginRight: 25}}>
@@ -56,7 +56,7 @@ class NavBar2 extends Component {
               </div>
             </div>
             <div>
-              <input onKeyDown={this.keyPress} value={this.state.searchVal} onChange={this.handleChange} className="nav-search" name="searchVal" placeholder="What are you looking for today?" type="text"/>
+              <input aria-label="Search" onKeyDown={this.keyPress} value={this.state.searchVal} onChange={this.handleChange} className="nav-search" name="searchVal" placeholder="What are you looking for today?" type="text"/>
               <img onClick={this.goSearch} src={SearchIcon} alt="search" className="search-icon" 
                 style={{marginLeft: -55, marginTop: 13}}/>
             </div>
