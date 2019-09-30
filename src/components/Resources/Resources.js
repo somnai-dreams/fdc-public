@@ -17,12 +17,13 @@ class Resources extends Component {
               <div className="search-results flex-row" style={{width: '100%', flexWrap: 'wrap'}}>
                   <h1 style={{color: '#FF6B77', width: '100%'}}> Resources </h1>
                   <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/1+Approach+to+compliance.pdf" className="flex-row border">
-                    <div className="search-results" style={{width: '90%', paddingBottom: 0}}>
-                      <div className="flex-row tags" >
-                        <div className="tag"> Poster </div> 
-                        <div className="tag"> Compliance </div> 
-                        <div className="tag"> For Providers </div> 
+                    <div className="flex-row tags" >
+                                    <div className="tag"> Poster </div> 
+                                    <div className="tag"> Compliance </div> 
+                                    <div className="tag"> For Providers </div> 
                       </div>
+                    <div className="search-results" style={{width: '90%', paddingBottom: 0}}>
+                      
                       <div className="search-result" style={{width: '90%'}}>
                         <a href="/">  Approach to compliance</a>
                         <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >

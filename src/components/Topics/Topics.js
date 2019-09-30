@@ -32,7 +32,7 @@ class Topics extends Component {
                     <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
                       <div className="search-result" style={{width: '100%'}}>
                         <a > Becoming an approved provider</a>
-                        <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
+                        <p >
                           The responsibilities of a child care provider and the key business requirements that are part of being a provider
                         </p>
                       </div>
@@ -45,7 +45,7 @@ class Topics extends Component {
                     <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
                       <div className="search-result" style={{width: '100%'}}>
                         <a > Applying to be an approved provider</a>
-                        <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
+                        <p >
                           Applying for approval for the first time, seeking to add or remove a service from the provider approval, and registration of personnel.
                         </p>
                       </div>
@@ -58,7 +58,7 @@ class Topics extends Component {
                     <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
                       <div className="search-result" style={{width: '100%'}}>
                         <a > Provider and service eligibility</a>
-                        <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
+                        <p >
                           Eligibility requirements that providers and services must meet to be eligible for approval under Family Assistance Law.
                         </p>
                       </div>
@@ -71,7 +71,7 @@ class Topics extends Component {
                     <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
                       <div className="search-result" style={{width: '100%'}}>
                         <a> Exempt services</a>
-                        <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
+                        <p >
                           Types of services that are not covered by the National Law and provides information on the requirements exempt services must meet.
                         </p>
                       </div>
@@ -84,7 +84,7 @@ class Topics extends Component {
                     <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
                       <div className="search-result" style={{width: '100%'}}>
                         <a > Support for providers</a>
-                        <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
+                        <p >
                           The Inclusion Support Program and the Community Child Care Fund (including Connected Beginnings) and how each program is delivered
                         </p>
                       </div>
@@ -108,7 +108,7 @@ class Topics extends Component {
                     <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
                       <div className="search-result" style={{width: '100%'}}>
                         <a >How child care subsidy is paid</a>
-                        <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
+                        <p >
                           How Child Care Subsidy payment amounts are determined, how and when payments are made to providers, circumstances where payments are made to families, managing gap fees, reconciliation, overpayments and debt
                         </p>
                       </div>
@@ -121,7 +121,7 @@ class Topics extends Component {
                     <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
                       <div className="search-result" style={{width: '100%'}}>
                         <a > Child care subsidy</a>
-                        <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
+                        <p >
                           Child Care Subsidy policy, including your responsibilities under the program and the roles of the Department of Education and Centrelink.
                         </p>
                       </div>
@@ -134,7 +134,7 @@ class Topics extends Component {
                     <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
                       <div className="search-result" style={{width: '100%'}}>
                         <a > Additional child care subsidy</a>
-                        <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
+                        <p >
                           The different types of Additional Child Care Subsidy, when this subsidy is payable and the different rates.
                         </p>
                       </div>
@@ -147,7 +147,7 @@ class Topics extends Component {
                     <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
                       <div className="search-result" style={{width: '100%'}}>
                         <a > Enrolling children</a>
-                        <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
+                        <p >
                           Tge steps that need to be taken to put in place an arrangement with the individual responsible for the child - usually a parent - and the process for enrolling that child.
                         </p>
                       </div>
@@ -160,7 +160,7 @@ class Topics extends Component {
                     <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
                       <div className="search-result" style={{width: '100%'}}>
                         <a > Managing and reporting sessions of care</a>
-                        <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
+                        <p >
                           What a session of care is and what you need to do to ensure the sessions of care you provide are managed and reported correctly, and how to handle absences and business continuity payments.
                         </p>
                       </div>
@@ -172,7 +172,7 @@ class Topics extends Component {
                     <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
                       <div className="search-result" style={{width: '100%'}}>
                         <a > Record keeping and notifications</a>
-                        <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
+                        <p >
                           Your record-keeping responsibilities, including specific Family Day Care record-keeping requirements, and notifications that need to be made to comply with provider obligations.
                         </p>
                       </div>
@@ -197,7 +197,7 @@ class Topics extends Component {
                     <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
                       <div className="search-result" style={{width: '100%'}}>
                         <a > Record keeping and notifications</a>
-                        <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
+                        <p >
                           Your record-keeping responsibilities, including specific Family Day Care record-keeping requirements, and notifications that need to be made to comply with provider obligations.
                         </p>
                       </div>
@@ -210,7 +210,7 @@ class Topics extends Component {
                     <div className="search-results" style={{width: '85%', paddingBottom: 0}}>
                       <div className="search-result" style={{width: '100%'}}>
                         <a > Compliance</a>
-                        <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
+                        <p >
                           What you need to do to maintain ongoing approval under Family Assistance Law and the action that can be taken by the Department of Education if you fail to meet those obligations
                         </p>
                       </div>

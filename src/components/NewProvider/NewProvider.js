@@ -32,7 +32,7 @@ class NewProvider extends Component {
             </div>
           </div>
 
-          <div className="container" style={{paddingBottom: 50, alignItems: 'center', flexWrap: 'wrap', marginTop: 20}}>
+          <div className="container" style={{paddingBottom: 10, alignItems: 'center', flexWrap: 'wrap', marginTop: 20}}>
             <div className="inner collapsible" style={{marginTop: -70, flexWrap: 'wrap'}}>
 
               <div className="fdc-box" style={{backgroundImage: `url(${Img1})`}}>
@@ -53,7 +53,7 @@ class NewProvider extends Component {
           </div>
 
           <div className="container flex-row">
-            <div className="inner flex-row" style={{marginTop: 80, justifyContent: 'space-between', alignItems: 'flex-start'}}>
+            <div className="inner flex-row" style={{marginTop: 0, justifyContent: 'space-between', alignItems: 'flex-start'}}>
               <h2> Related Topics</h2>
             </div>
           </div>
@@ -127,6 +127,90 @@ class NewProvider extends Component {
              </div>
            </div>
 
+            <div id="popular-section" className="resources container flex-row popular-section" style={{backgroundColor: '#1F2D76', flexWrap: 'wrap', paddingTop: 50, paddingBottom: 70, marginTop: 100}}>
+                <div className="inner" style={{width: '100%', maxWidth: 'none'}}>
+                      <div className="flex-row" style={{justifyContent: 'space-between', width: '100%', maxWidth: 1020}}>
+                        <img src={PopularShape} style={{position: 'absolute', marginLeft: -81, marginTop: -53}}/>
+                        <h1 style={{color: '#FFF', zIndex: 2}}>Relevant Resources</h1>
+                        <h3 style={{cursor: 'pointer', color: '#FFF'}}> View All</h3>
+                      </div>
+                </div>
+                
+         
+            <div className="container flex-row">
+            <div className="inner flex-row" style={{marginTop: 0, justifyContent: 'space-between', alignItems: 'flex-start'}}>
+              <div className="search-results flex-row" style={{width: '100%', flexWrap: 'wrap'}}>
+                  <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/1+Approach+to+compliance.pdf" className="flex-row border">
+                    <div className="flex-row tags" >
+                                    <div className="tag"> Poster </div> 
+                                    <div className="tag"> Compliance </div> 
+                                    <div className="tag"> For Providers </div> 
+                      </div>
+                    <div className="search-results" style={{width: '90%', paddingBottom: 0}}>
+                      
+                      <div className="search-result" style={{width: '90%'}}>
+                        <a href="/">  Approach to compliance</a>
+                        <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
+                          A poster on how the department actively monitors compliance
+                        </p>
+                      </div>
+                    </div>
+
+                    <img alt="view" src={ChevronRight} />
+                  </a>
+
+
+
+                  <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/3+What+does+good+compliance+look+like+for+an+FDC+provider.pdf" className="flex-row border">
+                    <div className="search-results" style={{width: '90%', paddingBottom: 0}}>
+
+                      <div className="flex-row tags" >
+                        <div className="tag"> Checklist </div> 
+                        <div className="tag"> Compliance </div> 
+                        <div className="tag"> For Providers </div> 
+                      </div>
+                      <div className="search-result" style={{width: '90%'}}>
+                        <a href="/">  What does good compliance look like for an FDC provider</a>
+                        <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
+                          A self-assessment checklist for FDC providers on good compliance practices
+                        </p>
+                      </div>
+                    </div>
+
+                        <img alt="view" src={ChevronRight} />
+                  </a>
+
+
+
+                  <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/6+Caring+for+a+relative+.pdf"  className="flex-row border">
+                    <div className="search-results" style={{width: '90%', paddingBottom: 0}}>
+                      <div className="flex-row tags" >
+                        <div className="tag"> Fact sheet </div> 
+                        <div className="tag"> Relatives </div> 
+                        <div className="tag"> For Providers </div> 
+                        <div className="tag"> For Educators</div> 
+                      </div>
+                      <div className="search-result" style={{width: '90%'}}>
+                        <a href="/">  Caring for a relative </a>
+                        <p style={{maxHeight: 150, overflow: 'hidden', lineHeight: 1.5}} >
+                          A fact sheet on the rules around caring for relatives as an FDC educator
+                        </p>
+                      </div>
+                    </div>
+
+                        <img alt="view" src={ChevronRight} />
+                   </a>
+
+                 
+
+
+              </div>
+            </div>
+          </div>
+
+          
+          </div>
+            
 
         <Footer/>
       </div>

@@ -414,7 +414,7 @@ class Content extends Component {
               <div className="flex-row" style={{justifyContent: 'space-between', width: '100%', maxWidth: 1020}}>
                 <img src={PopularShape} style={{position: 'absolute', marginLeft: -81, marginTop: -53}}/>
                 <h1 style={{color: '#FFF', zIndex: 2}}> Popular Topics </h1>
-                <h2 style={{cursor: 'pointer', color: '#FFF'}}> View All</h2>
+                <h3 style={{cursor: 'pointer', color: '#FFF'}}> View All</h3>
               </div>
             </div>
             <div className="inner flex-row" style={{flexWrap: 'wrap'}}>

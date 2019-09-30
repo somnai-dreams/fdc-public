@@ -207,13 +207,20 @@ p {
 }
 
 .resources .border{
-  width: calc(50% - 40px);
+  width: 48%;
   padding: 15px;
   border: 2px solid #c9cdde;
   border-radius: 19px;
-  margin: 25px 10px;
-  height: 144px;
+  margin: 25px 0px;
+  height: 140px;
   transition: all 0.2s ease;
+  position: relative;
+    background: white;
+}
+
+.resources.topics .border{
+    height: 130px;
+    
 }
 
 .resources .border:hover{
@@ -222,8 +229,9 @@ p {
 }
 
 .resources .search-result p{
-  margin-bottom: 0;
-  height: 50px;
+  margin-top: 5px;
+/*  height: 50px;*/
+    
 }
 
 .resources .border .search-result a{
@@ -239,7 +247,8 @@ p {
 
 .resources .border .tags{
   position: absolute;
-  margin-top: 105px;
+/*  margin-top: 105px;*/
+    bottom: -17px;
 }
 
 .resources .border .tags .tag{
@@ -247,25 +256,36 @@ p {
   font-weight: 600;
 }
 
+.new-provider .popular-section .border {
+    border: none;
+}
+
 
 .resources.topics .search-result p {
   height: 100px;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    height: auto;
 }
 .resources .search-result {
   margin: 0;
 }
 
 .resources .border .search-results .search-result {
-  height: 104px;
+  height: 100%;
 }
 
 .resources .border .search-results {
-  height: 104px;
+  height: 100%;
 }
 
 .resources .also-asked{
   margin-left: -70px;
 }
+
 
 .search-results .title {
   color: #FF6B77; 
@@ -378,6 +398,7 @@ p {
 .search-results {
     width: 65%;
     padding-bottom: 70px;
+    justify-content: space-between;
 }
 
 .search-result {
@@ -510,6 +531,11 @@ p {
   color: #1f2d76;
   font-size: 18px;
 
+}
+
+.new-provider .search-results{
+    padding-bottom: 0;
+    justify-content: space-between;
 }
 
 
