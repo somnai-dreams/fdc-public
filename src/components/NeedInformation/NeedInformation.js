@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import NavBar2 from '../NavBar2/NavBar2';
 import Footer from '../footer/footer';
 import Journey1 from '../Home/Journeys1.png';
-import Journey3 from '../Home/Journeys3.png';
+import Journey3 from '../Home/Journeys3Large.png';
 import Img1 from './1.png';
 import Img2 from './2.png';
 import Img3 from './3.png';
@@ -24,7 +24,7 @@ class NeedInformation extends Component {
         <NavBar2/> 
           <img alt="" style={{left: -600, top: 400}} src={leftShape} className="shapes-2 mobile-hidden-1700"/>
 
-          <div className="banner container" style={{alignItems: 'center', backgroundImage:  `url(${Journey3}`}}>
+          <div className="banner container" style={{alignItems: 'center', backgroundImage:  `url(${Journey3}`,backgroundPosition: 'calc(50% - -380px) 50%'}}>
             <div className="inner" style={{flexWrap: 'wrap', justifyContent: 'flex-start'}}>
               <div style={{width: '100%'}}>
               <h1 style={{color: '#FFF', margin: 0}}> I am operating a family day care service</h1>

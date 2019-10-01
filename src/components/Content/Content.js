@@ -213,7 +213,7 @@ class Content extends Component {
   //---- End window resize trigger -----
   didScroll = () => {
     let nav = document.getElementById("sticky-nav");
-    bottomOffset = document.getElementById("popular-section").getBoundingClientRect().top;
+    try { bottomOffset = document.getElementById("popular-section").getBoundingClientRect().top; } catch(e){}
     console.log(bottomOffset - navHeight);
      
     if (nav) {
@@ -291,7 +291,7 @@ class Content extends Component {
           }
             <div className="container flex-row">
               <div className="inner flex-row" style={{marginTop: 15}}>
-                <h1 id="content-title" style={{color: '#FF6B77'}}> {headlines[doc_no].text}</h1>
+                <h1 id="content-title" style={{color: '#f7626e'}}> {headlines[doc_no].text}</h1>
               </div>
             </div>
             <div className="container flex-row">
@@ -314,7 +314,7 @@ class Content extends Component {
                 <div className="inner flex-row" style={{minHeight: 'calc(100vh - 200px)', marginTop: 80, justifyContent: 'space-between', alignItems: 'flex-start'}}>
 
               <div className="search-results flex-row" style={{width: '100%', flexWrap: 'wrap'}}>
-                  <h1 style={{color: '#FF6B77', width: '100%'}}> Resources </h1>
+                  <h1 style={{color: '#f7626e', width: '100%'}}> Resources </h1>
 
                   <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/2+Response+to+non-compliance.pdf"  className="flex-row border">
                     <div className="search-results" style={{width: '90%', paddingBottom: 0}}>

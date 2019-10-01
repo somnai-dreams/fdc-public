@@ -13,7 +13,7 @@ class Topics extends Component {
           <div className="container flex-row">
             <div className="inner flex-row" style={{marginTop: 10, justifyContent: 'space-between', alignItems: 'flex-start'}}>
               <div className="flex-row" style={{width: '100%', flexWrap: 'wrap'}}>
-                <h1 style={{color: '#FF6B77', width: '100%'}}> Topics </h1>
+                <h1 style={{color: '#f7626e', width: '100%'}}> Topics </h1>
                 <p style={{color: '#1F2D76', fontSize: 20}}> 
                   Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam.
                 </p>

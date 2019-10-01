@@ -88,7 +88,7 @@ class Home extends Component {
               <img alt="" className="mobile-hidden" src={bannerShapeRight} style={{position: 'absolute', right: 0, bottom: 0, maxWidth: 400, width: '25vw'}}/>
 
           </div>
-          <div className="container" style={{paddingBottom: 50, flexWrap: 'wrap', alignItems: 'center'}}>
+          <div className="container" style={{paddingBottom: 30, flexWrap: 'wrap', alignItems: 'center'}}>
             <div className="inner collapsible" style={{marginTop: -70}}>
               <a href="/NewProvider" className="fdc-box" style={{backgroundImage: `url(${Journey1})`, backgroundColor: '#B9C7F6'}}>
                 <h2> I am a new provider</h2>
@@ -103,8 +103,8 @@ class Home extends Component {
           </div>
 
           <div className="container about-section" style={{paddingBottom: 100, flexWrap: 'wrap', alignItems: 'center'}}>
-            <div className="inner collapsible" style={{flexWrap:'wrap', paddingLeft: 33}}>
-              <h2 style={{width: '100%', color: '#FF6B77', marginBottom: 0}}> About </h2>
+            <div className="inner collapsible" style={{flexWrap:'wrap'}}>
+              <h2 style={{width: '100%', color: '#f7626e', marginBottom: 0}}> About </h2>
               <div className="flex-row" style={{justifyContent: 'space-between', position: 'relative'}}>
                 <div style={{width: '60%', color: '#1F2D76', fontSize: 20}}>
                   This website is for Family Day Care providers. It has information to help you understand your compliance obligations. 
@@ -120,7 +120,7 @@ class Home extends Component {
           <div className="container flex-row news-section" >
             <div className="inner" style={{width: '100%', maxWidth: 'none'}}>
               <div style={{textAlign: 'left', width: '100%', maxWidth: 1020}}>
-                <h2>News & Updates</h2>
+                <h2 style={{marginTop: "0", marginBottom: 30}}>News & Updates</h2>
                 <img alt="" src={NewsShapes} className="shape mobile-hidden"/>
               </div>
             </div>
@@ -130,24 +130,22 @@ class Home extends Component {
               <div className="fdc-box2">
                 <div className="btm-3" style={{backgroundImage: `url(${News3})`}}>
                 </div>
-                <div className="tag">POLICY UPDATE</div>
                 <h1> Additional Balancing</h1>
                 <h2> Frequently asked questions from our recent webinar </h2>
                 <div className="flex-row">
-                  <img alt="post time" className="clock" src={Clock} />
                   <span> 15 AUG 2019</span>
+                    <div className="tag">POLICY UPDATE</div>
                 </div>
               </div>
              
               <div className="fdc-box2 mobile-hidden-600">
                 <div className="btm-3" style={{backgroundImage: `url(${News2})`}}>
                 </div>
-                <div className="tag">NEWS ITEM</div>
                 <h1> Update your details</h1>
                 <h2> Reminder to update your details on the Child Care Finder</h2>
                 <div className="flex-row">
-                  <img alt="post time" className="clock" src={Clock} />
                   <span> 09 AUG 2019</span>
+                                    <div className="tag">NEWS ITEM</div>
                 </div>
               </div>
 
@@ -155,26 +153,25 @@ class Home extends Component {
               <div className="fdc-box2 mobile-hidden-800">
                 <div className="btm-3" style={{backgroundImage: `url(${News1})`}}>
                 </div>
-                <div className="tag">WEBINAR</div>
                 <h1> Latest Webinar</h1>
                 <h2> Understanding CCS balancing webcast for providers and services</h2>
                 <div className="flex-row">
-                  <img alt="Post time" className="clock" src={Clock} />
                   <span> 16 JULY 2019 </span>
+                                    <div className="tag">WEBINAR</div>
                 </div>
               </div>
               <img alt="Button scroll news items right" style={{cursor: 'pointer'}} src={ChevronRight} alt="more"/>
             </div>
           </div>
-          <div className="container flex-row popular-section" style={{backgroundColor: '#1F2D76', flexWrap: 'wrap', paddingTop: 100, paddingBottom: 144}}>
+          <div className="container flex-row popular-section" style={{backgroundColor: '#1F2D76', flexWrap: 'wrap', paddingTop: '100px', paddingBottom: '100px'}}>
             <div className="inner" style={{width: '100%', maxWidth: 'none'}}>
               <div className="flex-row" style={{justifyContent: 'space-between', width: '100%', maxWidth: 1020}}>
-                <img alt="" src={PopularShape} style={{position: 'absolute', marginLeft: -81, marginTop: -53}}/>
-                <h2 style={{color: '#FFF', zIndex: 2}}> Popular Topics </h2>
+                <img alt="" src={PopularShape} style={{position: 'absolute', marginLeft: -81, marginTop: 15}}/>
+                <h2 style={{color: '#FFF', zIndex: 2, marginTop: 0}}> Popular Topics </h2>
                 <h3 style={{cursor: 'pointer', color: '#FFF'}}> View All</h3>
               </div>
             </div>
-            <div className="inner flex-row" style={{flexWrap: 'wrap'}}>
+            <div className="inner flex-row" style={{flexWrap: 'wrap', zIndex: '1'}}>
               {tags.map((item, i) => {
                 return (
                   <a key={i} href={"/content"+"?="+(i)} className="fdc-box3" style={{width: 200}}>

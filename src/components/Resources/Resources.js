@@ -11,11 +11,20 @@ class Resources extends Component {
     return (
       <div className="resources">
           <NavBar2/>
+            <div className="container flex-row">
+            <div className="inner flex-row" style={{marginTop: 10, justifyContent: 'space-between', alignItems: 'flex-start'}}>
+              <div className="flex-row" style={{width: '100%', flexWrap: 'wrap'}}>
+                <h1 style={{color: '#f7626e', width: '100%'}}> Resources </h1>
+                <p style={{color: '#1F2D76', fontSize: 20}}> 
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam.
+                </p>
+              </div>
+            </div>
+          </div>
           <img alt="" style={{left: -600, top: 100}} src={leftShape} className="shapes-2 mobile-hidden-1700"/>
           <div className="container flex-row">
-            <div className="inner flex-row" style={{marginTop: 80, justifyContent: 'space-between', alignItems: 'flex-start'}}>
+            <div className="inner flex-row" style={{marginTop: 10, justifyContent: 'space-between', alignItems: 'flex-start'}}>
               <div className="search-results flex-row" style={{width: '100%', flexWrap: 'wrap'}}>
-                  <h1 style={{color: '#FF6B77', width: '100%'}}> Resources </h1>
                   <a href="https://fdc-prototype.s3.us-east-2.amazonaws.com/pdfs/1+Approach+to+compliance.pdf" className="flex-row border">
                     <div className="flex-row tags" >
                                     <div className="tag"> Poster </div> 

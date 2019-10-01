@@ -46,14 +46,16 @@
 
 .fdc-box2{
     cursor: pointer;
+/*
     -webkit-box-shadow: 0 9px 15px -15px #0000004f;
     box-shadow: 0 9px 15px -15px #0000004f;
+*/
     transition: all ease 0.2s;
 }
 
 .fdc-box2:hover{
     text-decoration: none;
-    transform: translateY(-5px);
+    transform: translateY(-10px);
     transform-origin: bottom;
     -webkit-box-shadow:0 16px 9px -9px #00000029;
     box-shadow:0 16px 9px -9px #00000029;
