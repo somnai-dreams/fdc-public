@@ -82,7 +82,7 @@ class NavBar2 extends Component {
           <div className="text">Resources</div>
         </NavLink>
 
-        <NavLink to="/news" href="/news" activeClassName="selected" className="nav-item no-ipad">
+        <NavLink to="/NewsPage" href="/NewsPage" activeClassName="selected" className="nav-item no-ipad">
           <div className="text">News</div>
         </NavLink>
 

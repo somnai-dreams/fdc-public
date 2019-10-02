@@ -9,6 +9,7 @@ import Img3 from './3.png';
 import PopularShape from '../Home/PopularShape.png';
 import ChevronRight from '../Home/chevron-right.svg';
 import leftShape from './leftShape.svg';
+import Shapes1 from './shapes1.png';
 
 
 let tags = [
@@ -22,12 +23,12 @@ class NeedInformation extends Component {
     return (
       <div className="new-provider">
         <NavBar2/> 
-          <img alt="" style={{left: -600, top: 400}} src={leftShape} className="shapes-2 mobile-hidden-1700"/>
+          <img alt="" style={{right: 50, top: 790, left: 'unset'}} src={Shapes1} className="shapes-1 mobile-hidden-1700"/>
 
           <div className="banner container" style={{alignItems: 'center', backgroundImage:  `url(${Journey3}`,backgroundPosition: 'calc(50% - -380px) 50%'}}>
             <div className="inner" style={{flexWrap: 'wrap', justifyContent: 'flex-start'}}>
               <div style={{width: '100%'}}>
-              <h1 style={{color: '#FFF', margin: 0}}> I am operating a family day care service</h1>
+              <h1 style={{color: '#FFF', margin: 0}}> I need information</h1>
               </div>
               <p style={{width: 400}}> 
                 Stay on top of your compliance obligations and updates to legislation and rules

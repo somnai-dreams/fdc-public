@@ -237,12 +237,14 @@ class Search extends Component {
                   }
                   {this.state.results.map((item, i) => {
                     return (
-                      <a href={"/Content?="+item.num} key={i} className="search-result">
-                        <div>
-                          <a> {item.title}</a>
-                          <p style={{marginTop: 5, maxHeight: 150, overflow: 'hidden', lineHeight: 1.5, marginBottom: 40}} dangerouslySetInnerHTML={{__html: item.snippet}}/>
-                        </div>
-                      </a>
+                                      
+                        <a href={"/Content?="+item.num} key={i} className="search-result border" style={{justifyContent: 'space-between'}}>
+                            <div style={{width: '90%'}}>
+                                <a >{item.title}</a>
+                                <p style={{marginTop: 5, maxHeight: 150, overflow: 'hidden', lineHeight: 1.5, marginBottom: 40}} dangerouslySetInnerHTML={{__html: item.snippet}}/>
+                                </div>
+                            <img style={{cursor: 'pointer'}} src={ChevronRight} alt="more"/>
+                       </a>
                     )
                   })}
                 </div>

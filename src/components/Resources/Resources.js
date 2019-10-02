@@ -16,7 +16,7 @@ class Resources extends Component {
               <div className="flex-row" style={{width: '100%', flexWrap: 'wrap'}}>
                 <h1 style={{color: '#f7626e', width: '100%'}}> Resources </h1>
                 <p style={{color: '#1F2D76', fontSize: 20}}> 
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam.
+                  Download printable resources to help you talk about your compliance obligations with educators and families.
                 </p>
               </div>
             </div>

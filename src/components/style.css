@@ -155,7 +155,7 @@ p {
   background-size: 140px;
   flex-wrap: wrap;
   background-color: #FFF;
-  border: 1px solid #1F2D763D;
+  border: 2px solid #1F2D763D;
 }
 
 .content .tabs {
@@ -185,7 +185,7 @@ p {
     color: #1F2D76;
     font-size: 21px;
     padding: 0 20px;
-    border-radius: 20px 20px 0 0;
+    border-radius: 15px 15px 0 0;
     cursor: pointer;
 /*    margin-right: 20px;*/
     opacity: 0.8;
@@ -225,7 +225,7 @@ p {
   width: 48%;
   padding: 15px;
   border: 2px solid #c9cdde;
-  border-radius: 19px;
+  border-radius: 15px;
   margin: 25px 0px;
   height: 140px;
   transition: all 0.2s ease;
@@ -416,6 +416,36 @@ p {
     margin: 50px 0;
 }
 
+.search-result.border{
+  padding: 15px;
+  border: 2px solid #c9cdde;
+  border-radius: 15px;
+  margin: 25px 0px;
+  height: 140px;
+  transition: all 0.2s ease;
+  position: relative;
+background: white;
+    display: flex;
+    align-content: center;
+    padding-right: 30px;
+}
+.search-result.border img{
+    height: 30px;
+    align-self: center;
+}
+
+.search-result.border:hover{
+ transform: translateY(-5px);
+    box-shadow: 0 9px 15px -15px #0000004f;
+}
+
+.search-result.border p{
+      display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
 .search-results .tag {
     background-color: #78a4ff;
     color: #FFF;
@@ -557,8 +587,10 @@ p {
     background-position: bottom;
     background-size: cover;
     height: 600px;
-    width: 100vw;
+    width: 100%;
     max-height: 800px;
+    position: relative;
+    overflow: hidden;
 }
 
 .banner .container {
@@ -588,13 +620,13 @@ p {
     min-width: 200px;
     min-height: 63px;
     background-color: #FFF;
-    border-radius: 17px;
+    border-radius: 15px;
     display: flex;
     flex-grow: 1;
     align-items: center;
     justify-content: space-between;
     padding: 0 16px;
-    margin: 15px 15px 0 0;
+    margin: 15px 7px 0 7px;
     font-weight: 600;
     color: #4864C8;
     cursor: pointer;
@@ -658,7 +690,7 @@ p {
     width: 234px;
     height: 313px;
     background-color: #FFF;
-    border-radius: 28px;
+    border-radius: 15px;
     margin-right: 25px;
     margin-left: 25px;
     position: relative;
@@ -692,7 +724,7 @@ p {
     font-weight: normal;
     /*  font-style: italic;*/
     margin: 25px;
-    font-size: 21px;
+    font-size: 24px;
     font-weight: 600;
     text-align: left;
 }
@@ -702,7 +734,7 @@ p {
     width: 234px;
     height: 313px;
     background-color: #719FFF;
-    border-radius: 28px;
+    border-radius: 15px;
     margin-right: 25px;
     margin-left: 25px;
     text-align: center;
@@ -1500,7 +1532,7 @@ p {
   margin-bottom: 16px;
     transition: all ease 0.3s;
     border: 2px solid #c9cdde;
-  border-radius: 19px;
+  border-radius: 15px;
   margin: 25px 10px;
 }
 
@@ -2075,4 +2107,27 @@ li {
 
 .help .drop-option {
     max-width: none;
+}
+
+.newsPage .search-result p{
+     display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+.newsPage .fdc-box2{
+    border: 2px solid #c9cdde;
+    border-radius: 18px;
+    margin: 0 7px;
+    
+}
+
+.newsPage .news-section{
+    background: none;
+}
+
+.newsPage .container .inner.news{
+    justify-content: space-between;
+    max-width: 1034px;
 }

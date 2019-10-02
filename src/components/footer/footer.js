@@ -30,22 +30,16 @@ class footer extends Component {
 
               <div className="list" style={{marginRight: 50}}>
                 <a href="/topics" style={{fontSize: 18, fontWeight: 600, marginBottom: 5}}> Topics </a>
-                <a href="/" style={{fontSize: 14}}> Lorem ipsum </a>
-                <a href="/" style={{fontSize: 14}}> Lorem ipsum </a>
               </div>
 
 
               <div className="list" style={{marginRight: 50}}>
                 <a href="/resources" style={{fontSize: 18, fontWeight: 600, marginBottom: 5}}> Resources </a>
-                <a href="/" style={{fontSize: 14}}> Lorem ipsum </a>
-                <a href="/" style={{fontSize: 14}}> Lorem ipsum </a>
               </div>
 
 
               <div className="list">
                 <a href="/" style={{fontSize: 18, fontWeight: 600, marginBottom: 5}}> News </a>
-                <a href="/" style={{fontSize: 14}}> Lorem ipsum </a>
-                <a href="/" style={{fontSize: 14}}> Lorem ipsum </a>
               </div>
 
             </div>

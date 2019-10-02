@@ -8,6 +8,8 @@ import Img1 from './1.png';
 import Img2 from './2.png';
 import Img3 from './3.png';
 import leftShape from './leftShape.svg';
+import Shapes1 from './shapes1.png';
+
 
 let tags = [
   {text: "Becoming an approved provider"},
@@ -20,9 +22,10 @@ class NewProvider extends Component {
     return (
       <div className="new-provider">
         <NavBar2/> 
-          <img alt="" style={{left: -600, top: 400}} src={leftShape} className="shapes-2 mobile-hidden-1700"/>
+          <img alt="" style={{right: 50, top: 790, left: 'unset'}} src={Shapes1} className="shapes-1 mobile-hidden-1700"/>
           <div className="banner container" style={{alignItems: 'center', backgroundColor: '#b9c7f6'}}>
-            <div className="inner" style={{flexWrap: 'wrap', justifyContent: 'flex-start'}}>
+        <div style={{    width: 700 + 'px',    height: 700 + 'px',    position: 'absolute',    background: 'white',    borderRadius: 100 + '%',    opacity: 0.2,    top: -130+'%',    left: -200+'px'}}></div>
+            <div className="inner" style={{zIndex: 1, flexWrap: 'wrap', justifyContent: 'flex-start'}}>
               <div style={{width: '100%'}}>
                 <h1 style={{color: '#202E77', margin: 0}}> I am a new provider </h1>
               </div>

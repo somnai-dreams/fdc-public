@@ -171,7 +171,7 @@ class Home extends Component {
                 <h3 style={{cursor: 'pointer', color: '#FFF'}}> View All</h3>
               </div>
             </div>
-            <div className="inner flex-row" style={{flexWrap: 'wrap', zIndex: '1'}}>
+            <div className="inner flex-row" style={{flexWrap: 'wrap', zIndex: '1', margin: "0 -7px 0 -7px", maxWidth: 1034}}>
               {tags.map((item, i) => {
                 return (
                   <a key={i} href={"/content"+"?="+(i)} className="fdc-box3" style={{width: 200}}>
