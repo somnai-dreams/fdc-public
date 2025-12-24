@@ -4,12 +4,12 @@
   "private": true,
   "dependencies": {
     "babel-preset-es2015": "^6.24.1",
-    "dialogflow": "^0.10.3",
+    "dialogflow": "^4.0.3",
     "raw-loader": "^0.5.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.1",
-    "react-scripts": "3.0.1",
+    "react-scripts": "5.0.1",
     "react-scrollable-anchor": "^0.6.1",
     "svg-inline-react": "^3.1.0"
   },
